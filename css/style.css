@@ -1,36 +1,52 @@
 /* ================================================================
-   HoopyAI — Clean & Modern Personal Website
-   Focused on readability, simplicity, and content clarity
+   HoopyAI — Clean & Fresh Personal Website
+   清新蓝紫黄配色 + 现代设计
    ================================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* ── Design Tokens ──────────────────────────────────────────── */
+/* ── 清新配色系统 ──────────────────────────────────────────── */
 :root {
-  /* Modern neutral palette - high contrast for readability */
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-accent: #f5f5f5;
+  /* 清新基础色 */
+  --bg-primary: #fafbff;
+  --bg-secondary: #f0f4ff;
+  --bg-card: #ffffff;
+  --bg-accent: #f8fafc;
   
-  --text-primary: #1a1a1a;
-  --text-secondary: #666666;
-  --text-muted: #999999;
+  /* 文字颜色 */
+  --text-primary: #2a3441;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
   
-  --border-light: #e5e5e5;
-  --border-medium: #d1d1d1;
+  /* 清新主题色 (低饱和度) */
+  --color-blue: #7dd3fc;      /* 清新天蓝 */
+  --color-purple: #c4b5fd;    /* 柔和紫 */
+  --color-yellow: #fde68a;    /* 温和黄 */
   
-  /* Modern accent colors - minimal but effective */
-  --accent-blue: #3b82f6;
-  --accent-green: #10b981;
-  --accent-purple: #8b5cf6;
-  --accent-orange: #f59e0b;
+  /* 深色变体 */
+  --color-blue-dark: #0ea5e9;
+  --color-purple-dark: #8b5cf6;
+  --color-yellow-dark: #f59e0b;
+  
+  /* 渐变效果 */
+  --gradient-bg: linear-gradient(135deg, #fafbff 0%, #f0f4ff 50%, #fefce8 100%);
+  --gradient-card: linear-gradient(145deg, rgba(125, 211, 252, 0.08) 0%, rgba(196, 181, 253, 0.08) 100%);
+  --gradient-text: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+  --gradient-button: linear-gradient(135deg, var(--color-blue), var(--color-purple));
+  
+  /* 边框和阴影 */
+  --border-light: rgba(125, 211, 252, 0.2);
+  --border-medium: rgba(196, 181, 253, 0.3);
+  --shadow-soft: 0 8px 32px rgba(125, 211, 252, 0.1);
+  --shadow-card: 0 4px 20px rgba(196, 181, 253, 0.15);
+  --shadow-hover: 0 12px 40px rgba(139, 92, 246, 0.2);
   
   /* Typography */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   
   /* Layout */
-  --nav-height: 60px;
+  --nav-height: 64px;
   --container-max: 800px;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -40,51 +56,40 @@
   --spacing-2xl: 4rem;
   
   /* Border radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
   
   /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark mode support - improved */
+/* Dark mode - 保持清新感 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
-    --bg-accent: #262626;
+    --bg-primary: #0f0f1a;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #16213e;
     
-    --text-primary: #ffffff;
-    --text-secondary: #a3a3a3;
-    --text-muted: #737373;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
     
-    --border-light: #262626;
-    --border-medium: #404040;
+    --color-blue: #38bdf8;
+    --color-purple: #a78bfa;
+    --color-yellow: #fbbf24;
     
-    /* Adjust accent colors for dark mode */
-    --accent-blue: #60a5fa;
-    --accent-green: #34d399;
-    --accent-purple: #a78bfa;
-    --accent-orange: #fbbf24;
-  }
-  
-  .nav {
-    background-color: rgba(15, 15, 15, 0.95);
+    --gradient-bg: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #2d1b22 100%);
+    --border-light: rgba(56, 189, 248, 0.2);
+    --shadow-card: 0 8px 32px rgba(167, 139, 250, 0.1);
   }
 }
 
-/* ── Performance Optimizations ─────────────────────────────── */
-* {
-  box-sizing: border-box;
-}
-
+/* ── Reset & Base ─────────────────────────────────────────── */
 *, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -92,7 +97,6 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  /* Improve font rendering */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,11 +107,9 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
-  /* Prevent layout shift */
+  background: var(--gradient-bg);
+  background-attachment: fixed;
   min-height: 100vh;
-  /* Enable hardware acceleration for smoother animations */
-  transform: translateZ(0);
 }
 
 /* ── Typography ─────────────────────────────────────────── */
@@ -119,13 +121,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-  font-size: 2.5rem; 
+  font-size: 3rem; 
   font-weight: 700;
   margin-bottom: var(--spacing-lg);
 }
 
 h2 { 
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -135,16 +137,17 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
 }
 
 a {
-  color: var(--accent-blue);
+  color: var(--color-blue-dark);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 a:hover {
-  color: var(--accent-purple);
+  color: var(--color-purple-dark);
 }
 
 /* ── Layout Components ─────────────────────────────────────── */
@@ -160,10 +163,11 @@ a:hover {
   top: 0;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border-light);
   z-index: 1000;
+  transition: all var(--transition-normal);
 }
 
 .nav__inner {
@@ -174,14 +178,13 @@ a:hover {
 }
 
 .nav__logo {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
-}
-
-.nav__logo-ai {
-  color: var(--accent-blue);
 }
 
 .nav__links {
@@ -193,11 +196,15 @@ a:hover {
 .nav__link {
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color var(--transition-fast);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
 }
 
 .nav__link:hover {
-  color: var(--text-primary);
+  color: var(--color-purple-dark);
+  background: rgba(196, 181, 253, 0.1);
+  transform: translateY(-1px);
 }
 
 .nav__hamburger {
@@ -207,12 +214,14 @@ a:hover {
   border: none;
   cursor: pointer;
   gap: 3px;
+  padding: var(--spacing-xs);
 }
 
 .nav__hamburger span {
   width: 20px;
   height: 2px;
-  background-color: var(--text-primary);
+  background: var(--gradient-text);
+  border-radius: 1px;
   transition: var(--transition-fast);
 }
 
@@ -220,9 +229,35 @@ a:hover {
 .hero {
   padding-top: calc(var(--nav-height) + var(--spacing-2xl));
   padding-bottom: var(--spacing-2xl);
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+/* 装饰性背景元素 */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hero__layout {
@@ -233,15 +268,23 @@ a:hover {
 }
 
 .avatar-frame {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: var(--bg-secondary);
+  background: var(--gradient-card);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.avatar-frame:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
 }
 
 .avatar-placeholder {
@@ -249,18 +292,21 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
+  color: var(--color-purple-dark);
+  text-align: center;
 }
 
 .avatar-placeholder__icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   margin-bottom: var(--spacing-xs);
+  opacity: 0.8;
 }
 
 .avatar-placeholder__label {
   font-size: 0.75rem;
-  text-align: center;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .hero__content {
@@ -269,31 +315,37 @@ a:hover {
 
 .hero__eyebrow {
   font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--accent-blue);
+  font-weight: 600;
+  color: var(--color-purple-dark);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   margin-bottom: var(--spacing-sm);
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(196, 181, 253, 0.1);
+  border-radius: var(--radius-sm);
 }
 
 .hero__name {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: var(--spacing-sm);
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.2;
 }
 
 .hero__title-line {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
+  font-weight: 400;
 }
 
 .hero__bio {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xl);
@@ -305,35 +357,63 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* ── Social Links ─────────────────────────────────────────── */
+/* ── 清新按钮设计 ─────────────────────────────────────────── */
 .social-link {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   font-weight: 500;
   color: var(--text-primary);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
 }
 
 .social-link:hover {
-  background-color: var(--accent-blue);
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  border-color: var(--color-purple);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  color: var(--color-purple-dark);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-card);
+  transition: left var(--transition-normal);
+  z-index: -1;
+}
+
+.social-link:hover::before {
+  left: 0;
 }
 
 .social-link svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  transition: all var(--transition-fast);
 }
 
-/* ── Sections ─────────────────────────────────────────── */
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* ── 卡片式 Sections ─────────────────────────────────────── */
 .section {
   padding: var(--spacing-2xl) 0;
+}
+
+.section--alt {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
 }
 
 .section__header {
@@ -342,28 +422,59 @@ a:hover {
 }
 
 .section__title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section__subtitle {
   font-size: 1.25rem;
   color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* ── Cards ─────────────────────────────────────────── */
+/* ── 清新卡片设计 ─────────────────────────────────────────── */
 .card {
-  background-color: var(--bg-primary);
+  background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);
   transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-button);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
-  border-color: var(--accent-blue);
-  box-shadow: var(--shadow-md);
+  border-color: var(--color-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+  color: var(--color-purple-dark);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
 }
 
 /* ── Grid Layouts ─────────────────────────────────────────── */
@@ -373,26 +484,64 @@ a:hover {
 }
 
 .grid--2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .grid--3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* ── Text Highlights ─────────────────────────────────────── */
+/* ── 清新文本高亮 ─────────────────────────────────────────── */
 .text-highlight {
-  background: linear-gradient(120deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-  padding: 0.125em 0.25em;
+  background: linear-gradient(120deg, rgba(125, 211, 252, 0.2) 0%, rgba(196, 181, 253, 0.2) 100%);
+  padding: 0.125em 0.375em;
   border-radius: var(--radius-sm);
   font-weight: 500;
+  color: var(--color-purple-dark);
+  border: 1px solid rgba(196, 181, 253, 0.3);
+  display: inline-block;
+  margin: 0 2px;
+  transition: all var(--transition-fast);
 }
 
-/* ── Responsive Design & Performance ─────────────────────── */
+.text-highlight:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+/* ── 状态标签 ─────────────────────────────────────────── */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge--wip {
+  background: rgba(253, 230, 138, 0.2);
+  color: var(--color-yellow-dark);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-badge--active {
+  background: rgba(125, 211, 252, 0.2);
+  color: var(--color-blue-dark);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.status-badge--planning {
+  background: rgba(196, 181, 253, 0.2);
+  color: var(--color-purple-dark);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* ── Responsive Design ─────────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
     --nav-height: 56px;
-    --container-max: 100%;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2.5rem;
     --spacing-2xl: 3rem;
@@ -415,7 +564,7 @@ a:hover {
   }
   
   .hero__name {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
   
   .hero__bio {
@@ -443,30 +592,39 @@ a:hover {
   }
   
   .section__title {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+  
+  .card {
+    padding: var(--spacing-lg);
   }
 }
 
 /* Enhanced mobile experience */
 @media (max-width: 480px) {
   .hero__name {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   .section__title {
-    font-size: 1.75rem;
+    font-size: 1.875rem;
   }
   
   .social-link {
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: 0.875rem;
   }
+  
+  .avatar-frame {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 /* ── Animations ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -483,6 +641,16 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 浮动动画 */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
 }
 
 /* ── Utility Classes ─────────────────────────────────────── */
@@ -502,6 +670,7 @@ a:hover {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
+/* Spacing utilities */
 .mb-0 { margin-bottom: 0; }
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
