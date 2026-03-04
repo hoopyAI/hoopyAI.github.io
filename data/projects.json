@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "parlez",
+      "title": "Parlez",
+      "description": "A web app for learning French with AI conversation practice, smart vocabulary cards, and personalized review sessions. Built from a personal obsession with the French language and a frustration with existing tools.",
+      "tags": ["typescript", "llm", "language-learning", "web"],
+      "githubUrl": "https://github.com/hoopyAI/parlez",
+      "liveUrl": null,
+      "status": "wip",
+      "featured": true
+    },
+    {
+      "id": "content-skill",
+      "title": "Content Creation SKILL",
+      "description": "A Claude Code skill for AI-assisted content creation — structures narratives, adapts tone, and generates drafts for Chinese social media. Designed around the build-in-public workflow.",
+      "tags": ["claude", "skill", "typescript", "content"],
+      "githubUrl": "https://github.com/hoopyAI/content-skill",
+      "liveUrl": null,
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "knowledge-hub",
+      "title": "HoopyAI Knowledge Hub",
+      "description": "Visual explainers for AI concepts — each topic has AI-generated image galleries and the exact prompts that created them. This site's knowledge-sharing engine.",
+      "tags": ["javascript", "html", "ai-art", "prompts"],
+      "githubUrl": "https://github.com/hoopyAI/hoopyAI.github.io",
+      "liveUrl": "https://hoopyai.github.io/knowledge.html",
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "shige-ai",
+      "title": "古诗词 AI Companion",
+      "description": "An AI companion for exploring Chinese classical poetry — translation, annotation, imagery analysis, and modern interpretations. Currently in the planning stage.",
+      "tags": ["typescript", "llm", "chinese-poetry", "culture"],
+      "githubUrl": null,
+      "liveUrl": null,
+      "status": "wip",
+      "featured": false
+    },
+    {
+      "id": "ai-research-skill",
+      "title": "AI Research SKILL",
+      "description": "A Claude Code skill for deep-diving into AI papers and concepts — summarizes arxiv papers, builds concept maps, and generates visual explanations. Powers the Knowledge Hub content pipeline.",
+      "tags": ["claude", "skill", "research", "ai"],
+      "githubUrl": "https://github.com/hoopyAI/ai-research-skill",
+      "liveUrl": null,
+      "status": "active",
+      "featured": false
+    },
+    {
+      "id": "data-pipeline-agent",
+      "title": "Data Pipeline Agent",
+      "description": "A TypeScript agent that analyzes data pipeline code, suggests optimizations, and auto-generates documentation. Built for internal tooling use cases.",
+      "tags": ["typescript", "agents", "data", "internal"],
+      "githubUrl": null,
+      "liveUrl": null,
+      "status": "archived",
+      "featured": false
+    }
+  ]
+}

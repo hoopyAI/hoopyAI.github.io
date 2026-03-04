@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "WebSearch",
+      "WebFetch(domain:www.sitebuilderreport.com)",
+      "WebFetch(domain:careerfoundry.com)",
+      "WebFetch(domain:colorwhistle.com)",
+      "WebFetch(domain:adongwanai.github.io)"
+    ]
+  }
+}

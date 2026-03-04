@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HoopyAI — AI Engineer building agents, LLM pipelines, and hobby-driven products. Build in public.">
+  <title>HoopyAI — AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- NAV: update in all 3 pages -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="HoopyAI home">
+        Hoopy<span class="nav__logo-ai">AI</span>
+      </a>
+      <div class="nav__right">
+        <button class="lang-toggle" aria-label="Switch language">中文</button>
+        <button class="nav__hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html"     class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="projects.html"  class="nav__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="knowledge.html" class="nav__link" data-i18n="nav.knowledge">Knowledge</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ════════════════════════════════════════
+         Hero — Cobalt + Violet watercolor wash
+    ════════════════════════════════════════ -->
+    <section class="hero section--wc" aria-labelledby="hero-name">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--a wc-blob--hero-1"></div>
+        <div class="wc-blob wc-blob--b wc-blob--hero-2"></div>
+        <div class="wc-blob wc-blob--c wc-blob--hero-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero__layout">
+
+          <!-- Square avatar placeholder -->
+          <figure class="avatar-frame reveal" aria-label="Profile photo">
+            <div class="avatar-placeholder">
+              <!--
+                ADD YOUR PHOTO: replace everything inside .avatar-placeholder with:
+                <img src="images/avatar/avatar.jpg" alt="HoopyAI">
+              -->
+              <svg class="avatar-placeholder__icon" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="0.9" stroke-linecap="round" aria-hidden="true">
+                <circle cx="12" cy="8.5" r="3.8"/>
+                <path d="M3.5 21c0-4.5 3.8-7.5 8.5-7.5s8.5 3 8.5 7.5"/>
+              </svg>
+              <p class="avatar-placeholder__label">Add your photo</p>
+            </div>
+          </figure>
+
+          <!-- Text content -->
+          <div class="hero__content">
+            <p class="hero__eyebrow reveal" data-i18n="hero.eyebrow">AI Engineer · Personal Builder</p>
+
+            <h1 id="hero-name" class="hero__name reveal reveal--delay-1">HoopyAI</h1>
+            <p class="hero__title-line reveal reveal--delay-1" data-i18n="hero.titleLine">
+              Building AI systems from genuine curiosity
+            </p>
+
+            <p class="hero__bio reveal reveal--delay-2" data-i18n-html="hero.bio">
+              I build <span class="text-hl text-hl--cobalt">TypeScript agents</span>,
+              <span class="text-hl text-hl--viridian">LLM pipelines</span>, and
+              <span class="text-hl text-hl--violet">AI-powered tools</span> —
+              and I turn every hobby into a product. Vibe coding with Claude before it was cool.
+            </p>
+
+            <div class="hero__links reveal reveal--delay-2" role="list">
+              <a href="https://github.com/hoopyAI" target="_blank" rel="noopener noreferrer"
+                 class="social-link" role="listitem">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/hoopyai" target="_blank" rel="noopener noreferrer"
+                 class="social-link" role="listitem">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a href="mailto:hello@hoopyai.dev" class="social-link" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Email
+              </a>
+            </div>
+
+            <div class="hero__cta reveal reveal--delay-3">
+              <a href="projects.html" class="btn btn--primary" data-i18n="hero.cta1">View Projects</a>
+              <a href="knowledge.html" class="btn btn--ghost" data-i18n="hero.cta2">Knowledge Hub</a>
+            </div>
+
+            <!-- Now Building — live status for VCs and collaborators -->
+            <div class="now-building reveal reveal--delay-3" aria-label="Currently building">
+              <p class="now-building__header">
+                <span class="now-building__dot"></span>
+                <span data-i18n="now.header">Now Building</span>
+              </p>
+              <ul class="now-building__list">
+                <li class="now-building__item">
+                  <span class="now-building__arrow">→</span>
+                  <span class="now-building__name" data-i18n="now.item1.name">Parlez — French Learning App</span>
+                  <span class="now-building__badge now-building__badge--wip" data-i18n="now.item1.status">WIP</span>
+                </li>
+                <li class="now-building__item">
+                  <span class="now-building__arrow">→</span>
+                  <span class="now-building__name" data-i18n="now.item2.name">Content Creation SKILL</span>
+                  <span class="now-building__badge now-building__badge--active" data-i18n="now.item2.status">Active</span>
+                </li>
+                <li class="now-building__item">
+                  <span class="now-building__arrow">→</span>
+                  <span class="now-building__name" data-i18n="now.item3.name">Chinese Poetry AI Tool</span>
+                  <span class="now-building__badge now-building__badge--planning" data-i18n="now.item3.status">Planning</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ink divider -->
+    <div class="container">
+      <div class="ink-rule reveal">
+        <span class="ink-rule__text" data-i18n="divider.about">de vita &amp; operibus</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         About — Sage + Ochre watercolor wash
+    ════════════════════════════════════════ -->
+    <section class="about section--wc" aria-labelledby="about-title">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--b wc-blob--about-1"></div>
+        <div class="wc-blob wc-blob--d wc-blob--about-2"></div>
+        <div class="wc-blob wc-blob--a wc-blob--about-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__text reveal">
+            <span class="section-label" data-num="§ 02" data-i18n="about.label">About</span>
+
+            <!-- Ghost number -->
+            <span class="section-num" aria-hidden="true">02</span>
+
+            <h2 id="about-title" class="section-title" style="margin-bottom:22px;"
+                data-i18n-html="about.title">
+              Who I am &amp;<br>
+              <em style="color: var(--i-500); font-style:italic;">what I care about</em>
+            </h2>
+
+            <p class="about__lead" data-i18n="about.lead">
+              I build AI systems that actually ship — not just clever demos.
+            </p>
+
+            <p data-i18n-html="about.body1">
+              I came to AI from software engineering: TypeScript-first, focused on
+              <span class="text-hl text-hl--ochre">what actually works in production</span>.
+              Agents that don't hallucinate their way into disaster. Pipelines that retrieve
+              the right context. Tools that real people want to use.
+            </p>
+
+            <div class="callout callout--viridian" data-i18n-html="about.callout">
+              My approach: every hobby becomes a product. Learning French → a language learning app.
+              Loving classical Chinese poetry → an AI poetry companion. Making content → a SKILL
+              for that workflow. <strong>Build in public, iterate in public.</strong>
+            </div>
+
+            <p data-i18n-html="about.body2">
+              This site is both portfolio and notebook. The
+              <span class="text-hl text-hl--cobalt">Knowledge Hub</span> is where I document
+              AI ideas visually — every entry has AI-generated images and the exact prompts
+              behind them.
+            </p>
+
+            <!-- Stat pills -->
+            <div class="stat-row">
+              <div class="stat-pill stat-pill--cobalt">
+                <span class="stat-pill__num">6+</span>
+                <span class="stat-pill__label" data-i18n="about.stat1">AI Projects</span>
+              </div>
+              <div class="stat-pill stat-pill--viridian">
+                <span class="stat-pill__num">6</span>
+                <span class="stat-pill__label" data-i18n="about.stat2">Knowledge Topics</span>
+              </div>
+              <div class="stat-pill stat-pill--ochre">
+                <span class="stat-pill__num">∞</span>
+                <span class="stat-pill__label" data-i18n="about.stat3">Prompts explored</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal--delay-1">
+            <div class="skills-panel">
+              <p class="skills-panel__title" data-i18n="skills.title">Technologies &amp; tools</p>
+
+              <div class="skills-group">
+                <p class="skills-group__label" data-i18n="skills.ai">AI / LLM</p>
+                <div class="skills-group__tags">
+                  <span class="tag">Claude API</span>
+                  <span class="tag">OpenAI API</span>
+                  <span class="tag">LangChain</span>
+                  <span class="tag">RAG</span>
+                  <span class="tag">Agents</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <p class="skills-group__label" data-i18n="skills.lang">Languages</p>
+                <div class="skills-group__tags">
+                  <span class="tag tag--viridian">TypeScript</span>
+                  <span class="tag tag--viridian">Python</span>
+                  <span class="tag tag--viridian">SQL</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <p class="skills-group__label" data-i18n="skills.infra">Tools</p>
+                <div class="skills-group__tags">
+                  <span class="tag tag--cobalt">Claude Code</span>
+                  <span class="tag tag--cobalt">GitHub Copilot</span>
+                  <span class="tag tag--cobalt">Vibe Coding</span>
+                  <span class="tag tag--cobalt">Node.js</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <p class="skills-group__label" data-i18n="skills.gen">Generative</p>
+                <div class="skills-group__tags">
+                  <span class="tag tag--violet">DALL-E</span>
+                  <span class="tag tag--violet">Image Prompting</span>
+                  <span class="tag tag--violet">Content Creation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ink divider -->
+    <div class="container">
+      <div class="ink-rule reveal">
+        <span class="ink-rule__text" data-i18n="divider.featured">opera selecta</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         Featured Projects — Sienna + Cerulean
+    ════════════════════════════════════════ -->
+    <section class="featured section--wc" aria-labelledby="featured-title">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--a wc-blob--feat-1"></div>
+        <div class="wc-blob wc-blob--c wc-blob--feat-2"></div>
+        <div class="wc-blob wc-blob--b wc-blob--feat-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-num="§ 03" data-i18n="featured.label">Featured Work</span>
+          <span class="section-num" aria-hidden="true">03</span>
+          <h2 id="featured-title" class="section-title" data-i18n="featured.title">Selected projects</h2>
+          <p class="section-desc">
+            <span data-i18n="featured.desc">A few things I've built. Full list on the</span>
+            <a href="projects.html" data-i18n="featured.desc.link">projects page</a>.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Parlez — French Learning App -->
+          <article class="card reveal">
+            <div class="project-card__header">
+              <h3 class="project-card__title" data-i18n="featured.p1.title">Parlez</h3>
+              <span class="badge badge--wip">WIP</span>
+            </div>
+            <p class="project-card__desc" data-i18n="featured.p1.desc">
+              AI-powered French learning — conversation practice, smart flashcards, personalized
+              review. Built from genuine obsession with the language.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--viridian">typescript</span>
+              <span class="tag tag--cobalt">llm</span>
+              <span class="tag">language-learning</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/hoopyAI/parlez" target="_blank"
+                 rel="noopener noreferrer" class="btn btn--ghost">
+                <svg class="btn--icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Content Creation SKILL -->
+          <article class="card reveal reveal--delay-1">
+            <div class="project-card__header">
+              <h3 class="project-card__title" data-i18n="featured.p2.title">Content Creation SKILL</h3>
+              <span class="badge badge--active">active</span>
+            </div>
+            <p class="project-card__desc" data-i18n="featured.p2.desc">
+              A Claude Code skill that structures narratives, adapts tone, and generates drafts
+              for Chinese social media. Powers my own content workflow.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--viridian">claude</span>
+              <span class="tag tag--cobalt">skill</span>
+              <span class="tag">typescript</span>
+              <span class="tag tag--violet">content</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/hoopyAI/content-skill" target="_blank"
+                 rel="noopener noreferrer" class="btn btn--ghost">
+                <svg class="btn--icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Knowledge Hub preview -->
+          <a href="knowledge.html" class="card reveal reveal--delay-2"
+             style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <span class="label-bracket" style="margin-bottom:14px;" data-i18n="featured.hub.label">Knowledge Hub</span>
+              <h3 class="project-card__title" style="margin-bottom:10px;" data-i18n="featured.hub.title">
+                AI Concept Galleries
+              </h3>
+              <p class="project-card__desc" data-i18n="featured.hub.desc">
+                Visual explainers for neural networks, transformers, diffusion models —
+                each with AI-generated image galleries and the exact prompts that created them.
+              </p>
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:18px;">
+              <span class="tag">deep-learning</span>
+              <span class="tag">prompts</span>
+              <span class="tag">gallery</span>
+              <span class="tag tag--cobalt">6 topics →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ink divider -->
+    <div class="container">
+      <div class="ink-rule reveal">
+        <span class="ink-rule__text" data-i18n="divider.connect">epistola</span>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         Connect — Violet + Ochre watercolor wash
+    ════════════════════════════════════════ -->
+    <section class="connect section--wc" aria-labelledby="connect-title">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--c wc-blob--connect-1"></div>
+        <div class="wc-blob wc-blob--a wc-blob--connect-2"></div>
+      </div>
+
+      <div class="container">
+        <div class="card connect-card reveal" style="text-align:center;">
+          <span class="section-label" data-num="§ 04" style="justify-content:center; margin-bottom:18px;"
+                data-i18n="connect.label">Get in touch</span>
+          <h2 id="connect-title" class="section-title" style="font-size:clamp(2rem,4vw,3rem); margin-bottom:14px;"
+              data-i18n="connect.title">
+            Let's build something
+          </h2>
+          <p class="section-desc" style="margin: 0 auto 24px; text-align:center; max-width:380px;"
+             data-i18n="connect.desc">
+            Working on an interesting AI problem? Have a project idea or just want
+            to talk agents, LLMs, and vibe coding?
+          </p>
+          <a href="mailto:hello@hoopyai.dev" class="btn btn--primary" data-i18n="connect.btn">
+            <svg class="btn--icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Say hello
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy" data-i18n="footer.copy">
+        &copy; 2025 HoopyAI &mdash; crafted with ink &amp; inference
+      </p>
+      <nav class="footer__links" aria-label="Footer links">
+        <a href="https://github.com/hoopyAI" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+        <a href="projects.html"  class="footer__link" data-i18n="nav.projects">Projects</a>
+        <a href="knowledge.html" class="footer__link" data-i18n="nav.knowledge">Knowledge</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
