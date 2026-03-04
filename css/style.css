@@ -53,10 +53,10 @@
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark mode support */
+/* Dark mode support - improved */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #0a0a0a;
+    --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
     --bg-accent: #262626;
     
@@ -66,15 +66,25 @@
     
     --border-light: #262626;
     --border-medium: #404040;
+    
+    /* Adjust accent colors for dark mode */
+    --accent-blue: #60a5fa;
+    --accent-green: #34d399;
+    --accent-purple: #a78bfa;
+    --accent-orange: #fbbf24;
+  }
+  
+  .nav {
+    background-color: rgba(15, 15, 15, 0.95);
   }
 }
 
-/* ── Reset & Base ─────────────────────────────────────────── */
-*, *::before, *::after {
+/* ── Performance Optimizations ─────────────────────────────── */
+* {
   box-sizing: border-box;
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
 }
@@ -82,6 +92,10 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Improve font rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -90,8 +104,10 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Prevent layout shift */
+  min-height: 100vh;
+  /* Enable hardware acceleration for smoother animations */
+  transform: translateZ(0);
 }
 
 /* ── Typography ─────────────────────────────────────────── */
@@ -372,10 +388,24 @@ a:hover {
   font-weight: 500;
 }
 
-/* ── Responsive Design ─────────────────────────────────────── */
+/* ── Responsive Design & Performance ─────────────────────── */
 @media (max-width: 768px) {
+  :root {
+    --nav-height: 56px;
+    --container-max: 100%;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+    --spacing-2xl: 3rem;
+  }
+  
   .container {
     padding: 0 var(--spacing-md);
+  }
+  
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--spacing-xl));
+    padding-bottom: var(--spacing-xl);
+    min-height: 60vh;
   }
   
   .hero__layout {
@@ -386,6 +416,10 @@ a:hover {
   
   .hero__name {
     font-size: 2.5rem;
+  }
+  
+  .hero__bio {
+    font-size: 1rem;
   }
   
   .nav__links {
@@ -402,6 +436,30 @@ a:hover {
   
   .grid--2, .grid--3 {
     grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section__title {
+    font-size: 2rem;
+  }
+}
+
+/* Enhanced mobile experience */
+@media (max-width: 480px) {
+  .hero__name {
+    font-size: 2rem;
+  }
+  
+  .section__title {
+    font-size: 1.75rem;
+  }
+  
+  .social-link {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
   }
 }
 
