@@ -543,8 +543,8 @@
           return;
         }
 
-        projects.forEach(project => {
-          this.gridEl.appendChild(this.renderCard(project));
+        projects.forEach((project, i) => {
+          this.gridEl.appendChild(this.renderCard(project, i));
         });
 
         Animate.init();
@@ -558,11 +558,12 @@
       }
     },
 
-    renderCard(project) {
+    renderCard(project, index = 0) {
       const article = document.createElement('article');
-      article.className = 'card project-card reveal';
+      const colorClass = `project-card--c${(index % 5) + 1}`;
+      article.className = `card project-card ${colorClass} reveal`;
 
-      // Alternate tag colors for visual variety
+      // Tag colors for variety
       const tagColors = ['tag--cobalt', 'tag--viridian', '', 'tag--violet', 'tag--ochre'];
       const tagsHtml = (project.tags || [])
         .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
@@ -584,19 +585,36 @@
         : '';
 
       article.innerHTML = `
-        <div class="project-card__header">
-          <h3 class="project-card__title">${escHtml(project.title)}</h3>
-          ${badgeHtml}
+        <div class="project-card__preview" aria-hidden="true">
+          ${Projects.previewIcon(project)}
         </div>
-        <p class="project-card__desc">${escHtml(project.description)}</p>
-        <div class="project-card__tags">${tagsHtml}</div>
-        <div class="project-card__actions">
-          ${githubBtn}
-          ${liveBtn}
+        <div class="project-card__body">
+          <div class="project-card__header">
+            <h3 class="project-card__title">${escHtml(project.title)}</h3>
+            ${badgeHtml}
+          </div>
+          <p class="project-card__desc">${escHtml(project.description)}</p>
+          <div class="project-card__tags">${tagsHtml}</div>
+          <div class="project-card__actions">
+            ${githubBtn}
+            ${liveBtn}
+          </div>
         </div>
       `;
 
       return article;
+    },
+
+    previewIcon(project) {
+      const tag = (project.tags || [])[0] || '';
+      const icons = {
+        typescript: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M13 9v6"/></svg>`,
+        llm:        `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>`,
+        claude:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 22,21 2,21"/><line x1="12" y1="10" x2="12" y2="15"/></svg>`,
+        javascript: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12v4a2 2 0 004 0M15 12v6"/></svg>`,
+        agents:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M17 14l2 2 4-4"/></svg>`,
+      };
+      return icons[tag] || `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 8h5M8 16h6"/></svg>`;
     },
   };
 
