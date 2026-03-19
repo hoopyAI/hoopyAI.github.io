@@ -71,7 +71,7 @@
 
         // About
         'about.label':   'About',
-        'about.title':   'Who I am &amp;<br><em style="color: var(--i-500); font-style:italic;">what I care about</em>',
+        'about.title':   'About',
         'about.lead':    'I build AI systems that actually ship — not just clever demos.',
         'about.body1':   'I came to AI from software engineering: TypeScript-first, focused on <span class="text-hl text-hl--ochre">what actually works in production</span>. Agents that don\'t hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.',
         'about.callout': 'My approach: every hobby becomes a product. Learning French → a language learning app. Loving classical Chinese poetry → an AI poetry companion. Making content → a SKILL for that workflow. <strong>Build in public, iterate in public.</strong>',
@@ -79,7 +79,7 @@
         'about.stat1':   'AI Projects',
         'about.stat2':   'Knowledge Topics',
         'about.stat3':   'Prompts explored',
-        'skills.title':  'Technologies & tools',
+        'skills.title':  'What I Build',
         'skills.ai':     'AI / LLM',
         'skills.lang':   'Languages',
         'skills.infra':  'Tools',
@@ -122,6 +122,26 @@
         'carousel.prompt.copy': 'Copy',
         'carousel.prompt.copied': 'Copied!',
         'carousel.hint': '← → arrow keys or swipe',
+
+        // Homepage sections
+        'about.subtitle': 'Who I am & what I care about',
+        'about.philosophy.title': 'Philosophy',
+        'about.philosophy.lead': 'I build AI systems that actually ship — not just clever demos.',
+        'about.philosophy.body': "I came to AI from software engineering: TypeScript-first, focused on what actually works in production. Agents that don't hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.",
+        'about.focus.title': 'Current Focus',
+        'about.focus.parlez': 'French Learning App',
+        'about.focus.wip': 'WIP',
+        'about.focus.content': 'Content Creation SKILL',
+        'about.focus.active': 'Active',
+        'about.focus.poetry': 'Chinese Poetry AI Tool',
+        'about.focus.planning': 'Planning',
+        'skills.subtitle': 'My approach to AI engineering',
+        'skills.agents.title': 'TypeScript Agents',
+        'skills.agents.desc': 'End-to-end AI workflows that integrate seamlessly with existing systems. Built with type safety and production reliability in mind.',
+        'skills.llm.title': 'LLM Pipelines',
+        'skills.llm.desc': 'RAG systems, prompt optimization, and model orchestration. Focus on accuracy, cost efficiency, and real-world performance.',
+        'skills.tools.title': 'AI Tools',
+        'skills.tools.desc': 'User-facing applications that solve real problems. From language learning to content creation, built for actual humans.',
       },
 
       zh: {
@@ -153,7 +173,7 @@
 
         // About
         'about.label':   '关于',
-        'about.title':   '我是谁，<br><em style="color: var(--i-500); font-style:italic;">在乎什么</em>',
+        'about.title':   '关于',
         'about.lead':    '我构建真正能用的 AI 系统，不只是看起来好看的 demo。',
         'about.body1':   '我从软件工程走入 AI 领域：TypeScript 优先，执着于<span class="text-hl text-hl--ochre">真正在生产环境中有效的东西</span>。不乱幻觉的 Agent，检索到正确上下文的 Pipeline，真实用户愿意用的工具。',
         'about.callout': '我的方式：每个爱好都变成一个产品。学法语 → 法语学习应用。爱古诗词 → AI 古诗词伴侣。做内容 → 内容创作 SKILL。<strong>公开构建，公开迭代。</strong>',
@@ -161,7 +181,7 @@
         'about.stat1':   'AI 项目',
         'about.stat2':   '知识主题',
         'about.stat3':   '探索过的 Prompt',
-        'skills.title':  '技术栈 &amp; 工具',
+        'skills.title':  '我在做什么',
         'skills.ai':     'AI / LLM',
         'skills.lang':   '编程语言',
         'skills.infra':  '工具',
@@ -204,15 +224,37 @@
         'carousel.prompt.copy': '复制',
         'carousel.prompt.copied': '已复制!',
         'carousel.hint': '← → 方向键或滑动',
+
+        // Homepage sections
+        'about.title': '关于',
+        'about.subtitle': '我是谁，在乎什么',
+        'about.philosophy.title': '理念',
+        'about.philosophy.lead': '我构建真正能用的 AI 系统，不只是看起来好看的 demo。',
+        'about.philosophy.body': '我从软件工程走入 AI 领域：TypeScript 优先，执着于真正在生产环境中有效的东西。不乱幻觉的 Agent，检索到正确上下文的 Pipeline，真实用户愿意用的工具。',
+        'about.focus.title': '正在构建',
+        'about.focus.parlez': '法语学习应用',
+        'about.focus.wip': '开发中',
+        'about.focus.content': '自媒体创作 SKILL',
+        'about.focus.active': '已上线',
+        'about.focus.poetry': '中文古诗词 AI 工具',
+        'about.focus.planning': '规划中',
+        'skills.title': '我在做什么',
+        'skills.subtitle': 'AI 工程方法论',
+        'skills.agents.title': 'TypeScript Agent',
+        'skills.agents.desc': '端到端 AI 工作流，无缝集成现有系统。注重类型安全和生产可靠性。',
+        'skills.llm.title': 'LLM 应用',
+        'skills.llm.desc': 'RAG 系统、Prompt 优化、模型编排。聚焦准确性、成本效率和真实场景表现。',
+        'skills.tools.title': 'AI 工具',
+        'skills.tools.desc': '解决真实问题的用户端应用。从语言学习到内容创作，为真实用户而构建。',
       },
     },
 
     init() {
-      // Priority: URL ?lang= param > localStorage > default 'en'
+      // Priority: URL ?lang= param > localStorage > default 'zh'
       const urlLang = new URLSearchParams(window.location.search).get('lang');
       this.current = (urlLang === 'en' || urlLang === 'zh')
         ? urlLang
-        : (localStorage.getItem('hoopyai-lang') || 'en');
+        : (localStorage.getItem('hoopyai-lang') || 'zh');
       this.apply();
       const btn = document.querySelector('.lang-toggle');
       if (btn) btn.addEventListener('click', () => this.toggle());

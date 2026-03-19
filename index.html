@@ -404,7 +404,7 @@
     }
   </style>
 </head>
-<body>
+<body data-page="home">
 
   <!-- Navigation -->
   <nav class="nav" aria-label="Main navigation">
@@ -413,9 +413,9 @@
         Hoopy<span style="color: var(--color-blue-dark);">AI</span>
       </a>
       <ul class="nav__links" role="list">
-        <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="projects.html" class="nav__link">Projects</a></li>
-        <li><a href="knowledge.html" class="nav__link">Knowledge</a></li>
+        <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="knowledge.html" class="nav__link" data-i18n="nav.knowledge">Knowledge</a></li>
       </ul>
       <button class="nav__hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -442,15 +442,15 @@
 
           <!-- Content -->
           <div class="hero__content">
-            <p class="hero__eyebrow">AI Engineer · Personal Builder</p>
-            
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">AI Engineer · Personal Builder</p>
+
             <h1 class="hero__name">HoopyAI</h1>
-            
-            <p class="hero__title-line">
+
+            <p class="hero__title-line" data-i18n="hero.titleLine">
               Building AI systems from genuine curiosity
             </p>
 
-            <p class="hero__bio">
+            <p class="hero__bio" data-i18n-html="hero.bio">
               I build <span class="text-highlight">TypeScript agents</span>,
               <span class="text-highlight">LLM pipelines</span>, and
               <span class="text-highlight">AI-powered tools</span> —
@@ -490,33 +490,33 @@
     <section class="section section--alt">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">About</h2>
-          <p class="section__subtitle">Who I am & what I care about</p>
+          <h2 class="section__title" data-i18n="about.title">About</h2>
+          <p class="section__subtitle" data-i18n="about.subtitle">Who I am & what I care about</p>
         </div>
         
         <div class="grid grid--2">
           <div class="card">
-            <h3>Philosophy</h3>
-            <p>I build AI systems that actually ship — not just clever demos.</p>
-            <p>I came to AI from software engineering: TypeScript-first, focused on what actually works in production. Agents that don't hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.</p>
+            <h3 data-i18n="about.philosophy.title">Philosophy</h3>
+            <p data-i18n="about.philosophy.lead">I build AI systems that actually ship — not just clever demos.</p>
+            <p data-i18n="about.philosophy.body">I came to AI from software engineering: TypeScript-first, focused on what actually works in production. Agents that don't hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.</p>
           </div>
           
           <div class="card">
-            <h3>Current Focus</h3>
+            <h3 data-i18n="about.focus.title">Current Focus</h3>
             <div class="project-item">
               <span class="project-arrow">→</span>
-              <span class="project-name">Parlez</span> — French Learning App 
-              <span class="status-badge status-badge--wip">WIP</span>
+              <span class="project-name">Parlez</span> — <span data-i18n="about.focus.parlez">French Learning App</span>
+              <span class="status-badge status-badge--wip" data-i18n="about.focus.wip">WIP</span>
             </div>
             <div class="project-item">
               <span class="project-arrow">→</span>
-              <span class="project-name">Content Creation SKILL</span>
-              <span class="status-badge status-badge--active">Active</span>
+              <span class="project-name" data-i18n="about.focus.content">Content Creation SKILL</span>
+              <span class="status-badge status-badge--active" data-i18n="about.focus.active">Active</span>
             </div>
             <div class="project-item">
               <span class="project-arrow">→</span>
-              <span class="project-name">Chinese Poetry AI Tool</span>
-              <span class="status-badge status-badge--planning">Planning</span>
+              <span class="project-name" data-i18n="about.focus.poetry">Chinese Poetry AI Tool</span>
+              <span class="status-badge status-badge--planning" data-i18n="about.focus.planning">Planning</span>
             </div>
           </div>
         </div>
@@ -527,29 +527,30 @@
     <section class="section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">What I Build</h2>
-          <p class="section__subtitle">My approach to AI engineering</p>
+          <h2 class="section__title" data-i18n="skills.title">What I Build</h2>
+          <p class="section__subtitle" data-i18n="skills.subtitle">My approach to AI engineering</p>
         </div>
         
         <div class="grid grid--3">
           <div class="card">
-            <h3 style="color: var(--color-blue-dark);">TypeScript Agents</h3>
-            <p>End-to-end AI workflows that integrate seamlessly with existing systems. Built with type safety and production reliability in mind.</p>
+            <h3 style="color: var(--color-blue-dark);" data-i18n="skills.agents.title">TypeScript Agents</h3>
+            <p data-i18n="skills.agents.desc">End-to-end AI workflows that integrate seamlessly with existing systems. Built with type safety and production reliability in mind.</p>
           </div>
-          
+
           <div class="card">
-            <h3 style="color: var(--color-purple-dark);">LLM Pipelines</h3>
-            <p>RAG systems, prompt optimization, and model orchestration. Focus on accuracy, cost efficiency, and real-world performance.</p>
+            <h3 style="color: var(--color-purple-dark);" data-i18n="skills.llm.title">LLM Pipelines</h3>
+            <p data-i18n="skills.llm.desc">RAG systems, prompt optimization, and model orchestration. Focus on accuracy, cost efficiency, and real-world performance.</p>
           </div>
-          
+
           <div class="card">
-            <h3 style="color: var(--color-yellow-dark);">AI Tools</h3>
-            <p>User-facing applications that solve real problems. From language learning to content creation, built for actual humans.</p>
+            <h3 style="color: var(--color-yellow-dark);" data-i18n="skills.tools.title">AI Tools</h3>
+            <p data-i18n="skills.tools.desc">User-facing applications that solve real problems. From language learning to content creation, built for actual humans.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <script src="js/app.js"></script>
 </body>
 </html>
