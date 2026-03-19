@@ -119,6 +119,12 @@
         'page.knowledge.eyebrow': 'AI Concepts &amp; Prompts',
         'page.knowledge.title':   'Knowledge <span class="grad-text">Hub</span>',
         'page.knowledge.desc':    'Visual explainers for AI topics — each entry has a gallery of AI-generated images and the prompts that created them. Click any card to explore.',
+        'knowledge.filter.all': 'All',
+        'knowledge.pages': 'pages',
+        'carousel.prompt.label': 'PROMPT',
+        'carousel.prompt.copy': 'Copy',
+        'carousel.prompt.copied': 'Copied!',
+        'carousel.hint': '← → arrow keys or swipe',
       },
 
       zh: {
@@ -195,6 +201,12 @@
         'page.knowledge.eyebrow': 'AI 概念 &amp; Prompt',
         'page.knowledge.title':   '知识 <span class="grad-text">库</span>',
         'page.knowledge.desc':    'AI 主题的视觉解读 —— 每个条目有 AI 生成的图片集和创建它们的 Prompt。点击任意卡片探索。',
+        'knowledge.filter.all': '全部',
+        'knowledge.pages': '页',
+        'carousel.prompt.label': '提示词',
+        'carousel.prompt.copy': '复制',
+        'carousel.prompt.copied': '已复制!',
+        'carousel.hint': '← → 方向键或滑动',
       },
     },
 
@@ -352,16 +364,10 @@
      Topics — Knowledge Hub card rendering
   ----------------------------------------------------------- */
   const Topics = {
-    gridEl:     null,
-    sentinelEl: null,
-    ioSentinel: null,
-    allTagsEl:  null,
+    gridEl: null,
 
     async init() {
-      this.gridEl     = document.getElementById('topics-grid');
-      this.sentinelEl = document.getElementById('load-more-sentinel');
-      this.allTagsEl  = document.getElementById('all-tags');
-
+      this.gridEl = document.getElementById('topics-grid');
       if (!this.gridEl) return;
 
       this.gridEl.innerHTML = `<div class="loading-spinner"><div class="spinner"></div></div>`;
@@ -370,11 +376,9 @@
         const data = await Data.fetch(config.topicsPath);
         state.allTopics      = data.topics || [];
         state.filteredTopics = [...state.allTopics];
-        state.renderedCount  = 0;
 
         this.buildTagList();
-        this.renderBatch();
-        this.initSentinel();
+        this.renderGrid();
       } catch (err) {
         console.error(err);
         this.gridEl.innerHTML = `
@@ -385,8 +389,24 @@
       }
     },
 
+    renderGrid() {
+      this.gridEl.innerHTML = '';
+      if (state.filteredTopics.length === 0) {
+        this.gridEl.innerHTML = `
+          <div class="empty-state">
+            <p class="empty-state__title">No topics found</p>
+            <p>Try adjusting your filters.</p>
+          </div>`;
+        return;
+      }
+      state.filteredTopics.forEach(topic => {
+        this.gridEl.appendChild(this.renderCard(topic));
+      });
+    },
+
     buildTagList() {
-      if (!this.allTagsEl) return;
+      const barEl = document.getElementById('filter-bar');
+      if (!barEl) return;
       const tagCounts = {};
       state.allTopics.forEach(t => {
         (t.tags || []).forEach(tag => {
@@ -395,124 +415,122 @@
       });
       const sorted = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
       const filterColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
-      this.allTagsEl.innerHTML = sorted.map(([tag], i) => `
-        <button class="filter-tag tag ${filterColors[i % filterColors.length]}" data-tag="${tag}" aria-pressed="false">${tag}</button>
+
+      let html = `<button class="filter-bar__btn" data-tag="__all" aria-pressed="true">
+        <span class="tag tag--active">${I18n.t('knowledge.filter.all')}</span>
+      </button>`;
+
+      html += sorted.map(([tag], i) => `
+        <button class="filter-bar__btn" data-tag="${tag}" aria-pressed="false">
+          <span class="tag ${filterColors[i % filterColors.length]}">${tag}</span>
+        </button>
       `).join('');
 
-      this.allTagsEl.querySelectorAll('.filter-tag').forEach(btn => {
-        btn.addEventListener('click', () => Search.onTagToggle(btn));
+      barEl.innerHTML = html;
+
+      barEl.querySelectorAll('.filter-bar__btn').forEach(btn => {
+        btn.addEventListener('click', () => this.onTagToggle(btn));
       });
     },
 
-    renderGrid() {
-      state.renderedCount = 0;
-      this.gridEl.innerHTML = '';
+    onTagToggle(btn) {
+      const tag = btn.dataset.tag;
+      const barEl = document.getElementById('filter-bar');
 
-      if (state.filteredTopics.length === 0) {
-        this.gridEl.innerHTML = `
-          <div class="empty-state">
-            <p class="empty-state__title">No topics found</p>
-            <p>Try adjusting your search or filters.</p>
-          </div>`;
-        return;
+      if (tag === '__all') {
+        state.activeTags.clear();
+        barEl.querySelectorAll('.filter-bar__btn').forEach(b => {
+          const span = b.querySelector('.tag');
+          span.classList.remove('tag--active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.querySelector('.tag').classList.add('tag--active');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        const allBtn = barEl.querySelector('[data-tag="__all"]');
+        if (allBtn) {
+          allBtn.querySelector('.tag').classList.remove('tag--active');
+          allBtn.setAttribute('aria-pressed', 'false');
+        }
+
+        if (state.activeTags.has(tag)) {
+          state.activeTags.delete(tag);
+          btn.querySelector('.tag').classList.remove('tag--active');
+          btn.setAttribute('aria-pressed', 'false');
+        } else {
+          state.activeTags.add(tag);
+          btn.querySelector('.tag').classList.add('tag--active');
+          btn.setAttribute('aria-pressed', 'true');
+        }
+
+        if (state.activeTags.size === 0 && allBtn) {
+          allBtn.querySelector('.tag').classList.add('tag--active');
+          allBtn.setAttribute('aria-pressed', 'true');
+        }
       }
 
-      this.renderBatch();
+      this.applyFilters();
     },
 
-    renderBatch() {
-      const slice = state.filteredTopics.slice(
-        state.renderedCount,
-        state.renderedCount + config.pageSize
-      );
-
-      slice.forEach(topic => {
-        const card = this.renderCard(topic);
-        this.gridEl.appendChild(card);
+    applyFilters() {
+      const tags = state.activeTags;
+      state.filteredTopics = state.allTopics.filter(topic => {
+        if (tags.size === 0) return true;
+        const topicTags = new Set(topic.tags || []);
+        for (const t of tags) {
+          if (!topicTags.has(t)) return false;
+        }
+        return true;
       });
-
-      state.renderedCount += slice.length;
+      this.renderGrid();
     },
 
     renderCard(topic) {
       const article = document.createElement('article');
-      article.className = 'card topic-card reveal';
+      article.className = 'cover-card reveal';
       article.setAttribute('tabindex', '0');
       article.setAttribute('role', 'button');
       article.setAttribute('aria-label', `Open ${topic.title}`);
       article.dataset.topicId = topic.id;
 
-      const thumbSrc = topic.imageCount > 0
-        ? `images/topics/${topic.id}/img-1.jpg`
+      const pages = getPages(topic);
+      const coverSrc = pages.length > 0
+        ? `images/topics/${topic.id}/${pages[0].image}`
         : null;
+      const pageCount = pages.length;
+      const pagesLabel = I18n.t('knowledge.pages');
 
-      const thumbHtml = thumbSrc
-        ? `<div class="topic-card__thumb">
-             <img data-src="${thumbSrc}" src="" alt="${topic.title} preview">
-           </div>`
-        : `<div class="topic-card__thumb topic-card__thumb--placeholder">${Topics.placeholderSvg()}</div>`;
-
-      const topicTagColors = ['tag--cobalt', '', 'tag--viridian', 'tag--violet'];
       const tagsHtml = (topic.tags || [])
-        .map((t, i) => `<span class="tag ${topicTagColors[i % topicTagColors.length]}">${t}</span>`)
+        .map(t => `<span class="cover-card__tag">${t}</span>`)
         .join('');
 
-      const featuredHtml = topic.featured
-        ? `<span class="topic-card__featured">★ Featured</span>`
-        : '';
-
       article.innerHTML = `
-        ${thumbHtml}
-        <div class="topic-card__meta">
-          <span class="topic-card__date">${formatDate(topic.date)}</span>
-          ${featuredHtml}
+        ${coverSrc
+          ? `<img class="cover-card__img" data-src="${coverSrc}" src="" alt="${escHtml(topic.title)}">`
+          : `<div class="cover-card__skeleton"></div>`}
+        <div class="cover-card__overlay">
+          <div class="cover-card__title">${escHtml(topic.title)}</div>
+          <div class="cover-card__pages">${pageCount} ${pagesLabel}</div>
+          <div class="cover-card__tags">${tagsHtml}</div>
         </div>
-        <h3 class="topic-card__title">${escHtml(topic.title)}</h3>
-        <div class="topic-card__tags">${tagsHtml}</div>
-        <p class="topic-card__count"><span>${topic.imageCount || 0}</span> images</p>
       `;
 
-      // Lazy-load the thumbnail + placeholder fallback
       const img = article.querySelector('img[data-src]');
       if (img) {
         img.addEventListener('error', () => {
-          const thumb = img.parentElement;
-          if (thumb) {
-            thumb.classList.add('topic-card__thumb--placeholder');
-            thumb.innerHTML = Topics.placeholderSvg();
-          }
+          img.outerHTML = `<div class="cover-card__skeleton"></div>`;
         });
         LazyLoad.observe(img);
       }
 
-      // Click / keyboard open modal
       const openModal = () => Modal.open(topic.id);
       article.addEventListener('click', openModal);
       article.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
       });
 
-      // Trigger scroll reveal
       requestAnimationFrame(() => Animate.init());
-
       return article;
-    },
-
-    placeholderSvg() {
-      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-        <polyline points="21,15 16,10 5,21"/>
-      </svg>`;
-    },
-
-    initSentinel() {
-      if (!this.sentinelEl || !('IntersectionObserver' in window)) return;
-      this.ioSentinel = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && state.renderedCount < state.filteredTopics.length) {
-          this.renderBatch();
-        }
-      }, { rootMargin: '300px' });
-      this.ioSentinel.observe(this.sentinelEl);
     },
   };
 
@@ -748,66 +766,15 @@
   };
 
   /* -----------------------------------------------------------
-     Search — debounced input + tag filter
-  ----------------------------------------------------------- */
-  const Search = {
-    debounceTimer: null,
-    inputEl: null,
-
-    init() {
-      this.inputEl = document.getElementById('search-input');
-      if (!this.inputEl) return;
-
-      this.inputEl.addEventListener('input', () => {
-        clearTimeout(this.debounceTimer);
-        this.debounceTimer = setTimeout(() => {
-          state.searchQuery = this.inputEl.value.trim().toLowerCase();
-          this.applyFilters();
-        }, config.searchDebounce);
-      });
-    },
-
-    onTagToggle(btn) {
-      const tag = btn.dataset.tag;
-      if (state.activeTags.has(tag)) {
-        state.activeTags.delete(tag);
-        btn.classList.remove('tag--active');
-        btn.setAttribute('aria-pressed', 'false');
-      } else {
-        state.activeTags.add(tag);
-        btn.classList.add('tag--active');
-        btn.setAttribute('aria-pressed', 'true');
-      }
-      this.applyFilters();
-    },
-
-    applyFilters() {
-      const q    = state.searchQuery;
-      const tags = state.activeTags;
-
-      state.filteredTopics = state.allTopics.filter(topic => {
-        // Tag AND logic
-        if (tags.size > 0) {
-          const topicTags = new Set(topic.tags || []);
-          for (const t of tags) {
-            if (!topicTags.has(t)) return false;
-          }
-        }
-        // Text search
-        if (q) {
-          const haystack = [topic.title, ...(topic.tags || [])].join(' ').toLowerCase();
-          if (!haystack.includes(q)) return false;
-        }
-        return true;
-      });
-
-      Topics.renderGrid();
-    },
-  };
-
-  /* -----------------------------------------------------------
      Helpers
   ----------------------------------------------------------- */
+  function getPages(topic) {
+    return topic.pages || Array.from({ length: topic.imageCount || 0 }, (_, i) => ({
+      image: `img-${i + 1}.jpg`,
+      prompt: topic.prompt || ''
+    }));
+  }
+
   function escHtml(str) {
     if (!str) return '';
     return str
@@ -875,7 +842,6 @@
     if (page === 'knowledge') {
       Modal.init();
       Topics.init();
-      Search.init();
     }
 
     if (page === 'projects') {
