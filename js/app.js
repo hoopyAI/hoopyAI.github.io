@@ -11,6 +11,7 @@
   const config = {
     topicsPath:   'data/topics.json',
     projectsPath: 'data/projects.json',
+    articlesPath: 'data/articles.json',
     pageSize:     12,
     lazyThreshold: 0.1,
   };
@@ -113,6 +114,13 @@
         'page.projects.eyebrow': 'Open Source',
         'page.projects.title':   'Vibe-coded <span class="grad-text">Projects</span>',
         'page.projects.desc':    "AI-assisted tools and experiments — built to solve real problems, learn by doing, and push the limits of what's possible with modern AI tooling.",
+
+        // Articles page
+        'page.articles.eyebrow': 'Blog',
+        'page.articles.title':   '<span class="grad-text">Articles</span>',
+        'page.articles.desc':    "Thoughts on AI engineering, vibe coding, and building in public — written from the trenches of shipping real projects.",
+        'articles.filter.all': 'All',
+        'articles.readmore': 'Read more',
 
         // Knowledge page
         'page.knowledge.eyebrow': 'AI Concepts &amp; Prompts',
@@ -217,6 +225,13 @@
         'page.projects.eyebrow': '开源项目',
         'page.projects.title':   'Vibe-coded <span class="grad-text">项目</span>',
         'page.projects.desc':    '用 AI 辅助构建的工具和实验 —— 解决真实问题，在实践中学习，探索现代 AI 工具的边界。',
+
+        // Articles page
+        'page.articles.eyebrow': '博客',
+        'page.articles.title':   '<span class="grad-text">文章</span>',
+        'page.articles.desc':    '关于 AI 工程、vibe coding 和公开构建的思考——来自交付真实项目的一线经验。',
+        'articles.filter.all': '全部',
+        'articles.readmore': '阅读全文',
 
         // Knowledge page
         'page.knowledge.eyebrow': 'AI 概念 &amp; Prompt',
@@ -334,7 +349,7 @@
 
       // Active link highlighting
       const page = document.body.dataset.page;
-      const map  = { home: 'index.html', projects: 'projects.html', knowledge: 'knowledge.html' };
+      const map  = { home: 'index.html', articles: 'articles.html', projects: 'projects.html', knowledge: 'knowledge.html' };
       const target = map[page] || '';
       document.querySelectorAll('.nav__link').forEach(link => {
         const href = link.getAttribute('href') || '';
@@ -620,6 +635,10 @@
     },
 
     renderCard(project, index = 0) {
+      const isZh = I18n.current === 'zh';
+      const title = isZh ? (project.titleZh || project.title) : project.title;
+      const desc  = isZh ? (project.descriptionZh || project.description) : project.description;
+
       const article = document.createElement('article');
       const colorClass = `project-card--c${(index % 5) + 1}`;
       article.className = `card project-card ${colorClass} reveal`;
@@ -651,10 +670,10 @@
         </div>
         <div class="project-card__body">
           <div class="project-card__header">
-            <h3 class="project-card__title">${escHtml(project.title)}</h3>
+            <h3 class="project-card__title">${escHtml(title)}</h3>
             ${badgeHtml}
           </div>
-          <p class="project-card__desc">${escHtml(project.description)}</p>
+          <p class="project-card__desc">${escHtml(desc)}</p>
           <div class="project-card__tags">${tagsHtml}</div>
           <div class="project-card__actions">
             ${githubBtn}
@@ -945,6 +964,268 @@
   };
 
   /* -----------------------------------------------------------
+     Articles — blog card rendering + reading modal
+  ----------------------------------------------------------- */
+  const articlesState = {
+    allArticles:      [],
+    filteredArticles: [],
+    activeTags:       new Set(),
+  };
+
+  const Articles = {
+    gridEl: null,
+
+    async init() {
+      this.gridEl = document.getElementById('articles-grid');
+      if (!this.gridEl) return;
+
+      this.gridEl.innerHTML = `<div class="loading-spinner"><div class="spinner"></div></div>`;
+
+      try {
+        const data = await Data.fetch(config.articlesPath);
+        articlesState.allArticles      = data.articles || [];
+        articlesState.filteredArticles  = [...articlesState.allArticles];
+
+        this.buildTagList();
+        this.renderGrid();
+      } catch (err) {
+        console.error(err);
+        this.gridEl.innerHTML = `
+          <div class="empty-state">
+            <p class="empty-state__title">Could not load articles</p>
+            <p>${err.message}</p>
+          </div>`;
+      }
+    },
+
+    renderGrid() {
+      this.gridEl.innerHTML = '';
+      if (articlesState.filteredArticles.length === 0) {
+        this.gridEl.innerHTML = `
+          <div class="empty-state">
+            <p class="empty-state__title">No articles found</p>
+            <p>Try adjusting your filters.</p>
+          </div>`;
+        return;
+      }
+      articlesState.filteredArticles.forEach(article => {
+        this.gridEl.appendChild(this.renderCard(article));
+      });
+      Animate.init();
+    },
+
+    buildTagList() {
+      const barEl = document.getElementById('articles-filter-bar');
+      if (!barEl) return;
+      const tagCounts = {};
+      articlesState.allArticles.forEach(a => {
+        (a.tags || []).forEach(tag => {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        });
+      });
+      const sorted = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+      const filterColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
+
+      let html = `<button class="filter-bar__btn" data-tag="__all" aria-pressed="true">
+        <span class="tag tag--active">${I18n.t('articles.filter.all')}</span>
+      </button>`;
+
+      html += sorted.map(([tag], i) => `
+        <button class="filter-bar__btn" data-tag="${tag}" aria-pressed="false">
+          <span class="tag ${filterColors[i % filterColors.length]}">${tag}</span>
+        </button>
+      `).join('');
+
+      barEl.innerHTML = html;
+
+      barEl.querySelectorAll('.filter-bar__btn').forEach(btn => {
+        btn.addEventListener('click', () => this.onTagToggle(btn));
+      });
+    },
+
+    onTagToggle(btn) {
+      const tag = btn.dataset.tag;
+      const barEl = document.getElementById('articles-filter-bar');
+
+      if (tag === '__all') {
+        articlesState.activeTags.clear();
+        barEl.querySelectorAll('.filter-bar__btn').forEach(b => {
+          const span = b.querySelector('.tag');
+          span.classList.remove('tag--active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.querySelector('.tag').classList.add('tag--active');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        const allBtn = barEl.querySelector('[data-tag="__all"]');
+        if (allBtn) {
+          allBtn.querySelector('.tag').classList.remove('tag--active');
+          allBtn.setAttribute('aria-pressed', 'false');
+        }
+
+        if (articlesState.activeTags.has(tag)) {
+          articlesState.activeTags.delete(tag);
+          btn.querySelector('.tag').classList.remove('tag--active');
+          btn.setAttribute('aria-pressed', 'false');
+        } else {
+          articlesState.activeTags.add(tag);
+          btn.querySelector('.tag').classList.add('tag--active');
+          btn.setAttribute('aria-pressed', 'true');
+        }
+
+        if (articlesState.activeTags.size === 0 && allBtn) {
+          allBtn.querySelector('.tag').classList.add('tag--active');
+          allBtn.setAttribute('aria-pressed', 'true');
+        }
+      }
+
+      this.applyFilters();
+    },
+
+    applyFilters() {
+      const tags = articlesState.activeTags;
+      articlesState.filteredArticles = articlesState.allArticles.filter(article => {
+        if (tags.size === 0) return true;
+        const articleTags = new Set(article.tags || []);
+        for (const t of tags) {
+          if (!articleTags.has(t)) return false;
+        }
+        return true;
+      });
+      this.renderGrid();
+    },
+
+    renderCard(article) {
+      const isZh = I18n.current === 'zh';
+      const title   = isZh ? (article.titleZh   || article.title)   : article.title;
+      const excerpt = isZh ? (article.excerptZh  || article.excerpt) : article.excerpt;
+      const readTime = isZh ? (article.readTimeZh || article.readTime) : article.readTime;
+
+      const tagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
+      const tagsHtml = (article.tags || [])
+        .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
+        .join('');
+
+      const el = document.createElement('article');
+      el.className = 'article-card card reveal';
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', title);
+
+      el.innerHTML = `
+        <div class="article-card__tags">${tagsHtml}</div>
+        <h3 class="article-card__title">${escHtml(title)}</h3>
+        <div class="article-card__meta">
+          <time datetime="${article.date}">${formatDate(article.date)}</time>
+          <span class="article-card__sep">&middot;</span>
+          <span>${escHtml(readTime)}</span>
+        </div>
+        <p class="article-card__excerpt">${escHtml(excerpt)}</p>
+      `;
+
+      const openArticle = () => ArticleModal.open(article);
+      el.addEventListener('click', openArticle);
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openArticle(); }
+      });
+
+      return el;
+    },
+  };
+
+  /* -----------------------------------------------------------
+     ArticleModal — reading overlay for articles
+  ----------------------------------------------------------- */
+  const ArticleModal = {
+    overlayEl: null,
+    modalEl:   null,
+    prevFocus: null,
+
+    init() {
+      this.overlayEl = document.getElementById('modal-overlay');
+      if (!this.overlayEl) return;
+      this.modalEl = this.overlayEl.querySelector('.modal');
+
+      this.overlayEl.addEventListener('click', (e) => {
+        if (e.target === this.overlayEl) this.close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!this.overlayEl.classList.contains('is-open')) return;
+        if (e.key === 'Escape') this.close();
+        if (e.key === 'Tab') this.trapFocus(e);
+      });
+
+      const closeBtn = this.overlayEl.querySelector('.modal__close');
+      if (closeBtn) closeBtn.addEventListener('click', () => this.close());
+    },
+
+    open(article) {
+      if (!this.overlayEl) return;
+      const isZh = I18n.current === 'zh';
+
+      this.prevFocus = document.activeElement;
+      document.body.style.overflow = 'hidden';
+
+      const title    = isZh ? (article.titleZh    || article.title)    : article.title;
+      const content  = isZh ? (article.contentZh   || article.content)  : article.content;
+      const readTime = isZh ? (article.readTimeZh  || article.readTime) : article.readTime;
+
+      const tagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
+      const tagsHtml = (article.tags || [])
+        .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
+        .join('');
+
+      const titleEl = this.overlayEl.querySelector('.modal__title');
+      const bodyEl  = this.overlayEl.querySelector('.modal__body');
+      if (titleEl) titleEl.textContent = title;
+
+      bodyEl.innerHTML = `
+        <div class="article-content">
+          <div class="article-content__meta">
+            <time datetime="${article.date}">${formatDate(article.date)}</time>
+            <span>&middot;</span>
+            <span>${escHtml(readTime)}</span>
+          </div>
+          <div class="article-content__tags">${tagsHtml}</div>
+          <div class="article-content__body">${content}</div>
+        </div>
+      `;
+
+      this.overlayEl.classList.add('is-open');
+      this.overlayEl.setAttribute('aria-hidden', 'false');
+
+      const closeBtn = this.overlayEl.querySelector('.modal__close');
+      if (closeBtn) closeBtn.focus();
+      if (this.modalEl) this.modalEl.scrollTop = 0;
+    },
+
+    close() {
+      if (!this.overlayEl) return;
+      this.overlayEl.classList.remove('is-open');
+      this.overlayEl.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (this.prevFocus) this.prevFocus.focus();
+    },
+
+    trapFocus(e) {
+      const focusable = this.modalEl.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    },
+  };
+
+  /* -----------------------------------------------------------
      Helpers
   ----------------------------------------------------------- */
   function getPages(topic) {
@@ -1021,6 +1302,11 @@
     if (page === 'knowledge') {
       Modal.init();
       Topics.init();
+    }
+
+    if (page === 'articles') {
+      ArticleModal.init();
+      Articles.init();
     }
 
     if (page === 'projects') {

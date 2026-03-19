@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HoopyAI Articles — thoughts on AI engineering, vibe coding, and building in public.">
+  <title>Articles — HoopyAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="articles">
+
+  <!-- NAV: update in all pages -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="HoopyAI home">
+        潦草虎皮<span class="nav__logo-ai">AI说</span>
+      </a>
+      <div class="nav__right">
+        <button class="lang-toggle" aria-label="Switch language" hidden>中文</button>
+        <button class="nav__hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html"     class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="articles.html"  class="nav__link" data-i18n="nav.articles">Articles</a></li>
+        <li><a href="projects.html"  class="nav__link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="knowledge.html" class="nav__link" data-i18n="nav.knowledge">Knowledge</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header — Blue + Purple wash -->
+    <header class="section--wc" style="padding: calc(var(--nav-h) + 72px) 0 52px;">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--b wc-blob--feat-1"></div>
+        <div class="wc-blob wc-blob--a wc-blob--feat-2"></div>
+        <div class="wc-blob wc-blob--c wc-blob--know-2"></div>
+      </div>
+      <div class="container">
+        <p class="page-header__eyebrow reveal" data-i18n="page.articles.eyebrow">Blog</p>
+        <h1 class="page-header__title reveal reveal--delay-1"
+            data-i18n-html="page.articles.title">
+          <span class="grad-text">Articles</span>
+        </h1>
+        <p class="page-header__desc reveal reveal--delay-2" data-i18n="page.articles.desc">
+          Thoughts on AI engineering, vibe coding, and building in public —
+          written from the trenches of shipping real projects.
+        </p>
+      </div>
+    </header>
+
+    <!-- Articles section -->
+    <div class="main-content section--wc">
+      <div class="wc-blobs" aria-hidden="true">
+        <div class="wc-blob wc-blob--d wc-blob--feat-2" style="opacity:0.7;"></div>
+        <div class="wc-blob wc-blob--a wc-blob--about-1" style="opacity:0.5;"></div>
+      </div>
+
+      <div class="container">
+        <!-- Tag Filter Bar -->
+        <div class="filter-bar reveal" id="articles-filter-bar" role="group" aria-label="Filter by tag">
+          <!-- Populated by app.js -->
+        </div>
+
+        <!-- Article List -->
+        <div class="articles-grid" id="articles-grid" role="list" aria-label="Articles">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Overlay -->
+  <div
+    id="modal-overlay"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-title">Article</h2>
+        <button class="modal__close" aria-label="Close dialog">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <!-- Populated by app.js Articles.openArticle() -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy" data-i18n="footer.copy">
+        &copy; 2025 HoopyAI &mdash; crafted with ink &amp; inference
+      </p>
+      <nav class="footer__links" aria-label="Footer links">
+        <a href="https://github.com/hoopyAI" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+        <a href="projects.html"  class="footer__link" data-i18n="nav.projects">Projects</a>
+        <a href="knowledge.html" class="footer__link" data-i18n="nav.knowledge">Knowledge</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
