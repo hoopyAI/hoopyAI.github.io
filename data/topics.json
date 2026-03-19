@@ -3,56 +3,85 @@
     {
       "id": "neural-networks-101",
       "title": "Neural Networks 101",
-      "prompt": "A luminous neural network diagram floating in deep space, synaptic connections rendered as glowing purple and cyan threads weaving through translucent spherical nodes, each node pulsing with soft bioluminescent light, information cascading as electric ripples through interconnected layers, macro photography aesthetic, dark background with subtle nebula colors, hyper-detailed, 8k resolution, cinematic lighting",
       "tags": ["deep-learning", "fundamentals", "visualization"],
-      "imageCount": 6,
       "date": "2025-11-15",
-      "featured": true
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "A luminous neural network diagram floating in deep space, synaptic connections rendered as glowing purple and cyan threads weaving through translucent spherical nodes, each node pulsing with soft bioluminescent light, information cascading as electric ripples through interconnected layers, macro photography aesthetic, dark background with subtle nebula colors, hyper-detailed, 8k resolution, cinematic lighting" },
+        { "image": "img-2.jpg", "prompt": "A luminous neural network diagram floating in deep space — alternate angle" },
+        { "image": "img-3.jpg", "prompt": "A luminous neural network diagram floating in deep space — detail view" },
+        { "image": "img-4.jpg", "prompt": "A luminous neural network diagram floating in deep space — wide shot" },
+        { "image": "img-5.jpg", "prompt": "A luminous neural network diagram floating in deep space — macro detail" },
+        { "image": "img-6.jpg", "prompt": "A luminous neural network diagram floating in deep space — final composition" }
+      ]
     },
     {
       "id": "transformer-architecture",
       "title": "Transformer Architecture",
-      "prompt": "An architectural blueprint of a transformer model visualized as an impossible building, attention heads rendered as gothic stained-glass windows casting multicolored light, positional encodings as spiraling staircases, feed-forward layers as grand halls with infinite depth, surrealist style blending Escher and Zaha Hadid, deep purple and gold palette, volumetric fog, dramatic shadows, ultra-detailed digital art",
       "tags": ["transformers", "attention", "architecture"],
-      "imageCount": 5,
       "date": "2025-12-02",
-      "featured": true
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "An architectural blueprint of a transformer model visualized as an impossible building, attention heads rendered as gothic stained-glass windows casting multicolored light, positional encodings as spiraling staircases, feed-forward layers as grand halls with infinite depth, surrealist style blending Escher and Zaha Hadid, deep purple and gold palette, volumetric fog, dramatic shadows, ultra-detailed digital art" },
+        { "image": "img-2.jpg", "prompt": "Transformer architecture — attention mechanism detail" },
+        { "image": "img-3.jpg", "prompt": "Transformer architecture — encoder-decoder overview" },
+        { "image": "img-4.jpg", "prompt": "Transformer architecture — positional encoding visualization" },
+        { "image": "img-5.jpg", "prompt": "Transformer architecture — multi-head attention" }
+      ]
     },
     {
       "id": "diffusion-models",
       "title": "Diffusion Models Explained",
-      "prompt": "A visual metaphor for diffusion — an oil painting slowly emerging from pure digital noise, pixels crystallizing from chaotic static into a serene landscape with mountains and aurora borealis, the transition visible across the canvas from left (pure noise) to right (perfect clarity), painterly style with visible brushstrokes, vibrant purples and teals, magical realism aesthetic, museum quality",
       "tags": ["generative-ai", "diffusion", "image-synthesis"],
-      "imageCount": 7,
       "date": "2025-12-20",
-      "featured": false
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "A visual metaphor for diffusion — an oil painting slowly emerging from pure digital noise, pixels crystallizing from chaotic static into a serene landscape with mountains and aurora borealis, the transition visible across the canvas from left (pure noise) to right (perfect clarity), painterly style with visible brushstrokes, vibrant purples and teals, magical realism aesthetic, museum quality" },
+        { "image": "img-2.jpg", "prompt": "Diffusion models — forward process noise addition" },
+        { "image": "img-3.jpg", "prompt": "Diffusion models — reverse denoising process" },
+        { "image": "img-4.jpg", "prompt": "Diffusion models — latent space representation" },
+        { "image": "img-5.jpg", "prompt": "Diffusion models — sampling and generation" },
+        { "image": "img-6.jpg", "prompt": "Diffusion models — conditional generation with text" },
+        { "image": "img-7.jpg", "prompt": "Diffusion models — final comparison of methods" }
+      ]
     },
     {
       "id": "reinforcement-learning",
       "title": "Reinforcement Learning Basics",
-      "prompt": "An agent navigating a neon-lit maze rendered as a glowing circuit board from a top-down isometric view, reward signals depicted as golden sparks and particles, the optimal path highlighted in bright cyan, suboptimal paths fading into shadow, retro-futuristic aesthetic blending Tron and biopunk, deep black background, electric blue and amber color scheme, hyper-detailed pixel art scaled up to 8k",
       "tags": ["reinforcement-learning", "agents", "fundamentals"],
-      "imageCount": 4,
       "date": "2026-01-08",
-      "featured": false
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "An agent navigating a neon-lit maze rendered as a glowing circuit board from a top-down isometric view, reward signals depicted as golden sparks and particles, the optimal path highlighted in bright cyan, suboptimal paths fading into shadow, retro-futuristic aesthetic blending Tron and biopunk, deep black background, electric blue and amber color scheme, hyper-detailed pixel art scaled up to 8k" },
+        { "image": "img-2.jpg", "prompt": "Reinforcement learning — reward function landscape" },
+        { "image": "img-3.jpg", "prompt": "Reinforcement learning — policy gradient visualization" },
+        { "image": "img-4.jpg", "prompt": "Reinforcement learning — exploration vs exploitation" }
+      ]
     },
     {
       "id": "prompt-engineering",
       "title": "The Art of Prompt Engineering",
-      "prompt": "A master calligrapher in a futuristic studio, writing luminous prompts in the air with a digital brush, each word materializing as holographic 3D objects and scenes — a dragon here, a galaxy there — the studio walls covered in floating text fragments and glowing output images, cyberpunk meets Renaissance aesthetic, warm amber and cool blue contrast, photorealistic rendering with painterly touches",
       "tags": ["prompting", "llm", "techniques"],
-      "imageCount": 8,
       "date": "2026-01-25",
-      "featured": true
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "A master calligrapher in a futuristic studio, writing luminous prompts in the air with a digital brush, each word materializing as holographic 3D objects and scenes — a dragon here, a galaxy there — the studio walls covered in floating text fragments and glowing output images, cyberpunk meets Renaissance aesthetic, warm amber and cool blue contrast, photorealistic rendering with painterly touches" },
+        { "image": "img-2.jpg", "prompt": "Prompt engineering — chain of thought visualization" },
+        { "image": "img-3.jpg", "prompt": "Prompt engineering — few-shot examples" },
+        { "image": "img-4.jpg", "prompt": "Prompt engineering — system prompt architecture" },
+        { "image": "img-5.jpg", "prompt": "Prompt engineering — temperature and sampling" },
+        { "image": "img-6.jpg", "prompt": "Prompt engineering — prompt chaining" },
+        { "image": "img-7.jpg", "prompt": "Prompt engineering — evaluation and iteration" },
+        { "image": "img-8.jpg", "prompt": "Prompt engineering — the art of specificity" }
+      ]
     },
     {
       "id": "vector-embeddings",
       "title": "Vector Embeddings & Semantic Space",
-      "prompt": "A three-dimensional semantic space visualization, thousands of glowing word-spheres clustered by meaning, similar concepts orbiting each other in colorful constellations, 'king' and 'queen' connected by shimmering golden vectors, semantic relationships as luminous threads in a cosmic web, deep space background with mathematical notation etched in starlight, data visualization meets space opera, extremely detailed",
       "tags": ["embeddings", "nlp", "rag"],
-      "imageCount": 5,
       "date": "2026-02-10",
-      "featured": false
+      "pages": [
+        { "image": "img-1.jpg", "prompt": "A three-dimensional semantic space visualization, thousands of glowing word-spheres clustered by meaning, similar concepts orbiting each other in colorful constellations, 'king' and 'queen' connected by shimmering golden vectors, semantic relationships as luminous threads in a cosmic web, deep space background with mathematical notation etched in starlight, data visualization meets space opera, extremely detailed" },
+        { "image": "img-2.jpg", "prompt": "Vector embeddings — word2vec arithmetic visualization" },
+        { "image": "img-3.jpg", "prompt": "Vector embeddings — dimensionality reduction" },
+        { "image": "img-4.jpg", "prompt": "Vector embeddings — similarity search" },
+        { "image": "img-5.jpg", "prompt": "Vector embeddings — RAG pipeline overview" }
+      ]
     }
   ]
 }
