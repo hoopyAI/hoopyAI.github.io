@@ -632,7 +632,7 @@
 
       article.innerHTML = `
         ${coverSrc
-          ? `<img class="cover-card__img" data-src="${coverSrc}" src="" alt="${escHtml(topic.title)}">`
+          ? `<img class="cover-card__img" data-src="${coverSrc}" alt="${escHtml(topic.title)}">`
           : `<div class="cover-card__skeleton"></div>`}
         <div class="cover-card__overlay">
           <div class="cover-card__title">${escHtml(topic.title)}</div>
@@ -644,7 +644,10 @@
       const img = article.querySelector('img[data-src]');
       if (img) {
         img.addEventListener('error', () => {
-          img.outerHTML = `<div class="cover-card__skeleton"></div>`;
+          // Only show fallback if a real src was attempted (not empty/missing)
+          if (img.src && !img.src.endsWith('/')) {
+            img.outerHTML = `<div class="cover-card__skeleton"></div>`;
+          }
         });
         LazyLoad.observe(img);
       }
