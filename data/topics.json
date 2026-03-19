@@ -1,86 +1,171 @@
 {
   "topics": [
     {
-      "id": "neural-networks-101",
-      "title": "Neural Networks 101",
-      "tags": ["deep-learning", "fundamentals", "visualization"],
-      "date": "2025-11-15",
+      "id": "hallucination",
+      "title": "大模型的「幻觉」是怎么回事？",
+      "tags": [
+        "ai-fundamentals",
+        "hallucination",
+        "llm"
+      ],
+      "date": "2026-02-21",
       "pages": [
-        { "image": "img-1.jpg", "prompt": "A luminous neural network diagram floating in deep space, synaptic connections rendered as glowing purple and cyan threads weaving through translucent spherical nodes, each node pulsing with soft bioluminescent light, information cascading as electric ripples through interconnected layers, macro photography aesthetic, dark background with subtle nebula colors, hyper-detailed, 8k resolution, cinematic lighting" },
-        { "image": "img-2.jpg", "prompt": "A luminous neural network diagram floating in deep space — alternate angle" },
-        { "image": "img-3.jpg", "prompt": "A luminous neural network diagram floating in deep space — detail view" },
-        { "image": "img-4.jpg", "prompt": "A luminous neural network diagram floating in deep space — wide shot" },
-        { "image": "img-5.jpg", "prompt": "A luminous neural network diagram floating in deep space — macro detail" },
-        { "image": "img-6.jpg", "prompt": "A luminous neural network diagram floating in deep space — final composition" }
+        {
+          "image": "img-1.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，细节丰富，3:4竖版，高质量1K分辨率。角色略带可爱感，介于写实和卡通之间。\n\n页面顶部手写大标题「大模型的幻觉是怎么回事？」下方浅色定义框内手写两行文字：「幻觉 Hallucination」换行「AI一本正经地编造不存在的事实」。\n\n画面主体：一个穿西装、表情超级自信的AI机器人站在讲台上，手指黑板侃侃而谈。黑板上写满三条清晰可读的荒唐内容：「地球有三个月亮」「鲁迅写了百年孤独」「圆周率等于3.2」。机器人胸口亮着芯片，脸上挂着迷之自信的微笑，对话框写「这些都是事实，我确信！」。\n\n讲台下坐着四个小人物，表情各异：一个满脸问号，一个拿手机搜索验证，一个已经信了频频点头，一个举手反驳。\n\n画面底部三个醒目数据徽章横排清晰可读：徽章一「83%用户遇到过AI编造事实」，徽章二「GPT-o3幻觉率高达33%」，徽章三「越聪明的模型越敢编」。\n\n整体水彩最华丽，是全组视觉最吸睛的一页。"
+        },
+        {
+          "image": "img-2.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「幻觉的本质：超级自动补全」副标题「它不是说错了，而是根本不知道自己不知道」。\n\n画面左右两栏对比，中间用大大的不等号分隔。\n\n左栏标题「人脑思考」：一个小人物脑袋里的思考流程图，四个步骤用箭头串联，每步有清晰文字标注：「遇到问题」→「承认不知道」→「查资料验证」→「理解后回答」。旁边手写注释「知道自己不知道」。\n\n右栏标题「AI补全」：一个机器人脑袋里的流程图，同样四步箭头串联，每步有清晰数字标注：「输入词」→「算概率 85% 12% 3%」→「选最高的」→「拼下一个」，机器人表情机械面无表情。旁边手写注释「不知道自己不知道」。\n\n底部浅色总结框内手写三条要点清晰可读：「它不是知道但说错，是根本没有理解」换行「类比：背完教科书但完全不理解内容的学生」换行「内部的不确定信号经常失灵」。"
+        },
+        {
+          "image": "img-3.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「AI为什么会编？六大致幻原因」。\n\n画面主体排列六个手绘小卡片（2列3行），每张卡片有编号、粗体标题和配图，标题文字清晰可读。\n\n卡片一「训练数据有毒」：画大锅混着论文、假新闻、阴谋论，AI在喝这锅汤，锅沿手写「Garbage In，Garbage Out」。\n\n卡片二「被逼必须回答」：画一张考卷，选项A「我不知道」打红叉，选项B「猜一个」打绿勾，旁边标注「拒绝回答等于零分」。\n\n卡片三「讨好型人格」：画AI疯狂点头说「对对对！」，对面用户说了一句明显的错话，AI还在竖大拇指。\n\n卡片四「知识有保质期」：画AI手持发黄过期的知识地图，真实世界已大变样，旁边标注「训练截止日之后的事一概不知」。\n\n卡片五「越说越离谱」：画雪球越滚越大，雪球上标着「小错→大错→离题万里」。\n\n卡片六「冷门话题最危险」：画AI在热门话题大路上走得稳，进入冷门话题小巷就摸黑乱撞，标注「冷门话题幻觉率高5到10倍」。\n\n底部一行总结文字「数据越稀少的领域，AI越容易一本正经地胡说八道」。"
+        },
+        {
+          "image": "img-4.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「真实惨案：这些人被AI幻觉坑惨了」副标题「不是假设，这些已经发生」。\n\n画面分三个漫画分格，每格有清晰文字标注。\n\n第一格「美国律师翻车」：律师满脸自信向法官递文件，文件标注「ChatGPT生成的6个判例」，法官用放大镜一看冒出大汗，气泡写「全是编的！不存在！」。底部数据标注「被罚款5000美元，全球已有486起类似案例」。\n\n第二格「全国首例AI幻觉诉讼」：一个AI对话框写「本AI保证准确，出错赔10万！」用户真的去杭州互联网法院起诉，法院判决气泡写「AI不是法律主体，承诺无效」。底部标注「2026年1月，中国AI幻觉第一案」。\n\n第三格「专业法律AI也翻车」：一个标着「专业法律AI」的高级机器人，输出文件上满是红色错误标记。底部标注「Westlaw AI幻觉率34%，每3个回答就有1个有问题」。\n\n底部浅色总结框手写「专业工具也会编——永远要自己验证！」。"
+        },
+        {
+          "image": "img-5.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「工程师怎么治幻觉？5大武器」。\n\n画面主体是一座防御堡垒的横截面图，五层防御从外到内，每层有粗体名称和清晰数据标注。\n\n最外层「Guardrails护栏」：画城墙和守卫，手写标注「不确定就拒绝回答」换行「医疗处方错误率 0.5%→0.02%」。\n\n第二层「RAG检索增强」：画大书架图书馆，AI先查资料再回答，手写「从闭卷考试改为开卷考试」换行「银行客服准确率提升至98%」。\n\n第三层「多Agent交叉验证」：画两个AI互相检查对方答案，一个写答案一个拿红笔批改，标注「法律错误率 1.2%→0.08%」。\n\n第四层「知识图谱校验」：画蜘蛛网式知识节点互相连接验证，标注「券商幻觉率 0.7%→0.03%」。\n\n核心层「领域微调」：画AI接受专科训练，标注「只调0.1%参数，误报率 15%→2.7%」。\n\n底部醒目总结「组合拳效果：可降低幻觉96%」。"
+        },
+        {
+          "image": "img-6.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「这些场景千万别盲信AI」。\n\n画面上半部分是一个大交通信号灯，红灯绿灯清晰可见。\n\n红灯区标题「高危场景」用红色背景框，四个小图标+清晰文字标注：药瓶图标「医疗健康：药品剂量、诊断建议」；法槌图标「法律咨询：案例引用，幻觉率34%+」；钱袋图标「财务投资：数据预测，某机构损失500万+」；毕业帽图标「学术引用：论文出处、参考文献」。\n\n绿灯区标题「相对安全」用绿色背景框，清晰列出：「头脑风暴、翻译润色、代码辅助、创意写作、格式转换」。\n\n画面下半部分标题「出现这些信号要警惕」，三个警告标志牌文字清晰可读：标牌一「回答超级具体，但没有任何不确定表述」；标牌二「给出了引用来源，但你搜不到」；标牌三「答案太完美，没有任何但是和除非」。\n\n底部总结一行「用得越放心的场景，越要保持验证习惯」。"
+        },
+        {
+          "image": "img-7.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。\n\n页面顶部手写标题「学会这5招，和AI聪明相处」。\n\n画面主体排列5张手绘卡片，每张卡片有编号、粗体标题、配图和简短说明文字，文字清晰可读。\n\n卡片一「拆小问」：画大问题被剪刀剪成小片，标注「长问题幻觉率是短问题的32倍！」\n\n卡片二「限范围」：画AI被围在圈里，圈上写「只根据我给的内容回答，不确定就说不知道」，旁边标注「加这一句，准确率大幅提升」。\n\n卡片三「要出处」：画用户对AI说「来源？」，AI指向一本书，用户真去翻那本书验证，标注「追问来源，然后真去查」。\n\n卡片四「交叉验」：画两个不同颜色的AI机器人对同一问题给出不同答案，一个人在中间对比，标注「两个模型答案不一致等于红灯警告」。\n\n卡片五「控长度」：画一把尺子量AI回答，短回答配绿色笑脸，长回答配黄色警告，标注「越长的回答越容易跑偏」。\n\n页面底部浅色总结框内大字手写「把AI当维基百科——好用的起点，不是终点」，水彩花边收尾。"
+        }
       ]
     },
     {
-      "id": "transformer-architecture",
-      "title": "Transformer Architecture",
-      "tags": ["transformers", "attention", "architecture"],
-      "date": "2025-12-02",
+      "id": "mcp",
+      "title": "什么是MCP",
+      "tags": [
+        "mcp",
+        "tools",
+        "ai-fundamentals"
+      ],
+      "date": "2026-02-20",
       "pages": [
-        { "image": "img-1.jpg", "prompt": "An architectural blueprint of a transformer model visualized as an impossible building, attention heads rendered as gothic stained-glass windows casting multicolored light, positional encodings as spiraling staircases, feed-forward layers as grand halls with infinite depth, surrealist style blending Escher and Zaha Hadid, deep purple and gold palette, volumetric fog, dramatic shadows, ultra-detailed digital art" },
-        { "image": "img-2.jpg", "prompt": "Transformer architecture — attention mechanism detail" },
-        { "image": "img-3.jpg", "prompt": "Transformer architecture — encoder-decoder overview" },
-        { "image": "img-4.jpg", "prompt": "Transformer architecture — positional encoding visualization" },
-        { "image": "img-5.jpg", "prompt": "Transformer architecture — multi-head attention" }
+        {
+          "image": "img-1.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，细节丰富，3:4竖版，高质量1K分辨率。角色略带可爱感，介于写实和卡通之间。页面顶部手写大标题「MCP」，正下方副标题「AI世界的USB-C标准」。标题下方有一个浅色高亮定义框，框内手写文字「MCP = Model Context Protocol」换行「让AI连接任何工具和数据的开放标准」，字体清晰可读。画面中央是一个巨大的金色发光USB-C插头，插头上标注「MCP」，插头周围发散金色光芒。插头左侧连接三个AI模型图标，每个图标旁有手写标注：「Claude」「ChatGPT」「Gemini」。插头右侧连接六个工具图标，每个旁有标注：「GitHub」「数据库」「日历」「浏览器」「文件」「搜索」，所有图标通过整洁的线汇聚到中央插头。画面右下角三个数据徽章，徽章内文字清晰：金色「9700万/月」下标「SDK下载量」，蓝色「16000+」下标「可用Server数」，绿色「14个月」下标「从发布到行业标准」。左下角惊喜小人举着写有「一插就通！」的旗子。整体水彩最华丽，是全组视觉最吸睛的一页。"
+        },
+        {
+          "image": "img-2.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「为什么需要MCP？」副标题红色「N×M集成地狱」。画面分上下两部分，中间有分隔线。上半部分左上角红色标签写「没有MCP」：左侧3个AI方块各贴标签「Claude」「GPT」「Gemini」，右侧5个服务方块各贴标签「GitHub」「数据库」「日历」「搜索」「文件」，中间是一团混乱纠缠的彩色连接线，中央手写红字「3×5＝15个定制接口」，旁边程序员小人抱头，头顶对话框写「每加一个服务都要重新写一套对接代码！」。下半部分左上角绿色标签写「有了MCP」：同样的AI和服务，中间只有一个发光方块写「MCP协议层」，连线整洁，中央手写绿字「3＋5＝8个接口」，程序员小人举手，头顶对话框写「接入一次，所有AI都能用！」。画面最底部一行醒目总结文字：「N×M的集成噩梦 → N＋M的统一标准」，两侧画对比图示：左边乱线团，右边整齐一根线。"
+        },
+        {
+          "image": "img-3.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「一图看懂工作原理」。画面主体是横向三层架构图。最左蓝色方块内写「MCP Client」，下方小字「Claude Desktop / Cursor 等AI应用」。中间宽大紫色管道内写「MCP Protocol」，括号小字「基于JSON-RPC」。最右橙色方块内写「MCP Server」，下方小字「提供工具和数据的后端」。管道内三条数据流各有标注文字：上方蓝色流「Resources — 数据和文档」；中间绿色流「Tools — 可执行的操作」；下方金色流「Prompts — 预设模板」。右侧Server方块向外连接四个图标，每个旁边有手写标注：「GitHub（代码仓库）」「PostgreSQL（数据库）」「Google Calendar（日历）」「Brave Search（联网搜索）」。页面下方浅色框内写类比解释：「就像餐厅的服务员（MCP）把顾客（AI）的需求传达给厨房（工具），顾客不需要知道厨房怎么运作」。底部关键词行：加粗标注「Client」「Protocol」「Server」三个词，中间用「→」连接。"
+        },
+        {
+          "image": "img-4.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「14个月：从实验到行业标准」。画面主体是一条从左下到右上大幅上升的彩色增长曲线，曲线上四个关键节点，每个节点旁有可读文字标注：节点一「2024.11 Anthropic正式发布，开源100个Server」旁画种子发芽；节点二「2025.03 OpenAI官方加入，ChatGPT支持MCP」旁画握手；节点三「2025.05 Server数突破4000，月下载量破亿」旁画火箭；节点四「2025.12 捐给Linux Foundation，16000＋ Server」旁画皇冠。曲线右侧竖排三张数据卡片，每张卡片内文字清晰：金色卡「9700万」小字「月SDK下载量」；蓝色卡「16000＋」小字「社区Server总数」；绿色卡「28%」小字「Fortune 500企业已采用」。页面底部横排五个色块代表五家公司，每个色块内写公司名：「Anthropic」「OpenAI」「Google」「Microsoft」「Amazon」，下方一行字「五大巨头全部支持，MCP成为事实标准」。"
+        },
+        {
+          "image": "img-5.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「MCP能做什么？6个真实场景」。画面是六个彩色卡片整齐排列成两列三行，每张卡片内有图标、粗体标题、一句说明文字。卡片一橙色：图标画代码编辑器，粗体字「AI代码助手」，小字「Cursor直接操作GitHub仓库、运行测试、提交PR」。卡片二蓝色：图标画日历，粗体字「智能日程管理」，小字「AI查你的空档时间，自动帮你预约会议」。卡片三绿色：图标画数据库，粗体字「企业数据查询」，小字「用中文问问题，AI自动查SQL，Bloomberg已在用」。卡片四紫色：图标画搜索放大镜，粗体字「联网实时搜索」，小字「AI不再只靠训练数据，接入Brave Search实时获取信息」。卡片五红色：图标画文件夹，粗体字「本地文件操作」，小字「AI直接读写你电脑上的文件，整理资料」。卡片六黄色：图标画客服头像，粗体字「客服自动化」，小字「AI跨多个系统完成整套操作，不只是回答问题」。六张卡片下方一行总结：「用自然语言指挥AI，完成以前需要十几个步骤的操作」。"
+        },
+        {
+          "image": "img-6.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「两大隐患」。画面上半部分红色区域标题「痛点① Context爆炸」：画一个快要溢出的水桶，桶身写「Context Window」，各种Server图标往桶里倒水。桶旁边文字标注：「每个Server占用上下文空间」「接的Server越多，AI越容易犯糊涂」。旁边一个AI机器人头上冒烟，对话框写「我的脑子装不下了！」。底部数据小框「接入10个Server ≈ 浪费数千个Token」。画面下半部分橙色区域标题「痛点② 安全黑洞」：安全盾牌上有裂缝，裂缝处伸出一只手，旁边文字标注「Prompt Injection攻击：恶意指令藏在数据里操控AI」。右侧柱状图配文字「53% 的Server使用不安全的静态API密钥」，用红色加粗。另一角画员工偷偷开启Server图标，旁边文字「Shadow Agentic IT：员工私自运行未经审批的Agent，IT部门全不知情」。画面最底部绿色提示框写「好消息：MCP v2已引入Auth认证，持续改进中」。"
+        },
+        {
+          "image": "img-7.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「Agent协议三层栈」副标题「谁负责什么？」。画面主体是三层叠放的架构图，每层都有清晰的文字说明。最下层蓝色底板，左侧竖排标签写「连接层」，层内大字「MCP」小字「Anthropic · 2024.11」，右侧文字说明「让Agent连接工具和数据」，下一行小字「解决：能访问什么？」，图示画一个Agent向下伸线连接数据库、GitHub、日历。中间层橙色底板，左侧竖排标签写「协作层」，层内大字「A2A」小字「Google · 2025.04」，右侧文字说明「让多个Agent互相分工协作」，下一行小字「解决：怎么组团干活？」，图示画三个Agent互传任务单。最上层紫色底板，左侧竖排标签写「知识层」，层内大字「Skills」小字「Anthropic · 2025.10 · OpenAI已支持」，右侧文字说明「教Agent如何完成特定工作流」，下一行小字「解决：知道怎么做？」，图示画翻开的笔记本写着工作流程。三层右侧对齐三行口诀：蓝「MCP＝工具箱」橙「A2A＝团队表」紫「Skills＝知识库」。页面最底部加粗金句「三层叠加 ＝ 真正的智能体基础设施」。"
+        },
+        {
+          "image": "img-8.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「MCP的未来」副标题「AI时代的Kubernetes」。画面上部画一条技术演进时间轴，轴上三个节点，每个节点旁有可读文字：「2013 Docker — 容器化革命」「2014 Kubernetes — 编排成标准」「2024 MCP — AI集成成标准」，三者用箭头连成进化链，旁边标注「技术标准化总是这样走」。画面中部三张预测卡片横排，每张卡片内文字清晰：卡片一「多模态扩展」内容「2026年起MCP支持图片/音频/视频，Agent不只能读文字」；卡片二「Agent军团时代」内容「Gartner预测：2026年40%企业应用内置AI Agent，MCP是基础设施」；卡片三「MCP防火墙」内容「企业IT将部署统一管控层，决定哪些Agent能访问哪些数据」。画面下部一条从左到右的时间轴，三个阶段文字：「现在：工程师手动配置」→「近期：可视化一键安装」→「未来：MCP无感运行，但AI能力飞跃」。最底部彩色花边内写金句「你不用懂协议，但你会享受它带来的智能」。"
+        }
       ]
     },
     {
-      "id": "diffusion-models",
-      "title": "Diffusion Models Explained",
-      "tags": ["generative-ai", "diffusion", "image-synthesis"],
-      "date": "2025-12-20",
+      "id": "rag",
+      "title": "RAG全解析：从入门到最新进化",
+      "tags": [
+        "rag",
+        "retrieval",
+        "llm"
+      ],
+      "date": "2026-02-23",
       "pages": [
-        { "image": "img-1.jpg", "prompt": "A visual metaphor for diffusion — an oil painting slowly emerging from pure digital noise, pixels crystallizing from chaotic static into a serene landscape with mountains and aurora borealis, the transition visible across the canvas from left (pure noise) to right (perfect clarity), painterly style with visible brushstrokes, vibrant purples and teals, magical realism aesthetic, museum quality" },
-        { "image": "img-2.jpg", "prompt": "Diffusion models — forward process noise addition" },
-        { "image": "img-3.jpg", "prompt": "Diffusion models — reverse denoising process" },
-        { "image": "img-4.jpg", "prompt": "Diffusion models — latent space representation" },
-        { "image": "img-5.jpg", "prompt": "Diffusion models — sampling and generation" },
-        { "image": "img-6.jpg", "prompt": "Diffusion models — conditional generation with text" },
-        { "image": "img-7.jpg", "prompt": "Diffusion models — final comparison of methods" }
+        {
+          "image": "img-1.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，细节丰富，3:4竖版，高质量1K分辨率。角色略带可爱感，介于写实和卡通之间。页面顶部手写大标题「RAG」，副标题「让AI不再胡说八道的秘密武器」。标题下方有一个浅色高亮定义框，框内手写两行文字：「RAG = Retrieval-Augmented Generation」换行「检索增强生成 — 给AI配一个实时可查的外挂图书馆」，字体清晰可读。画面左右对比两个场景，中间用闪电分隔，闪电上写大字「RAG」。左边「没有RAG」：一个机器人坐在封闭玻璃罩里，旁边三个红色便利贴标注「幻觉」「知识截止」「看不到你的数据」，机器人对话框写「我来编一个答案吧！」。右边「有了RAG」：同款机器人站在图书馆里翻阅书架，书架上贴着标签「实时数据」「私有文档」「最新信息」，机器人对话框写「查到了，这是可靠答案」，旁边绿色对勾。画面底部三个数据徽章：「2020年诞生」「60%生产级AI在用」「准确率大幅提升」。整体水彩最华丽，是全组视觉最吸睛的一页。"
+        },
+        {
+          "image": "img-2.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「为什么需要RAG？」副标题「LLM的三大死穴」。画面上半部分是一个大脑图标代表LLM，大脑上贴着三张红色便利贴，每张有粗体标题和说明文字。便利贴①粗体「知识截止」：旁边画停止的时钟，下方手写「训练完了就不更新了，问今天的新闻一概不知」。便利贴②粗体「幻觉问题」：旁边画机器人在试卷上胡乱作答，对话框写「答不上来就编，还编得特别自信」。便利贴③粗体「看不到私有数据」：旁边画带锁的文件柜，下方手写「你公司的内部文件它根本没见过」。画面下半部分是一条时间轴，左端标注「2020年 Meta AI研究员 Patrick Lewis 发表 Retrieval-Augmented Generation 论文（NeurIPS）」，旁边画灯泡「RAG正式诞生」，右端延伸标注「2026年：60%生产级AI应用使用RAG」。时间轴下方一个浅色总结框，框内大字手写「RAG = 给AI配一个可以随时查阅的外挂图书馆」。"
+        },
+        {
+          "image": "img-3.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「基础RAG怎么运作？五步流水线」。画面主体是一条从左到右的彩色流水线，五个步骤用圆形色块编号，每步有图标、粗体标题、一句说明文字。步骤①橙色圆「切块 Chunking」图标画剪刀切文件，说明「把长文档切成小片段，便于检索」。步骤②蓝色圆「向量化 Embedding」图标画文字变成坐标点，说明「把文字转成AI能理解的数字向量」。步骤③绿色圆「存入向量库」图标画数据库圆柱体，说明「所有片段向量存入 Pinecone / Chroma 等向量数据库」。步骤④紫色圆「语义检索」图标画放大镜找相似点，说明「用户提问后，找出语义最相近的片段」，旁边加粗标注「不是关键词匹配，是语义理解！」。步骤⑤金色圆「生成答案」图标画片段+问题合并喂给AI大脑，说明「检索到的片段作为上下文，AI生成有据可查的答案」。流水线下方一个对比框：左边「传统搜索：搜苹果手机，只找含这两个字的文章」vs 右边「语义搜索：自动找到写iPhone的文章」，用红叉绿勾标出差异。底部小字标注「Naive RAG局限：切块太粗、相似度≠有用」。"
+        },
+        {
+          "image": "img-4.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「多模态RAG」副标题「图表、PDF、图片都能检索了」。画面上方左侧红色警示框：画一个AI对着满是图表的PDF页面，对话框写「我只能读文字，图表看不懂！」，旁边红叉标注「传统RAG遇到图表就失灵」。画面中央重点区域：浅黄色背景框内标题「ColPali 方案（2025 ICLR 发表）」，下方流程图：「PDF页面」→ 箭头标注「直接当成图片处理，不提取文字」→「视觉向量化」→「向量库」→「检索时直接比对整页图像」。旁边手写说明「保留了图表的空间位置关系和视觉信息，传统方法会丢失这些」。画面下方三个应用场景卡片横排：橙色卡「医疗」画X光片，文字「查询影像报告，不丢失空间信息」；蓝色卡「金融」画财报图表，文字「分析季报中的柱状图和折线图」；绿色卡「学术」画论文示意图，文字「检索实验数据图，不只是正文文字」。底部一行总结「传统RAG：只读文字 → 多模态RAG：能看图表」。"
+        },
+        {
+          "image": "img-5.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「GraphRAG」副标题「微软2024：让AI读懂关系网络」。画面上方展示普通RAG的盲点：用户对话框写「这批文件里最重要的主题是什么？」，普通RAG机器人耸肩对话框写「我只拿到几个孤立片段，不知道它们之间有什么关系」，旁边红叉标注「跨文档关联 = 普通RAG的死角」。画面中央是GraphRAG流程图，步骤标注清晰：「文档」→「实体抽取（人物/地点/事件）」→「关系连线（谁和谁有关）」→「知识图谱（节点网络图）」→「社区发现（相关节点自动聚类）」→「层次摘要」→「回答问题」。知识图谱部分画出节点网络，节点用不同颜色区分，边上写关系类型。右侧两种查询模式标注：「Local模式：精确实体查询（告诉我张三的关系网络）」「Global模式：全局分析（这批文件的核心主题）」。底部两个数据标注：绿色「准确率提升约3倍（data.world基准）」；橙色「Token消耗减少26%-97%」；红色小字「缺点：构建图谱需大量LLM调用，成本较高」。"
+        },
+        {
+          "image": "img-6.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「Agentic RAG」副标题「从被动查资料 → 主动推理」。画面左侧小区域展示「普通RAG」：一条简单直线流程「问题 → 检索一次 → 生成答案」，旁边手写「只查一次，遇到复杂问题就不够用了」，画一个耸肩小人。画面右侧大区域（占页面三分之二）展示「Agentic RAG」：中央一个戴侦探帽的AI机器人，周围四个步骤形成循环箭头圈：步骤①「规划」文字「把复杂问题拆解成子问题」；步骤②「检索」文字「从多个数据源并行查询」；步骤③「反思」机器人对话框「够用了吗？相关吗？」；步骤④「再检索」文字「不够就继续查，直到满意」，最后绿色对勾「输出答案」。画面底部实际案例框：用户问题「Q3 EMEA销售额比去年变化多少、为什么？」下方拆解成三个子问题「① 查Q3 EMEA销售数字」「② 查去年同期数字」「③ 查业务背景原因」，三路检索后合并推理。底部关键词行：加粗标注「Self-RAG」「CRAG」「FLARE」，小字「三种主流Agentic RAG实现方式」。"
+        },
+        {
+          "image": "img-7.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写大标题「RAG已死？」，标题字体夸张像报纸头条，副标题「长上下文 vs RAG 大辩论」。画面主体是擂台场景，左右两个角斗士面对面。左边「长上下文派」：角色举着「200万Token大旗」，对话框写「把所有文件全塞进去不就行了？RAG太麻烦了！」旁边引用框手写「Chroma CEO：RAG已死，上下文工程当立」。右边「RAG反击派」：角色举着计算器，四张数据牌清晰可读：牌①「成本：RAG /usr/bin/bash.00008 vs 长上下文 /usr/bin/bash.10（差距1250倍！）」；牌②「速度：RAG约1秒 vs 长上下文约45秒」；牌③对话框「塞太多反而让AI变蠢——上下文腐烂问题」；牌④「现实：60%生产级应用仍在用RAG」。擂台中间裁判举牌，牌上写「真正死的是Naive RAG，活着的是进化中的RAG」。画面底部浅色总结框，框内手写「不是替代关系，是进化升级 — RAG正在成长为》上下文工程《」。"
+        },
+        {
+          "image": "img-8.webp",
+          "prompt": "彩色手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，精细墨水线描与明亮鲜艳水彩着色结合，3:4竖版，高质量1K分辨率。角色略带可爱感。页面顶部手写标题「RAG进化全景」副标题「你该用哪种？」。画面上半部分是一棵大树：树根处手写「2020 基础RAG诞生」，主干向上分出四根枝桠，每根枝桠旁有清晰文字：枝一绿色「Advanced RAG — 查询改写 + 混合检索 + 重排序，比基础版更准」；枝二蓝色「多模态RAG — ColPali整页PDF识别，图表也能查」；枝三橙色「GraphRAG — 微软2024，知识图谱，适合跨文档关联分析」；枝四紫色「Agentic RAG — 最新前沿，自主规划+多跳检索，复杂任务必选」。树顶用金色写「上下文工程 Context Engineering」标注为未来方向。画面下半部分是一个手绘风格的选型指引表，表格四行两列，内容清晰：行一「简单文档问答 → Advanced RAG」；行二「含图表的PDF → 多模态RAG」；行三「跨文档复杂关联 → GraphRAG」；行四「多步推理 / 复杂Agent任务 → Agentic RAG」。底部一个小人举旗子，旗上写「RAG没有死，它只是长大了」，水彩花边收尾。"
+        }
       ]
     },
     {
-      "id": "reinforcement-learning",
-      "title": "Reinforcement Learning Basics",
-      "tags": ["reinforcement-learning", "agents", "fundamentals"],
-      "date": "2026-01-08",
+      "id": "token",
+      "title": "什么是Token",
+      "tags": [
+        "token",
+        "ai-fundamentals",
+        "llm"
+      ],
+      "date": "2026-02-20",
       "pages": [
-        { "image": "img-1.jpg", "prompt": "An agent navigating a neon-lit maze rendered as a glowing circuit board from a top-down isometric view, reward signals depicted as golden sparks and particles, the optimal path highlighted in bright cyan, suboptimal paths fading into shadow, retro-futuristic aesthetic blending Tron and biopunk, deep black background, electric blue and amber color scheme, hyper-detailed pixel art scaled up to 8k" },
-        { "image": "img-2.jpg", "prompt": "Reinforcement learning — reward function landscape" },
-        { "image": "img-3.jpg", "prompt": "Reinforcement learning — policy gradient visualization" },
-        { "image": "img-4.jpg", "prompt": "Reinforcement learning — exploration vs exploitation" }
-      ]
-    },
-    {
-      "id": "prompt-engineering",
-      "title": "The Art of Prompt Engineering",
-      "tags": ["prompting", "llm", "techniques"],
-      "date": "2026-01-25",
-      "pages": [
-        { "image": "img-1.jpg", "prompt": "A master calligrapher in a futuristic studio, writing luminous prompts in the air with a digital brush, each word materializing as holographic 3D objects and scenes — a dragon here, a galaxy there — the studio walls covered in floating text fragments and glowing output images, cyberpunk meets Renaissance aesthetic, warm amber and cool blue contrast, photorealistic rendering with painterly touches" },
-        { "image": "img-2.jpg", "prompt": "Prompt engineering — chain of thought visualization" },
-        { "image": "img-3.jpg", "prompt": "Prompt engineering — few-shot examples" },
-        { "image": "img-4.jpg", "prompt": "Prompt engineering — system prompt architecture" },
-        { "image": "img-5.jpg", "prompt": "Prompt engineering — temperature and sampling" },
-        { "image": "img-6.jpg", "prompt": "Prompt engineering — prompt chaining" },
-        { "image": "img-7.jpg", "prompt": "Prompt engineering — evaluation and iteration" },
-        { "image": "img-8.jpg", "prompt": "Prompt engineering — the art of specificity" }
-      ]
-    },
-    {
-      "id": "vector-embeddings",
-      "title": "Vector Embeddings & Semantic Space",
-      "tags": ["embeddings", "nlp", "rag"],
-      "date": "2026-02-10",
-      "pages": [
-        { "image": "img-1.jpg", "prompt": "A three-dimensional semantic space visualization, thousands of glowing word-spheres clustered by meaning, similar concepts orbiting each other in colorful constellations, 'king' and 'queen' connected by shimmering golden vectors, semantic relationships as luminous threads in a cosmic web, deep space background with mathematical notation etched in starlight, data visualization meets space opera, extremely detailed" },
-        { "image": "img-2.jpg", "prompt": "Vector embeddings — word2vec arithmetic visualization" },
-        { "image": "img-3.jpg", "prompt": "Vector embeddings — dimensionality reduction" },
-        { "image": "img-4.jpg", "prompt": "Vector embeddings — similarity search" },
-        { "image": "img-5.jpg", "prompt": "Vector embeddings — RAG pipeline overview" }
+        {
+          "image": "img-1.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部大标题「Token：AI的最小思考单位」。这是全系列最华丽震撼的一页！画面主体是一个壮观的大场景：一句混合中英文的句子「Hello你好World世界」正在被一台巨型达芬奇风格精密齿轮机械切割装置切割分解，切割刀片闪着光，每个被切下的文字片段变成五颜六色的发光积木方块，方块上印着文字碎片，大小不一。方块沿着传送带流入右侧一个巨大的AI大脑形状的机器，大脑表面布满齿轮和电路。画面左侧一个可爱小人物惊讶地看着这一切，手里拿着手机正在打字。右上角悬浮一个跳动的价格仪表盘，指针在转动，标注「每一分钱都按Token算」。周围布满达芬奇手稿风格的齿轮、连杆、弹簧、标注箭头，还有「文字→Token→数字」的流程箭头。画面底部小字「不懂Token就像用手机不懂流量」。整个画面色彩极其丰富鲜艳饱和，视觉冲击力极强，细节密集华丽，装饰元素填满每个角落。"
+        },
+        {
+          "image": "img-2.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「Token长什么样？用英文来理解」。画面主体是一张达芬奇风格的「Token解剖图」：上半部分展示英文单词被拆分的过程——「hello」保持完整是一个绿色方块标注「= 1 token」，「chatbot」保持完整是一个蓝色方块标注「= 1 token」，「unbelievable」被虚线切割成三个彩色方块「un」「believ」「able」标注「= 3 tokens」，每个切割点用达芬奇风格的精细箭头和剪刀图标标注。中间展示「I love AI」拆成3个独立方块。下半部分是一个手绘对比表格，左列是单词，右列是token数量，用彩色方块数量可视化。底部标注关键规律：「常见词 = 1 token」画一个大积木，「长词/生僻词 = 多个子词」画多个小积木拼接。旁边小字「每个模型词表不同，同一段话token数可能不一样」。周围装饰达芬奇风格的标注线和解剖学风格的指示箭头。"
+        },
+        {
+          "image": "img-3.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「中文怎么算Token？比你想的复杂」。画面上半部分：李白《静夜思》的诗句「床前明月光，疑是地上霜」被逐字切割成彩色token小方块，每个汉字旁边用达芬奇风格箭头标注「1字 ≈ 1-2 token」，还有一个小放大镜展示UTF-8字节拆分过程。画面下半部分是一组震撼的大小对比可视化：最左边一个手机微信聊天气泡标注「200字 ≈ 300 token」体积最小；中间一篇知乎文章卷轴标注「3000字 ≈ 5000 token」体积中等；最右边一本巨大的《红楼梦》古典书籍标注「73万字 ≈ 100万token」体积最大，旁边画一个等号连接Claude的logo标注「刚好塞满Claude上下文窗口」。物体大小按token量成比例缩放形成强烈视觉冲击。底部还画一叠合同文件标注「50页合同2.5万字 ≈ 3.5万token」。周围装饰达芬奇风格数学公式和编码示意草图。"
+        },
+        {
+          "image": "img-4.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「分词器的秘密」，副标题「AI怎么把文字切成Token？」。画面主体是一条从上到下的达芬奇风格工厂流水线：顶部入口处一段完整中文文本被投入传送带，第一站「拆解车间」文字被拆成最小字节碎片飞散开，第二站「统计车间」一个可爱小工人拿着放大镜在统计高频字节组合并在黑板上画正字计数，第三站「合并车间」齿轮机械装置把高频碎片压合成完整的彩色token方块，底部出口处整齐排列的token方块输出。流水线旁边画两条对比轨道：左边快速通道上常见字「的」「是」「了」作为大号完整积木块快速通过标注「常见词完整保留」，右边慢速通道上罕见字「饕餮」被拆成四个小积木艰难拼装标注「罕见词被拆碎」。底部画一盒打开的乐高积木作为类比，标注「大零件直接用，罕见形状用小积木拼」。"
+        },
+        {
+          "image": "img-5.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「Token怎么影响你的钱包？」旁边画一个打开的钱包图标。画面主体是一张手绘「Token价格菜单」，做成餐厅菜单风格，用达芬奇手稿式表格呈现，从上到下价格递增：顶部「简单问题」旁边画一个小聊天气泡，标注「250 token ≈ ¥0.005」绿色价签；中间「分析论文」旁边画一张论文，标注「1.2万 token ≈ ¥0.7」黄色价签；底部「读完《红楼梦》写总结」旁边画一本厚书，标注「100万 token ≈ ¥36」红色价签。菜单右侧醒目标注「输出比输入贵3-5倍！」配惊叹号和一个输出token闪闪发光的图标。页面底部并排画三个模型价格标签对比：Claude、GPT、Gemini，Gemini旁边标注「同样事只要40%价格」配一个省钱小猪存钱罐。周围装饰金币飞溅和达芬奇风格计算草图。底部小字「每天重度100次 ≈ ¥7-35」。"
+        },
+        {
+          "image": "img-6.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「上下文窗口：Token的停车场」。画面主体是一个生动的俯视角度停车场场景：右侧是一个超大型豪华停车场，入口拱门上写「Claude / Gemini」和「100万车位」，里面密密麻麻停满了彩色小汽车，每辆车代表一段对话内容，部分车身上写着对话片段。左侧是一个明显更小的停车场，入口写「GPT」和「12.8万车位」，只停了少量车辆，显得空旷。大停车场的出口处，一辆标注「最早的对话」的旧车正在被一只达芬奇风格的机械手臂推出停车场，车上小人物表情无奈挥手告别，旁边箭头标注「停车场满了→最早对话被遗忘」。画面上方用达芬奇风格的流程标注「聊50轮→每轮都占车位→前面的被挤走」的示意图，画成一排车依次进入车位。底部小字「长上下文也更贵」旁边画一个小金币图标。"
+        },
+        {
+          "image": "img-7.webp",
+          "prompt": "彩色达芬奇手绘风中文插画，翻开的复古笔记本书页背景，米黄色纸张质感，左侧有装订线书脊，页面边缘微卷有阴影，像手账本翻开的一页，精细墨水线描与水彩着色结合，细节丰富有质感的复古插画风格，3:4竖版，高质量1K分辨率。角色造型有质感但略带可爱感，介于写实和卡通之间，用明亮鲜艳的水彩色彩着色，饱和度高，色彩丰富活泼，达芬奇手稿式精细标注和机械草图装饰。页面顶部标题「会算Token的人，用AI最聪明」。画面分为四个精美手绘卡片区域，用达芬奇风格装饰线条分隔：①左上角「指令精简」——画一把剪刀正在修剪一段冗长文本，剪掉的部分飘散消失，剩下精简的短句发光，标注「省一半输出token」；②右上角「分段喂入」——画一本打开的书，只有高亮的一个章节被抽出送入AI入口，其余页面半透明，标注「提取关键章节」；③左下角「选对模型」——画左边一辆地铁标注「Flash/Haiku 日常用」价签便宜，右边一辆豪华跑车标注「Opus/Pro 难题用」价签贵，对比鲜明；④右下角「了解计费」——画一个精美的仪表盘显示token用量柱状图，指针指向安全区域。页面底部用手写体金句收尾：「Token就像手机流量——知道怎么计费的人永远不会被账单吓到」，旁边装饰小星星和达芬奇风格的涡旋花纹。"
+        }
       ]
     }
   ]
