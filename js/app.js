@@ -13,7 +13,6 @@
     projectsPath: 'data/projects.json',
     pageSize:     12,
     lazyThreshold: 0.1,
-    searchDebounce: 250,
   };
 
   /* -----------------------------------------------------------
@@ -23,8 +22,6 @@
     allTopics:      [],
     filteredTopics: [],
     activeTags:     new Set(),
-    searchQuery:    '',
-    renderedCount:  0,
   };
 
   /* -----------------------------------------------------------

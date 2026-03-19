@@ -1528,12 +1528,6 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.modal__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: var(--spacing-md);
-}
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 900px) {
