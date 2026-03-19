@@ -45,10 +45,12 @@
       en: {
         // Nav
         'nav.home':      'Home',
+        'nav.articles':  'Articles',
         'nav.projects':  'Projects',
         'nav.knowledge': 'Knowledge',
 
         // Hero
+        'hero.name':      'HoopyAI',
         'hero.eyebrow':   'AI Engineer · Personal Builder',
         'hero.titleLine': 'Building AI systems from genuine curiosity',
         'hero.bio':       'I build <span class="text-hl text-hl--cobalt">TypeScript agents</span>, <span class="text-hl text-hl--viridian">LLM pipelines</span>, and <span class="text-hl text-hl--violet">AI-powered tools</span> — and I turn every hobby into a product. Vibe coding with Claude before it was cool.',
@@ -147,10 +149,12 @@
       zh: {
         // Nav
         'nav.home':      '主页',
+        'nav.articles':  '文章',
         'nav.projects':  '项目',
         'nav.knowledge': '知识库',
 
         // Hero
+        'hero.name':      '潦草虎皮AI说',
         'hero.eyebrow':   'AI 工程师 · 个人建造者',
         'hero.titleLine': '用好奇心驱动构建，用 AI 把每个爱好变成产品',
         'hero.bio':       '我做 <span class="text-hl text-hl--cobalt">TypeScript Agent</span>、<span class="text-hl text-hl--viridian">LLM 应用</span>和<span class="text-hl text-hl--violet">AI 工具</span> —— 每个爱好都会变成一个产品。Claude 重度用户，vibe coding 先行者。',
