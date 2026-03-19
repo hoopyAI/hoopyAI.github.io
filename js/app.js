@@ -643,6 +643,12 @@
     overlayEl: null,
     modalEl:   null,
     prevFocus: null,
+    currentSlide: 0,
+    totalSlides: 0,
+    currentPages: [],
+    currentTopicId: null,
+    touchStartX: 0,
+    touchStartY: 0,
 
     init() {
       this.overlayEl = document.getElementById('modal-overlay');
@@ -657,6 +663,8 @@
         if (!this.overlayEl.classList.contains('is-open')) return;
         if (e.key === 'Escape') this.close();
         if (e.key === 'Tab') this.trapFocus(e);
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); this.goToSlide(this.currentSlide - 1, this.currentTopicId); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); this.goToSlide(this.currentSlide + 1, this.currentTopicId); }
       });
 
       const closeBtn = this.overlayEl.querySelector('.modal__close');
@@ -670,12 +678,18 @@
       this.prevFocus = document.activeElement;
       document.body.style.overflow = 'hidden';
 
-      this.renderContent(topic);
+      this.currentPages = getPages(topic);
+      this.totalSlides = this.currentPages.length;
+      this.currentSlide = 0;
+      this.currentTopicId = topic.id;
 
+      this.renderContent(topic);
       this.overlayEl.classList.add('is-open');
       this.overlayEl.setAttribute('aria-hidden', 'false');
 
-      // Focus the close button
+      if (this.currentPages.length > 0) this.preloadImage(topic.id, 0);
+      if (this.currentPages.length > 1) this.preloadImage(topic.id, 1);
+
       const closeBtn = this.overlayEl.querySelector('.modal__close');
       if (closeBtn) closeBtn.focus();
     },
@@ -688,64 +702,186 @@
       if (this.prevFocus) this.prevFocus.focus();
     },
 
+    preloadImage(topicId, index) {
+      if (index < 0 || index >= this.currentPages.length) return;
+      const img = new Image();
+      img.src = `images/topics/${topicId}/${this.currentPages[index].image}`;
+    },
+
     renderContent(topic) {
       const titleEl = this.overlayEl.querySelector('.modal__title');
       const bodyEl  = this.overlayEl.querySelector('.modal__body');
-
       if (titleEl) titleEl.textContent = topic.title;
 
-      const galleryHtml = this.renderGallery(topic);
-      const modalTagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
+      const pages = this.currentPages;
+      const tagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
       const tagsHtml = (topic.tags || [])
-        .map((t, i) => `<span class="tag ${modalTagColors[i % modalTagColors.length]}">${t}</span>`)
+        .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
         .join('');
 
-      bodyEl.innerHTML = `
-        ${galleryHtml}
-        <div class="prompt-section">
-          <div class="prompt-section__label">
-            <span class="prompt-section__title">Generation Prompt</span>
-            <button class="prompt-copy" id="copy-prompt-btn" aria-label="Copy prompt to clipboard">
-              ${iconCopy()} Copy
-            </button>
+      const slidesHtml = pages.map((page, i) => `
+        <div class="carousel__slide${i === 0 ? ' active' : ''}" data-index="${i}">
+          <div class="carousel__img-skeleton" id="carousel-skeleton-${i}"></div>
+          <img class="carousel__img" src="" data-src="images/topics/${topic.id}/${page.image}"
+               alt="${escHtml(topic.title)} page ${i + 1}"
+               style="display:none;"
+               id="carousel-img-${i}">
+          <div class="carousel__prompt">
+            <div class="carousel__prompt-header">
+              <span class="carousel__prompt-label">${I18n.t('carousel.prompt.label')}</span>
+              <button class="carousel__copy-btn" data-prompt-index="${i}">${I18n.t('carousel.prompt.copy')}</button>
+            </div>
+            <div class="carousel__prompt-text">${escHtml(page.prompt)}</div>
           </div>
-          <pre class="prompt-text" id="modal-prompt-text">${escHtml(topic.prompt || '')}</pre>
         </div>
-        <div class="modal__tags">${tagsHtml}</div>
+      `).join('');
+
+      const dotsHtml = pages.map((_, i) =>
+        `<button class="carousel__dot${i === 0 ? ' active' : ''}" data-dot="${i}" aria-label="Go to page ${i + 1}"></button>`
+      ).join('');
+
+      bodyEl.innerHTML = `
+        <div class="carousel">
+          <div class="carousel__viewport">
+            <button class="carousel__arrow carousel__arrow--left" aria-label="Previous page">&#8249;</button>
+            <div class="carousel__track">${slidesHtml}</div>
+            <button class="carousel__arrow carousel__arrow--right" aria-label="Next page">&#8250;</button>
+          </div>
+          <div class="carousel__footer">
+            <div class="carousel__dots">${dotsHtml}</div>
+            <span class="carousel__counter">1 / ${pages.length}</span>
+          </div>
+        </div>
+        <div class="carousel__tags">${tagsHtml}</div>
+        <div class="carousel__hint">
+          <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> ${I18n.t('carousel.hint')}
+        </div>
       `;
 
-      // Wire copy button
-      const copyBtn = bodyEl.querySelector('#copy-prompt-btn');
-      if (copyBtn) {
-        copyBtn.addEventListener('click', () => {
-          navigator.clipboard.writeText(topic.prompt || '').then(() => {
-            copyBtn.classList.add('copied');
-            copyBtn.innerHTML = `${iconCheck()} Copied!`;
-            setTimeout(() => {
-              copyBtn.classList.remove('copied');
-              copyBtn.innerHTML = `${iconCopy()} Copy`;
-            }, 2000);
-          }).catch(() => {});
-        });
-      }
-
-      // Scroll modal to top
+      this.loadSlideImage(0);
+      this.wireCarousel(topic.id);
       if (this.modalEl) this.modalEl.scrollTop = 0;
     },
 
-    renderGallery(topic) {
-      if (!topic.imageCount || topic.imageCount === 0) return '';
-      const items = [];
-      for (let i = 1; i <= topic.imageCount; i++) {
-        const src = `images/topics/${topic.id}/img-${i}.jpg`;
-        items.push(`
-          <div class="gallery-item">
-            <img src="${src}" alt="${escHtml(topic.title)} image ${i}"
-              onerror="this.parentElement.classList.add('gallery-item--placeholder'); this.parentElement.innerHTML='<span>img-${i}.jpg</span>';">
-          </div>
-        `);
+    loadSlideImage(index) {
+      const img = document.getElementById(`carousel-img-${index}`);
+      const skeleton = document.getElementById(`carousel-skeleton-${index}`);
+      if (!img || !img.dataset.src) return;
+
+      img.onload = () => {
+        img.style.display = 'block';
+        if (skeleton) skeleton.style.display = 'none';
+      };
+      img.onerror = () => {
+        if (skeleton) {
+          skeleton.className = 'carousel__img-error';
+          skeleton.textContent = this.currentPages[index]?.image || 'image';
+        }
+        img.style.display = 'none';
+      };
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    },
+
+    wireCarousel(topicId) {
+      const bodyEl = this.overlayEl.querySelector('.modal__body');
+
+      const prevBtn = bodyEl.querySelector('.carousel__arrow--left');
+      const nextBtn = bodyEl.querySelector('.carousel__arrow--right');
+      prevBtn.addEventListener('click', () => this.goToSlide(this.currentSlide - 1, topicId));
+      nextBtn.addEventListener('click', () => this.goToSlide(this.currentSlide + 1, topicId));
+
+      bodyEl.querySelectorAll('.carousel__dot').forEach(dot => {
+        dot.addEventListener('click', () => this.goToSlide(Number(dot.dataset.dot), topicId));
+      });
+
+      bodyEl.querySelectorAll('.carousel__copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.dataset.promptIndex);
+          const text = this.currentPages[idx]?.prompt || '';
+          this.copyToClipboard(text, btn);
+        });
+      });
+
+      const viewport = bodyEl.querySelector('.carousel__viewport');
+      viewport.addEventListener('touchstart', (e) => {
+        this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      viewport.addEventListener('touchend', (e) => {
+        const dx = this.touchStartX - e.changedTouches[0].clientX;
+        const dy = this.touchStartY - e.changedTouches[0].clientY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+          if (dx > 0) this.goToSlide(this.currentSlide + 1, topicId);
+          else        this.goToSlide(this.currentSlide - 1, topicId);
+        }
+      }, { passive: true });
+
+      this.updateArrows();
+    },
+
+    goToSlide(index, topicId) {
+      if (index < 0 || index >= this.totalSlides) return;
+
+      const bodyEl = this.overlayEl.querySelector('.modal__body');
+      const slides = bodyEl.querySelectorAll('.carousel__slide');
+      const dots   = bodyEl.querySelectorAll('.carousel__dot');
+
+      slides[this.currentSlide].classList.remove('active');
+      dots[this.currentSlide].classList.remove('active');
+
+      this.currentSlide = index;
+
+      slides[this.currentSlide].classList.add('active');
+      dots[this.currentSlide].classList.add('active');
+
+      this.loadSlideImage(index);
+      this.preloadImage(topicId, index + 1);
+      this.preloadImage(topicId, index - 1);
+
+      const counter = bodyEl.querySelector('.carousel__counter');
+      if (counter) counter.textContent = `${index + 1} / ${this.totalSlides}`;
+
+      this.updateArrows();
+    },
+
+    updateArrows() {
+      const bodyEl = this.overlayEl.querySelector('.modal__body');
+      if (!bodyEl) return;
+      const prev = bodyEl.querySelector('.carousel__arrow--left');
+      const next = bodyEl.querySelector('.carousel__arrow--right');
+      if (prev) prev.disabled = this.currentSlide === 0;
+      if (next) next.disabled = this.currentSlide === this.totalSlides - 1;
+    },
+
+    copyToClipboard(text, btn) {
+      const onSuccess = () => {
+        const origText = btn.textContent;
+        btn.textContent = I18n.t('carousel.prompt.copied');
+        setTimeout(() => { btn.textContent = origText; }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+          this.fallbackCopy(text, btn, onSuccess);
+        });
+      } else {
+        this.fallbackCopy(text, btn, onSuccess);
       }
-      return `<div class="gallery-grid">${items.join('')}</div>`;
+    },
+
+    fallbackCopy(text, btn, onSuccess) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        onSuccess();
+      } catch (_) {}
+      document.body.removeChild(ta);
     },
 
     trapFocus(e) {
