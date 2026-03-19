@@ -61,34 +61,15 @@
       </div>
 
       <div class="container">
-        <!-- Search & Filter -->
-        <div class="search-bar reveal">
-          <div class="search-bar__input-wrap">
-            <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input
-              type="search"
-              id="search-input"
-              class="search-bar__input"
-              placeholder="Search topics…"
-              aria-label="Search knowledge topics"
-              autocomplete="off"
-            >
-          </div>
-          <div class="search-bar__tags" id="all-tags" role="group" aria-label="Filter by tag">
-            <!-- Populated by app.js -->
-          </div>
-        </div>
-
-        <!-- Topics Grid -->
-        <div class="grid-3" id="topics-grid" role="list" aria-label="Knowledge topics">
+        <!-- Tag Filter Bar -->
+        <div class="filter-bar reveal" id="filter-bar" role="group" aria-label="Filter by tag">
           <!-- Populated by app.js -->
         </div>
 
-        <!-- Infinite scroll sentinel -->
-        <div id="load-more-sentinel" class="load-more-sentinel" aria-hidden="true"></div>
+        <!-- Cover Grid -->
+        <div class="cover-grid" id="topics-grid" role="list" aria-label="Knowledge topics">
+          <!-- Populated by app.js -->
+        </div>
       </div>
     </div>
   </main>
