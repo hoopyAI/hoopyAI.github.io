@@ -3,7 +3,9 @@
     {
       "id": "parlez",
       "title": "Parlez",
+      "titleZh": "Parlez 法语学习",
       "description": "A web app for learning French with AI conversation practice, smart vocabulary cards, and personalized review sessions. Built from a personal obsession with the French language and a frustration with existing tools.",
+      "descriptionZh": "AI 驱动的法语学习应用——对话练习、智能词汇卡片和个性化复习。源于对法语的真实热爱和对现有工具的不满。",
       "tags": ["typescript", "llm", "language-learning", "web"],
       "githubUrl": "https://github.com/hoopyAI/parlez",
       "liveUrl": null,
@@ -13,7 +15,9 @@
     {
       "id": "content-skill",
       "title": "Content Creation SKILL",
+      "titleZh": "自媒体创作 SKILL",
       "description": "A Claude Code skill for AI-assisted content creation — structures narratives, adapts tone, and generates drafts for Chinese social media. Designed around the build-in-public workflow.",
+      "descriptionZh": "基于 Claude Code 的内容创作 SKILL——结构化叙事、适配语气、为中文自媒体生成草稿。围绕公开构建工作流设计。",
       "tags": ["claude", "skill", "typescript", "content"],
       "githubUrl": "https://github.com/hoopyAI/content-skill",
       "liveUrl": null,
@@ -23,7 +27,9 @@
     {
       "id": "knowledge-hub",
       "title": "HoopyAI Knowledge Hub",
+      "titleZh": "HoopyAI 知识库",
       "description": "Visual explainers for AI concepts — each topic has AI-generated image galleries and the exact prompts that created them. This site's knowledge-sharing engine.",
+      "descriptionZh": "AI 概念的视觉化解读——每个主题都有 AI 生成的图片集和创建它们的完整 Prompt。本站的知识分享引擎。",
       "tags": ["javascript", "html", "ai-art", "prompts"],
       "githubUrl": "https://github.com/hoopyAI/hoopyAI.github.io",
       "liveUrl": "https://hoopyai.github.io/knowledge.html",
@@ -33,7 +39,9 @@
     {
       "id": "shige-ai",
       "title": "古诗词 AI Companion",
+      "titleZh": "古诗词 AI 伴侣",
       "description": "An AI companion for exploring Chinese classical poetry — translation, annotation, imagery analysis, and modern interpretations. Currently in the planning stage.",
+      "descriptionZh": "探索中国古典诗词的 AI 伴侣——翻译、注解、意象分析和现代解读。目前处于规划阶段。",
       "tags": ["typescript", "llm", "chinese-poetry", "culture"],
       "githubUrl": null,
       "liveUrl": null,
@@ -43,7 +51,9 @@
     {
       "id": "ai-research-skill",
       "title": "AI Research SKILL",
+      "titleZh": "AI 研究 SKILL",
       "description": "A Claude Code skill for deep-diving into AI papers and concepts — summarizes arxiv papers, builds concept maps, and generates visual explanations. Powers the Knowledge Hub content pipeline.",
+      "descriptionZh": "用于深入研究 AI 论文和概念的 Claude Code SKILL——总结 arxiv 论文、构建概念图、生成视觉化解释。为知识库内容流水线提供支持。",
       "tags": ["claude", "skill", "research", "ai"],
       "githubUrl": "https://github.com/hoopyAI/ai-research-skill",
       "liveUrl": null,
@@ -53,7 +63,9 @@
     {
       "id": "data-pipeline-agent",
       "title": "Data Pipeline Agent",
+      "titleZh": "数据流水线 Agent",
       "description": "A TypeScript agent that analyzes data pipeline code, suggests optimizations, and auto-generates documentation. Built for internal tooling use cases.",
+      "descriptionZh": "分析数据流水线代码、建议优化方案并自动生成文档的 TypeScript Agent。为内部工具场景构建。",
       "tags": ["typescript", "agents", "data", "internal"],
       "githubUrl": null,
       "liveUrl": null,
