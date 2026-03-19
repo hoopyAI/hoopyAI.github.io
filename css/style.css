@@ -29,7 +29,7 @@
   --color-yellow-dark: #f59e0b;
   
   /* 渐变效果 */
-  --gradient-bg: linear-gradient(135deg, #fafbff 0%, #f0f4ff 50%, #fefce8 100%);
+  --gradient-bg: #fafbff;
   --gradient-card: linear-gradient(145deg, rgba(125, 211, 252, 0.08) 0%, rgba(196, 181, 253, 0.08) 100%);
   --gradient-text: linear-gradient(135deg, #0ea5e9, #8b5cf6);
   --gradient-button: linear-gradient(135deg, var(--color-blue), var(--color-purple));
@@ -82,7 +82,7 @@
     --color-purple: #a78bfa;
     --color-yellow: #fbbf24;
     
-    --gradient-bg: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #2d1b22 100%);
+    --gradient-bg: #0f0f1a;
     --border-light: rgba(56, 189, 248, 0.2);
     --shadow-card: 0 8px 32px rgba(167, 139, 250, 0.1);
   }
@@ -109,7 +109,6 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--gradient-bg);
-  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -413,8 +412,7 @@ a:hover {
 }
 
 .section--alt {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
+  background: var(--bg-secondary);
 }
 
 .section__header {
@@ -746,33 +744,9 @@ a:hover {
   padding: var(--spacing-2xl) 0;
 }
 
-.wc-blobs {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.wc-blob {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.wc-blob--a { width: 420px; height: 420px; background: radial-gradient(circle, rgba(125, 211, 252, 0.3) 0%, rgba(125, 211, 252, 0) 70%); }
-.wc-blob--b { width: 360px; height: 360px; background: radial-gradient(circle, rgba(196, 181, 253, 0.3) 0%, rgba(196, 181, 253, 0) 70%); }
-.wc-blob--c { width: 300px; height: 300px; background: radial-gradient(circle, rgba(253, 230, 138, 0.3) 0%, rgba(253, 230, 138, 0) 70%); }
-.wc-blob--d { width: 320px; height: 320px; background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(14, 165, 233, 0) 70%); }
-
-.wc-blob--feat-1  { top: -120px;  right: -80px;  }
-.wc-blob--feat-2  { bottom: -80px; left: 35%;    }
-.wc-blob--about-1 { top: 5%;      left: -120px;  }
-.wc-blob--know-2  { bottom: -60px; right: -60px; }
-
 .section--wc > .container,
 .section--wc > .main-content > .container {
   position: relative;
-  z-index: 1;
 }
 
 .main-content {
