@@ -59,18 +59,6 @@
       "liveUrl": "https://hoopyai.github.io/knowledge.html",
       "status": "active",
       "featured": true
-    },
-    {
-      "id": "shige-ai",
-      "title": "Chinese Poetry AI",
-      "titleZh": "古诗词 AI 伴侣",
-      "description": "An AI companion for exploring Chinese classical poetry — translation, annotation, imagery analysis, and modern interpretations.",
-      "descriptionZh": "探索中国古典诗词的 AI 伴侣——翻译、注解、意象分析和现代解读。",
-      "tags": ["typescript", "llm", "chinese-poetry", "culture"],
-      "githubUrl": null,
-      "liveUrl": null,
-      "status": "wip",
-      "featured": false
     }
   ]
 }
