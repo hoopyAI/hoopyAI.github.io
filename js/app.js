@@ -55,58 +55,6 @@
         'hero.eyebrow':   'AI Engineer · AI Explorer',
         'hero.slogan':    'Start rough, then refine — exploration and trial-and-error are prerequisites for focus',
         'hero.bio':       'AI Agent solutions by day, exploring everything interesting with AI by night — knowledge comics, Suno music, and a love for French language and culture. Every hobby eventually becomes an open-source project.',
-        'hero.cta1':      'View Projects',
-        'hero.cta2':      'Knowledge Hub',
-
-        // Now Building
-        'now.header':       'Now Building',
-        'now.item1.name':   'Parlez — French Learning App',
-        'now.item1.status': 'WIP',
-        'now.item2.name':   'Content Creation SKILL',
-        'now.item2.status': 'Active',
-        'now.item3.name':   'Chinese Poetry AI Tool',
-        'now.item3.status': 'Planning',
-
-        // Dividers
-        'divider.about':    'de vita &amp; operibus',
-        'divider.featured': 'opera selecta',
-        'divider.connect':  'epistola',
-
-        // About
-        'about.label':   'About',
-        'about.title':   'About',
-        'about.lead':    'I build AI systems that actually ship — not just clever demos.',
-        'about.body1':   'I came to AI from software engineering: TypeScript-first, focused on <span class="text-hl text-hl--ochre">what actually works in production</span>. Agents that don\'t hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.',
-        'about.callout': 'My approach: every hobby becomes a product. Learning French → a language learning app. Loving classical Chinese poetry → an AI poetry companion. Making content → a SKILL for that workflow. <strong>Build in public, iterate in public.</strong>',
-        'about.body2':   'This site is both portfolio and notebook. The <span class="text-hl text-hl--cobalt">Knowledge Hub</span> is where I document AI ideas visually — every entry has AI-generated images and the exact prompts behind them.',
-        'about.stat1':   'AI Projects',
-        'about.stat2':   'Knowledge Topics',
-        'about.stat3':   'Prompts explored',
-        'skills.title':  'What I Build',
-        'skills.ai':     'AI / LLM',
-        'skills.lang':   'Languages',
-        'skills.infra':  'Tools',
-        'skills.gen':    'Generative',
-
-        // Featured
-        'featured.label':     'Featured Work',
-        'featured.title':     'Selected projects',
-        'featured.desc':      "A few things I've built. Full list on the",
-        'featured.desc.link': 'projects page',
-        'featured.p1.title':  'Parlez',
-        'featured.p1.desc':   'AI-powered French learning — conversation practice, smart flashcards, personalized review. Built from genuine obsession with the language.',
-        'featured.p2.title':  'Content Creation SKILL',
-        'featured.p2.desc':   'A Claude Code skill that structures narratives, adapts tone, and generates drafts for Chinese social media. Powers my own content workflow.',
-        'featured.hub.label': 'Knowledge Hub',
-        'featured.hub.title': 'AI Concept Galleries',
-        'featured.hub.desc':  'Visual explainers for neural networks, transformers, diffusion models — each with AI-generated image galleries and the exact prompts that created them.',
-
-        // Connect
-        'connect.label': 'Get in touch',
-        'connect.title': "Let's build something",
-        'connect.desc':  'Working on an interesting AI problem? Have a project idea or just want to talk agents, LLMs, and vibe coding?',
-        'connect.btn':   'Say hello',
-
         // Footer
         'footer.copy': '© 2026 潦草虎皮AI说 — crafted with ink & inference',
 
@@ -153,32 +101,9 @@
         'home.knowledge.title': 'Knowledge Hub',
         'home.knowledge.viewAll': 'Explore more \u2192',
         'home.knowledge.desc': 'AI concept comics \u2014 visual explainers for AI technology with AI-generated illustrations and the prompts behind them.',
-        'home.knowledge.t1': 'Neural Networks',
-        'home.knowledge.t2': 'Transformers',
-        'home.knowledge.t3': 'Diffusion Models',
-        'home.knowledge.t4': 'AI Agents',
-
         'home.about.title': 'About',
         'home.about.body': '"Start rough, then refine \u2014 exploration and trial-and-error are prerequisites for focus." \u2014 Search "\u6f66\u8349\u864e\u76aeAI\u8bf4" on Xiaohongshu for more content.',
 
-        'about.subtitle': 'Who I am & what I care about',
-        'about.philosophy.title': 'Philosophy',
-        'about.philosophy.lead': 'I build AI systems that actually ship — not just clever demos.',
-        'about.philosophy.body': "I came to AI from software engineering: TypeScript-first, focused on what actually works in production. Agents that don't hallucinate their way into disaster. Pipelines that retrieve the right context. Tools that real people want to use.",
-        'about.focus.title': 'Current Focus',
-        'about.focus.parlez': 'French Learning App',
-        'about.focus.wip': 'WIP',
-        'about.focus.content': 'Content Creation SKILL',
-        'about.focus.active': 'Active',
-        'about.focus.poetry': 'Chinese Poetry AI Tool',
-        'about.focus.planning': 'Planning',
-        'skills.subtitle': 'My approach to AI engineering',
-        'skills.agents.title': 'TypeScript Agents',
-        'skills.agents.desc': 'End-to-end AI workflows that integrate seamlessly with existing systems. Built with type safety and production reliability in mind.',
-        'skills.llm.title': 'LLM Pipelines',
-        'skills.llm.desc': 'RAG systems, prompt optimization, and model orchestration. Focus on accuracy, cost efficiency, and real-world performance.',
-        'skills.tools.title': 'AI Tools',
-        'skills.tools.desc': 'User-facing applications that solve real problems. From language learning to content creation, built for actual humans.',
       },
 
       zh: {
@@ -193,58 +118,6 @@
         'hero.eyebrow':   'AI 工程师 · AI 玩家',
         'hero.slogan':    '先潦草再认真，探索和试错是专注的前提',
         'hero.bio':       '白天做 AI Agent 方案，业余用 AI 探索一切有趣的事——画科普漫画、用 Suno 写歌，还喜欢法语和法国文化。每个爱好最终都会变成一个开源项目。',
-        'hero.cta1':      '查看项目',
-        'hero.cta2':      '知识库',
-
-        // Now Building
-        'now.header':       '正在构建',
-        'now.item1.name':   'Parlez — 法语学习应用',
-        'now.item1.status': '开发中',
-        'now.item2.name':   '自媒体创作 SKILL',
-        'now.item2.status': '已上线',
-        'now.item3.name':   '中文古诗词 AI 工具',
-        'now.item3.status': '规划中',
-
-        // Dividers
-        'divider.about':    'de vita &amp; operibus',
-        'divider.featured': 'opera selecta',
-        'divider.connect':  'epistola',
-
-        // About
-        'about.label':   '关于',
-        'about.title':   '关于',
-        'about.lead':    '我构建真正能用的 AI 系统，不只是看起来好看的 demo。',
-        'about.body1':   '我从软件工程走入 AI 领域：TypeScript 优先，执着于<span class="text-hl text-hl--ochre">真正在生产环境中有效的东西</span>。不乱幻觉的 Agent，检索到正确上下文的 Pipeline，真实用户愿意用的工具。',
-        'about.callout': '我的方式：每个爱好都变成一个产品。学法语 → 法语学习应用。爱古诗词 → AI 古诗词伴侣。做内容 → 内容创作 SKILL。<strong>公开构建，公开迭代。</strong>',
-        'about.body2':   '这个网站既是作品集，也是笔记本。<span class="text-hl text-hl--cobalt">知识库</span>是我用视觉方式记录 AI 想法的地方 —— 每个条目都有 AI 生成的图片和背后完整的 Prompt。',
-        'about.stat1':   'AI 项目',
-        'about.stat2':   '知识主题',
-        'about.stat3':   '探索过的 Prompt',
-        'skills.title':  '我在做什么',
-        'skills.ai':     'AI / LLM',
-        'skills.lang':   '编程语言',
-        'skills.infra':  '工具',
-        'skills.gen':    '生成式 AI',
-
-        // Featured
-        'featured.label':     '精选作品',
-        'featured.title':     '代表项目',
-        'featured.desc':      '几个我做的东西。完整列表在',
-        'featured.desc.link': '项目页面',
-        'featured.p1.title':  'Parlez 法语学习',
-        'featured.p1.desc':   'AI 驱动的法语学习 —— 对话练习、智能闪卡、个性化复习。源于对法语真实的热爱。',
-        'featured.p2.title':  '自媒体创作 SKILL',
-        'featured.p2.desc':   '基于 Claude Code 的内容创作 SKILL，支持结构化叙事、适配中文自媒体风格，为我自己的内容工作流提供支持。',
-        'featured.hub.label': '知识库',
-        'featured.hub.title': 'AI 概念图集',
-        'featured.hub.desc':  '神经网络、Transformer、扩散模型等 AI 概念的视觉化解读 —— 配有 AI 生成图片和完整 Prompt。',
-
-        // Connect
-        'connect.label': '联系我',
-        'connect.title': '一起构建吧',
-        'connect.desc':  '在做有趣的 AI 项目？有想法想聊聊？欢迎聊 Agent、LLM 和 vibe coding。',
-        'connect.btn':   '发邮件',
-
         // Footer
         'footer.copy': '© 2026 潦草虎皮AI说 — 用墨水与推理构建',
 
@@ -291,34 +164,9 @@
         'home.knowledge.title': '知识库',
         'home.knowledge.viewAll': '探索更多 \u2192',
         'home.knowledge.desc': 'AI 概念漫画 —— 用视觉方式解读 AI 技术，配有 AI 生成的插画和背后的 Prompt。',
-        'home.knowledge.t1': '神经网络',
-        'home.knowledge.t2': 'Transformer',
-        'home.knowledge.t3': '扩散模型',
-        'home.knowledge.t4': 'AI Agent',
-
         'home.about.title': '关于',
         'home.about.body': '「先潦草再认真，探索和试错是专注的前提」—— 在小红书搜索「潦草虎皮AI说」查看更多内容。',
 
-        'about.title': '关于',
-        'about.subtitle': '我是谁，在乎什么',
-        'about.philosophy.title': '理念',
-        'about.philosophy.lead': '我构建真正能用的 AI 系统，不只是看起来好看的 demo。',
-        'about.philosophy.body': '我从软件工程走入 AI 领域：TypeScript 优先，执着于真正在生产环境中有效的东西。不乱幻觉的 Agent，检索到正确上下文的 Pipeline，真实用户愿意用的工具。',
-        'about.focus.title': '正在构建',
-        'about.focus.parlez': '法语学习应用',
-        'about.focus.wip': '开发中',
-        'about.focus.content': '自媒体创作 SKILL',
-        'about.focus.active': '已上线',
-        'about.focus.poetry': '中文古诗词 AI 工具',
-        'about.focus.planning': '规划中',
-        'skills.title': '我在做什么',
-        'skills.subtitle': 'AI 工程方法论',
-        'skills.agents.title': 'TypeScript Agent',
-        'skills.agents.desc': '端到端 AI 工作流，无缝集成现有系统。注重类型安全和生产可靠性。',
-        'skills.llm.title': 'LLM 应用',
-        'skills.llm.desc': 'RAG 系统、Prompt 优化、模型编排。聚焦准确性、成本效率和真实场景表现。',
-        'skills.tools.title': 'AI 工具',
-        'skills.tools.desc': '解决真实问题的用户端应用。从语言学习到内容创作，为真实用户而构建。',
       },
     },
 
