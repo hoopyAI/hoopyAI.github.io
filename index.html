@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="潦草虎皮AI说 — AI Engineer building agents, LLM pipelines, and hobby-driven products. Build in public.">
+  <meta name="description" content="潦草虎皮AI说 — AI 工程师，用漫画讲 AI 知识，用代码把爱好变成产品">
   <title>潦草虎皮AI说 — AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,9 +235,10 @@
       line-height: 1.2;
     }
 
-    .hero__title-line {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
+    .hero__slogan {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-muted);
       margin-bottom: var(--spacing-md);
     }
 
@@ -271,8 +272,14 @@
 
     .social-link:hover { transform: translateY(-2px); }
     .social-link--github:hover { border-color: #333; box-shadow: 0 8px 24px rgba(0,0,0,0.15); color: #1a1a1a; }
-    .social-link--linkedin:hover { border-color: #0a66c2; box-shadow: 0 8px 24px rgba(10,102,194,0.2); color: #0a66c2; }
-    .social-link--email:hover { border-color: #16a34a; box-shadow: 0 8px 24px rgba(22,163,74,0.2); color: #16a34a; }
+    .social-link--xhs {
+      font-size: 0.85rem;
+    }
+    .social-link--xhs:hover {
+      border-color: #fe2c55;
+      box-shadow: 0 8px 24px rgba(254, 44, 85, 0.2);
+      color: #fe2c55;
+    }
 
     .social-link svg { width: 16px; height: 16px; }
 
@@ -629,43 +636,28 @@
 
           <!-- Content -->
           <div class="hero__content">
-            <p class="hero__eyebrow" data-i18n="hero.eyebrow">AI Engineer · Personal Builder</p>
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">AI Engineer · AI Explorer</p>
 
             <h1 class="hero__name" data-i18n="hero.name">潦草虎皮AI说</h1>
 
-            <p class="hero__title-line" data-i18n="hero.titleLine">
-              Building AI systems from genuine curiosity
+            <p class="hero__slogan" data-i18n="hero.slogan">
+              先潦草再认真，探索和试错是专注的前提
             </p>
 
-            <p class="hero__bio" data-i18n-html="hero.bio">
-              I build <span class="text-highlight">TypeScript agents</span>,
-              <span class="text-highlight">LLM pipelines</span>, and
-              <span class="text-highlight">AI-powered tools</span> —
-              and I turn every hobby into a product. Vibe coding with Claude before it was cool.
+            <p class="hero__bio" data-i18n="hero.bio">
+              白天做 AI Agent 方案，业余用 AI 探索一切有趣的事——画科普漫画、用 Suno 写歌，还喜欢法语和法国文化。每个爱好最终都会变成一个开源项目。
             </p>
 
             <div class="hero__links" role="list">
+              <span class="social-link social-link--xhs" role="listitem">
+                小红书：潦草虎皮AI说
+              </span>
               <a href="https://github.com/hoopyAI" target="_blank" rel="noopener noreferrer"
                  class="social-link social-link--github" role="listitem">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
                 </svg>
                 GitHub
-              </a>
-              <a href="https://linkedin.com/in/hoopyai" target="_blank" rel="noopener noreferrer"
-                 class="social-link social-link--linkedin" role="listitem">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                </svg>
-                LinkedIn
-              </a>
-              <a href="mailto:hello@hoopyai.dev" class="social-link social-link--email" role="listitem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Email
               </a>
             </div>
           </div>

@@ -52,9 +52,9 @@
 
         // Hero
         'hero.name':      'HoopyAI',
-        'hero.eyebrow':   'AI Engineer · Personal Builder',
-        'hero.titleLine': 'Building AI systems from genuine curiosity',
-        'hero.bio':       'I build <span class="text-hl text-hl--cobalt">TypeScript agents</span>, <span class="text-hl text-hl--viridian">LLM pipelines</span>, and <span class="text-hl text-hl--violet">AI-powered tools</span> — and I turn every hobby into a product. Vibe coding with Claude before it was cool.',
+        'hero.eyebrow':   'AI Engineer · AI Explorer',
+        'hero.slogan':    'Start rough, then refine — exploration and trial-and-error are prerequisites for focus',
+        'hero.bio':       'AI Agent solutions by day, exploring everything interesting with AI by night — knowledge comics, Suno music, and a love for French language and culture. Every hobby eventually becomes an open-source project.',
         'hero.cta1':      'View Projects',
         'hero.cta2':      'Knowledge Hub',
 
@@ -197,9 +197,9 @@
 
         // Hero
         'hero.name':      '潦草虎皮AI说',
-        'hero.eyebrow':   'AI 工程师 · 个人建造者',
-        'hero.titleLine': '用好奇心驱动构建，用 AI 把每个爱好变成产品',
-        'hero.bio':       '我做 <span class="text-hl text-hl--cobalt">TypeScript Agent</span>、<span class="text-hl text-hl--viridian">LLM 应用</span>和<span class="text-hl text-hl--violet">AI 工具</span> —— 每个爱好都会变成一个产品。Claude 重度用户，vibe coding 先行者。',
+        'hero.eyebrow':   'AI 工程师 · AI 玩家',
+        'hero.slogan':    '先潦草再认真，探索和试错是专注的前提',
+        'hero.bio':       '白天做 AI Agent 方案，业余用 AI 探索一切有趣的事——画科普漫画、用 Suno 写歌，还喜欢法语和法国文化。每个爱好最终都会变成一个开源项目。',
         'hero.cta1':      '查看项目',
         'hero.cta2':      '知识库',
 
