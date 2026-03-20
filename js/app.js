@@ -89,14 +89,12 @@
 
         'home.projects.title': 'Featured Projects',
         'home.projects.viewAll': 'View all \u2192',
-        'home.projects.p1.desc': 'AI-powered French learning app \u2014 conversation practice and smart flashcards.',
-        'home.projects.p1.status': 'WIP',
-        'home.projects.p2.name': 'Content Creation SKILL',
-        'home.projects.p2.desc': 'Claude Code skill for structured Chinese social media content creation.',
+        'home.projects.p1.desc': 'AI knowledge comic creation Skill — turns complex topics into hand-drawn style comic pages.',
+        'home.projects.p1.status': 'Active',
+        'home.projects.p2.desc': 'Lifting knowledge and inspiration from Mind to Knowledge Base.',
         'home.projects.p2.status': 'Active',
-        'home.projects.p3.name': 'Chinese Poetry AI Tool',
-        'home.projects.p3.desc': 'AI companion for classical Chinese poetry \u2014 appreciation, analysis, and creation.',
-        'home.projects.p3.status': 'Planning',
+        'home.projects.p3.desc': 'Short-video creation assistant — voiceovers, subtitles, and translations from text.',
+        'home.projects.p3.status': 'Active',
 
         'home.knowledge.title': 'Knowledge Hub',
         'home.knowledge.viewAll': 'Explore more \u2192',
@@ -152,14 +150,12 @@
 
         'home.projects.title': '精选项目',
         'home.projects.viewAll': '查看全部 \u2192',
-        'home.projects.p1.desc': 'AI 驱动的法语学习应用 —— 对话练习和智能闪卡。',
-        'home.projects.p1.status': '开发中',
-        'home.projects.p2.name': '自媒体创作 SKILL',
-        'home.projects.p2.desc': '基于 Claude Code 的中文自媒体内容结构化创作工具。',
+        'home.projects.p1.desc': 'AI 知识图文创作 Skill —— 把复杂话题变成手绘风漫画页面。',
+        'home.projects.p1.status': '已上线',
+        'home.projects.p2.desc': '从思维到知识库的提炼器。',
         'home.projects.p2.status': '已上线',
-        'home.projects.p3.name': '中文古诗词 AI 工具',
-        'home.projects.p3.desc': '古诗词 AI 伴侣 —— 赏析、解读与创作。',
-        'home.projects.p3.status': '规划中',
+        'home.projects.p3.desc': '短视频创作助手 —— 从文本生成配音、字幕和翻译。',
+        'home.projects.p3.status': '已上线',
 
         'home.knowledge.title': '知识库',
         'home.knowledge.viewAll': '探索更多 \u2192',
@@ -1028,7 +1024,7 @@
         <p class="article-card__excerpt">${escHtml(excerpt)}</p>
       `;
 
-      const openArticle = () => ArticleModal.open(article);
+      const openArticle = () => { window.location.href = `post.html?id=${article.id}`; };
       el.addEventListener('click', openArticle);
       el.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openArticle(); }
@@ -1131,6 +1127,61 @@
   };
 
   /* -----------------------------------------------------------
+     ArticleReader — dedicated reading page for articles
+  ----------------------------------------------------------- */
+  const ArticleReader = {
+    async init() {
+      const container = document.getElementById('article-content');
+      if (!container) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id');
+      if (!articleId) {
+        container.innerHTML = '<p>Article not found.</p>';
+        return;
+      }
+
+      try {
+        const data = await Data.fetch(config.articlesPath);
+        const article = (data.articles || []).find(a => a.id === articleId);
+        if (!article) {
+          container.innerHTML = '<p>Article not found.</p>';
+          return;
+        }
+
+        const isZh = I18n.current === 'zh';
+        const title    = isZh ? (article.titleZh    || article.title)    : article.title;
+        const content  = isZh ? (article.contentZh   || article.content)  : article.content;
+        const readTime = isZh ? (article.readTimeZh  || article.readTime) : article.readTime;
+
+        document.title = `${title} — 潦草虎皮AI说`;
+
+        const tagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
+        const tagsHtml = (article.tags || [])
+          .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
+          .join('');
+
+        container.innerHTML = `
+          <a href="articles.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.9rem;color:var(--color-blue-dark);margin-bottom:var(--spacing-lg);text-decoration:none;">
+            ← ${isZh ? '返回文章列表' : 'Back to articles'}
+          </a>
+          <h1 style="font-size:2rem;font-weight:800;margin-bottom:0.75rem;line-height:1.3;">${escHtml(title)}</h1>
+          <div class="article-content__meta">
+            <time datetime="${article.date}">${formatDate(article.date)}</time>
+            <span>&middot;</span>
+            <span>${escHtml(readTime)}</span>
+          </div>
+          <div class="article-content__tags">${tagsHtml}</div>
+          <div class="article-content__body">${content}</div>
+        `;
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<p>Failed to load article: ${err.message}</p>`;
+      }
+    },
+  };
+
+  /* -----------------------------------------------------------
      Helpers
   ----------------------------------------------------------- */
   function getPages(topic) {
@@ -1210,8 +1261,13 @@
     }
 
     if (page === 'articles') {
-      ArticleModal.init();
-      Articles.init();
+      // Check if we're on the post reading page
+      const articleContent = document.getElementById('article-content');
+      if (articleContent) {
+        ArticleReader.init();
+      } else {
+        Articles.init();
+      }
     }
 
     if (page === 'projects') {

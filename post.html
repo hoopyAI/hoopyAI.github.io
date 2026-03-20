@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HoopyAI Articles — thoughts on AI engineering, vibe coding, and building in public.">
-  <title>Articles — HoopyAI</title>
+  <meta name="description" content="Article — 潦草虎皮AI说">
+  <title>Article — 潦草虎皮AI说</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="articles">
 
-  <!-- NAV: update in all pages -->
   <nav class="nav" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo" aria-label="HoopyAI home">
@@ -33,45 +32,13 @@
   </nav>
 
   <main>
-    <!-- Page Header — Blue + Purple wash -->
-    <header class="section--wc" style="padding: calc(var(--nav-h) + 72px) 0 52px;">
-      <div class="wc-blobs" aria-hidden="true">
-        <div class="wc-blob wc-blob--b wc-blob--feat-1"></div>
-        <div class="wc-blob wc-blob--a wc-blob--feat-2"></div>
-        <div class="wc-blob wc-blob--c wc-blob--know-2"></div>
-      </div>
-      <div class="container">
-        <p class="page-header__eyebrow reveal" data-i18n="page.articles.eyebrow">Blog</p>
-        <h1 class="page-header__title reveal reveal--delay-1"
-            data-i18n-html="page.articles.title">
-          <span class="grad-text">Articles</span>
-        </h1>
-        <p class="page-header__desc reveal reveal--delay-2" data-i18n="page.articles.desc">
-          Thoughts on AI engineering, vibe coding, and building in public —
-          written from the trenches of shipping real projects.
-        </p>
-      </div>
-    </header>
-
-    <!-- Articles section -->
-    <div class="main-content section--wc">
-      <div class="wc-blobs" aria-hidden="true">
-        <div class="wc-blob wc-blob--d wc-blob--feat-2" style="opacity:0.7;"></div>
-        <div class="wc-blob wc-blob--a wc-blob--about-1" style="opacity:0.5;"></div>
-      </div>
-
-      <div class="container">
-        <!-- Tag Filter Bar -->
-        <div class="filter-bar reveal" id="articles-filter-bar" role="group" aria-label="Filter by tag">
-          <!-- Populated by app.js -->
-        </div>
-
-        <!-- Article List -->
-        <div class="articles-grid" id="articles-grid" role="list" aria-label="Articles">
-          <!-- Populated by app.js -->
+    <article class="section" style="padding-top: calc(var(--nav-h) + 48px);">
+      <div class="container" style="max-width: 720px;">
+        <div id="article-content">
+          <div class="loading-spinner"><div class="spinner"></div></div>
         </div>
       </div>
-    </div>
+    </article>
   </main>
 
   <footer class="footer">
