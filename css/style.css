@@ -1198,6 +1198,13 @@ a:hover {
   color: var(--color-purple-dark);
 }
 
+.footer__cat {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* ── Modal ───────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed;

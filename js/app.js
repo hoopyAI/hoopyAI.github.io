@@ -108,7 +108,7 @@
         'connect.btn':   'Say hello',
 
         // Footer
-        'footer.copy': '© 2025 HoopyAI — crafted with ink &amp; inference',
+        'footer.copy': '© 2026 潦草虎皮AI说 — crafted with ink & inference',
 
         // Projects page
         'page.projects.eyebrow': 'Open Source',
@@ -246,7 +246,7 @@
         'connect.btn':   '发邮件',
 
         // Footer
-        'footer.copy': '© 2025 HoopyAI — 用墨水与推理构建',
+        'footer.copy': '© 2026 潦草虎皮AI说 — 用墨水与推理构建',
 
         // Projects page
         'page.projects.eyebrow': '开源项目',
