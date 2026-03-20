@@ -56,7 +56,7 @@
         'hero.slogan':    'Start rough, then refine — exploration and trial-and-error are prerequisites for focus',
         'hero.bio':       'AI Agent solutions by day, exploring everything interesting with AI by night — knowledge comics, Suno music, and a love for French language and culture. Every hobby eventually becomes an open-source project.',
         // Footer
-        'footer.copy': '© 2026 潦草虎皮AI说 — crafted with ink & inference',
+        'footer.copy': '© 2026 潦草虎皮AI说 — exploring everything interesting with AI',
 
         // Projects page
         'page.projects.eyebrow': 'Open Source',
@@ -117,7 +117,7 @@
         'hero.slogan':    '先潦草再认真，探索和试错是专注的前提',
         'hero.bio':       '白天做 AI Agent 方案，业余用 AI 探索一切有趣的事——画科普漫画、用 Suno 写歌，还喜欢法语和法国文化。每个爱好最终都会变成一个开源项目。',
         // Footer
-        'footer.copy': '© 2026 潦草虎皮AI说 — 用墨水与推理构建',
+        'footer.copy': '© 2026 潦草虎皮AI说 — 用 AI 探索一切有趣的事',
 
         // Projects page
         'page.projects.eyebrow': '开源项目',
