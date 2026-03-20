@@ -136,15 +136,8 @@
         // Homepage sections
         'home.articles.title': 'Latest Articles',
         'home.articles.viewAll': 'View all \u2192',
-        'home.articles.a1.title': 'Why I chose TypeScript to build AI Agents',
-        'home.articles.a1.tags': 'TypeScript, AI Agents',
-        'home.articles.a1.excerpt': 'Type safety, rich ecosystem, first-class async \u2014 why TypeScript is my weapon of choice for building production AI agent systems.',
-        'home.articles.a2.title': 'From scratch: Building a knowledge base with RAG',
-        'home.articles.a2.tags': 'RAG, LLM',
-        'home.articles.a2.excerpt': 'A practical guide to building a RAG-based knowledge base from zero \u2014 embedding strategies, chunking, retrieval optimization, and real-world pitfalls.',
-        'home.articles.a3.title': 'Vibe Coding practical guide',
-        'home.articles.a3.tags': 'Vibe Coding, Productivity',
-        'home.articles.a3.excerpt': 'How to develop in flow state with AI assistants \u2014 workflows, prompting strategies, and tips for staying in the zone while shipping fast.',
+        'home.articles.a1.title': 'From Idea to Comic: My AI Knowledge Post Creation Workflow',
+        'home.articles.a1.excerpt': 'How I use Claude Code + Gemini to turn AI topics into hand-drawn style knowledge comics \u2014 from topic research to publishing on Xiaohongshu.',
 
         'home.projects.title': 'Featured Projects',
         'home.projects.viewAll': 'View all \u2192',
@@ -166,7 +159,7 @@
         'home.knowledge.t4': 'AI Agents',
 
         'home.about.title': 'About',
-        'home.about.body': 'I\'m an <strong>AI engineer</strong> who came from software engineering \u2014 TypeScript-first, obsessed with what actually works in production. Every hobby becomes a product: learning French spawned a language learning app, loving classical poetry led to an AI poetry tool, and content creation became a Claude Code SKILL. <strong>Build in public, iterate in public.</strong>',
+        'home.about.body': '"Start rough, then refine \u2014 exploration and trial-and-error are prerequisites for focus." \u2014 Search "\u6f66\u8349\u864e\u76aeAI\u8bf4" on Xiaohongshu for more content.',
 
         'about.subtitle': 'Who I am & what I care about',
         'about.philosophy.title': 'Philosophy',
@@ -281,15 +274,8 @@
         // Homepage sections
         'home.articles.title': '最新文章',
         'home.articles.viewAll': '查看全部 \u2192',
-        'home.articles.a1.title': '为什么我选择 TypeScript 来构建 AI Agent',
-        'home.articles.a1.tags': 'TypeScript, AI Agent',
-        'home.articles.a1.excerpt': '类型安全、丰富生态、原生异步 —— 为什么 TypeScript 是我构建生产级 AI Agent 系统的首选武器。',
-        'home.articles.a2.title': '从零开始：用 RAG 构建知识库',
-        'home.articles.a2.tags': 'RAG, LLM',
-        'home.articles.a2.excerpt': '从零搭建基于 RAG 的知识库实战指南 —— 嵌入策略、分块方案、检索优化，以及真实场景中的坑。',
-        'home.articles.a3.title': 'Vibe Coding 实践指南',
-        'home.articles.a3.tags': 'Vibe Coding, 效率',
-        'home.articles.a3.excerpt': '如何与 AI 助手一起进入心流开发 —— 工作流、Prompt 策略，以及快速交付的同时保持专注的技巧。',
+        'home.articles.a1.title': '从想法到漫画：我的 AI 知识图文创作工作流',
+        'home.articles.a1.excerpt': '我如何用 Claude Code + Gemini 把 AI 话题变成达芬奇手绘风知识漫画——从选题研究到发布小红书的完整流程。',
 
         'home.projects.title': '精选项目',
         'home.projects.viewAll': '查看全部 \u2192',
@@ -311,7 +297,7 @@
         'home.knowledge.t4': 'AI Agent',
 
         'home.about.title': '关于',
-        'home.about.body': '我是一名<strong>AI 工程师</strong>，从软件工程走入 AI 领域 —— TypeScript 优先，执着于真正在生产环境中有效的东西。每个爱好都会变成一个产品：学法语催生了语言学习应用，爱古诗词导向了 AI 诗词工具，做内容变成了 Claude Code SKILL。<strong>公开构建，公开迭代。</strong>',
+        'home.about.body': '「先潦草再认真，探索和试错是专注的前提」—— 在小红书搜索「潦草虎皮AI说」查看更多内容。',
 
         'about.title': '关于',
         'about.subtitle': '我是谁，在乎什么',

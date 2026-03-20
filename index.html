@@ -485,33 +485,12 @@
       background: linear-gradient(135deg, rgba(125, 211, 252, 0.15), rgba(196, 181, 253, 0.2));
       border: 1px solid var(--border-light);
       transition: var(--transition-normal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .knowledge-thumb:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
       border-color: var(--color-purple);
-    }
-
-    .knowledge-thumb__placeholder {
-      text-align: center;
-      padding: var(--spacing-sm);
-    }
-
-    .knowledge-thumb__icon {
-      font-size: 2rem;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .knowledge-thumb__label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      line-height: 1.3;
     }
 
     .knowledge-preview__desc {
@@ -667,60 +646,30 @@
 
     <hr class="section-divider">
 
-    <!-- 2. Featured Articles -->
+    <!-- 2. Knowledge Hub Preview -->
     <section class="section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
-          <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
+          <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
+          <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
         </div>
 
-        <div class="article-preview-grid">
-          <!-- Article 1 -->
-          <a href="articles.html" class="card article-preview-card">
-            <h3 class="article-preview__title" data-i18n="home.articles.a1.title">Why I chose TypeScript to build AI Agents</h3>
-            <div class="article-preview__meta">
-              <time datetime="2026-03-15">2026-03-15</time>
-              <span>&middot;</span>
-              <span data-i18n="home.articles.a1.tags">TypeScript, AI Agents</span>
-            </div>
-            <p class="article-preview__excerpt" data-i18n="home.articles.a1.excerpt">Type safety, rich ecosystem, first-class async — why TypeScript is my weapon of choice for building production AI agent systems.</p>
-            <div class="article-preview__tags">
-              <span class="tag tag--blue">TypeScript</span>
-              <span class="tag">AI Agents</span>
-            </div>
+        <div class="knowledge-preview-grid">
+          <a href="knowledge.html" class="knowledge-thumb">
+            <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉" style="width:100%;height:100%;object-fit:cover;">
           </a>
-
-          <!-- Article 2 -->
-          <a href="articles.html" class="card article-preview-card">
-            <h3 class="article-preview__title" data-i18n="home.articles.a2.title">From scratch: Building a knowledge base with RAG</h3>
-            <div class="article-preview__meta">
-              <time datetime="2026-02-28">2026-02-28</time>
-              <span>&middot;</span>
-              <span data-i18n="home.articles.a2.tags">RAG, LLM</span>
-            </div>
-            <p class="article-preview__excerpt" data-i18n="home.articles.a2.excerpt">A practical guide to building a RAG-based knowledge base from zero — embedding strategies, chunking, retrieval optimization, and real-world pitfalls.</p>
-            <div class="article-preview__tags">
-              <span class="tag">RAG</span>
-              <span class="tag tag--green">LLM</span>
-            </div>
+          <a href="knowledge.html" class="knowledge-thumb">
+            <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP" style="width:100%;height:100%;object-fit:cover;">
           </a>
-
-          <!-- Article 3 -->
-          <a href="articles.html" class="card article-preview-card">
-            <h3 class="article-preview__title" data-i18n="home.articles.a3.title">Vibe Coding practical guide</h3>
-            <div class="article-preview__meta">
-              <time datetime="2026-02-10">2026-02-10</time>
-              <span>&middot;</span>
-              <span data-i18n="home.articles.a3.tags">Vibe Coding, Productivity</span>
-            </div>
-            <p class="article-preview__excerpt" data-i18n="home.articles.a3.excerpt">How to develop in flow state with AI assistants — workflows, prompting strategies, and tips for staying in the zone while shipping fast.</p>
-            <div class="article-preview__tags">
-              <span class="tag tag--yellow">Vibe Coding</span>
-              <span class="tag">Productivity</span>
-            </div>
+          <a href="knowledge.html" class="knowledge-thumb">
+            <img src="images/topics/rag/img-1.webp" alt="RAG 全解析" style="width:100%;height:100%;object-fit:cover;">
+          </a>
+          <a href="knowledge.html" class="knowledge-thumb">
+            <img src="images/topics/token/img-1.webp" alt="什么是 Token" style="width:100%;height:100%;object-fit:cover;">
           </a>
         </div>
+
+        <p class="knowledge-preview__desc" data-i18n="home.knowledge.desc">AI concept comics — visual explainers for AI technology with AI-generated illustrations and the prompts behind them.</p>
       </div>
     </section>
 
@@ -764,42 +713,30 @@
 
     <hr class="section-divider">
 
-    <!-- 4. Knowledge Hub Preview -->
+    <!-- 4. Latest Articles -->
     <section class="section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
-          <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
+          <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
+          <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
         </div>
 
-        <div class="knowledge-preview-grid">
-          <a href="knowledge.html" class="knowledge-thumb">
-            <div class="knowledge-thumb__placeholder">
-              <span class="knowledge-thumb__icon">🧠</span>
-              <span class="knowledge-thumb__label" data-i18n="home.knowledge.t1">Neural Networks</span>
+        <div class="article-preview-grid">
+          <a href="articles.html" class="card article-preview-card">
+            <div class="article-preview__tags">
+              <span class="tag">workflow</span>
+              <span class="tag tag--blue">claude-code</span>
+              <span class="tag tag--yellow">ai-art</span>
             </div>
-          </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <div class="knowledge-thumb__placeholder">
-              <span class="knowledge-thumb__icon">🔄</span>
-              <span class="knowledge-thumb__label" data-i18n="home.knowledge.t2">Transformers</span>
+            <h3 class="article-preview__title" data-i18n="home.articles.a1.title">From Idea to Comic: My AI Knowledge Post Creation Workflow</h3>
+            <div class="article-preview__meta">
+              <time datetime="2026-03-20">2026-03-20</time>
+              <span>&middot;</span>
+              <span>10 min</span>
             </div>
-          </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <div class="knowledge-thumb__placeholder">
-              <span class="knowledge-thumb__icon">🎨</span>
-              <span class="knowledge-thumb__label" data-i18n="home.knowledge.t3">Diffusion Models</span>
-            </div>
-          </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <div class="knowledge-thumb__placeholder">
-              <span class="knowledge-thumb__icon">🤖</span>
-              <span class="knowledge-thumb__label" data-i18n="home.knowledge.t4">AI Agents</span>
-            </div>
+            <p class="article-preview__excerpt" data-i18n="home.articles.a1.excerpt">How I use Claude Code + Gemini to turn AI topics into hand-drawn style knowledge comics — from topic research to publishing on Xiaohongshu.</p>
           </a>
         </div>
-
-        <p class="knowledge-preview__desc" data-i18n="home.knowledge.desc">AI concept comics — visual explainers for AI technology with AI-generated illustrations and the prompts behind them.</p>
       </div>
     </section>
 
@@ -812,9 +749,7 @@
           <h2 class="section__title" data-i18n="home.about.title">About</h2>
         </div>
 
-        <p class="about-brief" data-i18n-html="home.about.body">
-          I'm an <strong>AI engineer</strong> who came from software engineering — TypeScript-first, obsessed with what actually works in production. Every hobby becomes a product: learning French spawned a language learning app, loving classical poetry led to an AI poetry tool, and content creation became a Claude Code SKILL. <strong>Build in public, iterate in public.</strong>
-        </p>
+        <p class="about-brief" data-i18n="home.about.body">「先潦草再认真，探索和试错是专注的前提」—— 在小红书搜索「潦草虎皮AI说」查看更多内容。</p>
       </div>
     </section>
   </main>
