@@ -346,6 +346,13 @@
       box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
     }
 
+    /* Dashboard grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+    }
+
     /* Article Cards */
     .article-preview-card {
       display: block;
@@ -358,7 +365,7 @@
     }
 
     .article-preview__title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: var(--spacing-xs);
@@ -369,16 +376,16 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-      margin-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-xs);
     }
 
     .article-preview__excerpt {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
       line-height: 1.6;
-      margin-bottom: var(--spacing-sm);
+      margin: 0;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -389,6 +396,7 @@
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
+      margin-bottom: var(--spacing-xs);
     }
 
     .tag {
@@ -406,116 +414,84 @@
     .tag--yellow { background: rgba(253, 230, 138, 0.2); color: var(--color-yellow-dark); }
     .tag--green { background: rgba(22, 163, 74, 0.1); color: var(--color-green-dark); }
 
-    /* Project Cards */
-    .project-preview-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-md);
+    /* Project rows (compact list) */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-    .project-preview-card {
-      display: block;
+    .project-row {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) 0;
+      border-bottom: 1px solid var(--border-light);
       text-decoration: none;
       color: inherit;
+      transition: var(--transition-fast);
     }
 
-    .project-preview-card:hover { color: inherit; }
+    .project-row:last-child { border-bottom: none; }
 
-    .project-preview__icon {
-      font-size: 1.75rem;
-      margin-bottom: var(--spacing-sm);
+    .project-row:hover {
+      color: var(--color-purple-dark);
     }
 
-    .project-preview__name {
-      font-size: 1rem;
+    .project-row__icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      width: 32px;
+      text-align: center;
+    }
+
+    .project-row__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .project-row__name {
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 4px;
     }
 
-    .project-preview__desc {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      margin-bottom: var(--spacing-sm);
-    }
-
-    /* Status Badges */
-    .status-badge {
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .status-badge--wip {
-      background: rgba(253, 230, 138, 0.2);
-      color: var(--color-yellow-dark);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-    }
-
-    .status-badge--active {
-      background: rgba(125, 211, 252, 0.2);
-      color: var(--color-blue-dark);
-      border: 1px solid rgba(14, 165, 233, 0.3);
-    }
-
-    .status-badge--planning {
-      background: rgba(196, 181, 253, 0.2);
+    .project-row:hover .project-row__name {
       color: var(--color-purple-dark);
-      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
-    /* Knowledge Preview Grid */
-    .knowledge-preview-grid {
+    .project-row__desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Knowledge strip (compact horizontal) */
+    .knowledge-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-md);
-      margin-bottom: var(--spacing-md);
+      gap: var(--spacing-sm);
     }
 
-    .knowledge-thumb {
+    .knowledge-strip__thumb {
       aspect-ratio: 3/4;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-sm);
       overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, rgba(125, 211, 252, 0.15), rgba(196, 181, 253, 0.2));
       border: 1px solid var(--border-light);
       transition: var(--transition-normal);
     }
 
-    .knowledge-thumb:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+    .knowledge-strip__thumb:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.12);
       border-color: var(--color-purple);
     }
 
-    .knowledge-preview__desc {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* About section */
-    .about-brief {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 640px;
-    }
-
-    .about-brief strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    /* Article grid */
-    .article-preview-grid {
-      display: grid;
-      gap: var(--spacing-md);
+    .knowledge-strip__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* Footer */
@@ -568,14 +544,14 @@
       .hero__links { justify-content: center; }
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
-      .project-preview-cards { grid-template-columns: 1fr; }
-      .knowledge-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .knowledge-strip { grid-template-columns: repeat(4, 1fr); }
       .section__header { flex-direction: column; gap: var(--spacing-xs); }
       .footer__inner { flex-direction: column; gap: var(--spacing-sm); text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .knowledge-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .knowledge-strip { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -643,88 +619,84 @@
       </div>
     </section>
 
-    <!-- 2. Knowledge Hub Preview -->
-    <section class="section section--alt">
+    <!-- Dashboard: Article + Projects side by side -->
+    <section class="section">
+      <div class="container">
+        <div class="dashboard-grid">
+          <!-- Left: Latest Article -->
+          <div class="dashboard-col">
+            <div class="section__header">
+              <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
+              <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
+            </div>
+            <a href="/post.html?id=creation-workflow" class="card article-preview-card">
+              <div class="article-preview__tags">
+                <span class="tag">workflow</span>
+                <span class="tag tag--blue">claude-code</span>
+              </div>
+              <h3 class="article-preview__title" data-i18n="home.articles.a1.title">From Idea to Comic: My AI Knowledge Post Creation Workflow</h3>
+              <div class="article-preview__meta">
+                <time datetime="2026-03-20">2026-03-20</time>
+                <span>&middot;</span>
+                <span>10 min</span>
+              </div>
+              <p class="article-preview__excerpt" data-i18n="home.articles.a1.excerpt">How I use Claude Code + Gemini to turn AI topics into hand-drawn style knowledge comics.</p>
+            </a>
+          </div>
+
+          <!-- Right: Projects -->
+          <div class="dashboard-col">
+            <div class="section__header">
+              <h2 class="section__title" data-i18n="home.projects.title">Featured Projects</h2>
+              <a href="projects.html" class="section__view-all" data-i18n="home.projects.viewAll">View all &rarr;</a>
+            </div>
+            <div class="project-list">
+              <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="project-row">
+                <span class="project-row__icon">🎨</span>
+                <div class="project-row__info">
+                  <span class="project-row__name">Sketch Post</span>
+                  <span class="project-row__desc" data-i18n="home.projects.p1.desc">AI knowledge comic creation Skill</span>
+                </div>
+              </a>
+              <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="project-row">
+                <span class="project-row__icon">💡</span>
+                <div class="project-row__info">
+                  <span class="project-row__name">MindLift</span>
+                  <span class="project-row__desc" data-i18n="home.projects.p2.desc">Knowledge and inspiration distiller</span>
+                </div>
+              </a>
+              <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="project-row">
+                <span class="project-row__icon">🎬</span>
+                <div class="project-row__info">
+                  <span class="project-row__name">Voice Your Video</span>
+                  <span class="project-row__desc" data-i18n="home.projects.p3.desc">Short-video creation assistant</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Knowledge Hub: compact strip -->
+    <section class="section section--alt" style="padding: var(--spacing-xl) 0;">
       <div class="container">
         <div class="section__header">
           <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
           <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
         </div>
-
-        <div class="knowledge-preview-grid">
-          <a href="knowledge.html" class="knowledge-thumb">
-            <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉" style="width:100%;height:100%;object-fit:cover;">
+        <div class="knowledge-strip">
+          <a href="knowledge.html" class="knowledge-strip__thumb">
+            <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
           </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP" style="width:100%;height:100%;object-fit:cover;">
+          <a href="knowledge.html" class="knowledge-strip__thumb">
+            <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
           </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <img src="images/topics/rag/img-1.webp" alt="RAG 全解析" style="width:100%;height:100%;object-fit:cover;">
+          <a href="knowledge.html" class="knowledge-strip__thumb">
+            <img src="images/topics/rag/img-1.webp" alt="RAG 全解析">
           </a>
-          <a href="knowledge.html" class="knowledge-thumb">
-            <img src="images/topics/token/img-1.webp" alt="什么是 Token" style="width:100%;height:100%;object-fit:cover;">
-          </a>
-        </div>
-
-        <p class="knowledge-preview__desc" data-i18n="home.knowledge.desc">AI concept comics — visual explainers for AI technology with AI-generated illustrations and the prompts behind them.</p>
-      </div>
-    </section>
-
-    <!-- 3. Latest Articles -->
-    <section class="section">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
-          <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
-        </div>
-
-        <div class="article-preview-grid">
-          <a href="/post.html?id=creation-workflow" class="card article-preview-card">
-            <div class="article-preview__tags">
-              <span class="tag">workflow</span>
-              <span class="tag tag--blue">claude-code</span>
-              <span class="tag tag--yellow">ai-art</span>
-            </div>
-            <h3 class="article-preview__title" data-i18n="home.articles.a1.title">From Idea to Comic: My AI Knowledge Post Creation Workflow</h3>
-            <div class="article-preview__meta">
-              <time datetime="2026-03-20">2026-03-20</time>
-              <span>&middot;</span>
-              <span>10 min</span>
-            </div>
-            <p class="article-preview__excerpt" data-i18n="home.articles.a1.excerpt">How I use Claude Code + Gemini to turn AI topics into hand-drawn style knowledge comics — from topic research to publishing on Xiaohongshu.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Featured Projects -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="home.projects.title">Featured Projects</h2>
-          <a href="projects.html" class="section__view-all" data-i18n="home.projects.viewAll">View all &rarr;</a>
-        </div>
-
-        <div class="project-preview-cards">
-          <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="card project-preview-card">
-            <div class="project-preview__icon">🎨</div>
-            <div class="project-preview__name">Sketch Post</div>
-            <p class="project-preview__desc" data-i18n="home.projects.p1.desc">AI knowledge comic creation Skill — turns complex topics into hand-drawn style comic pages.</p>
-            <span class="status-badge status-badge--active" data-i18n="home.projects.p1.status">Active</span>
-          </a>
-
-          <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="card project-preview-card">
-            <div class="project-preview__icon">💡</div>
-            <div class="project-preview__name">MindLift</div>
-            <p class="project-preview__desc" data-i18n="home.projects.p2.desc">Lifting knowledge and inspiration from Mind to Knowledge Base.</p>
-            <span class="status-badge status-badge--active" data-i18n="home.projects.p2.status">Active</span>
-          </a>
-
-          <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="card project-preview-card">
-            <div class="project-preview__icon">🎬</div>
-            <div class="project-preview__name">Voice Your Video</div>
-            <p class="project-preview__desc" data-i18n="home.projects.p3.desc">Short-video creation assistant — voiceovers, subtitles, and translations from text.</p>
-            <span class="status-badge status-badge--active" data-i18n="home.projects.p3.status">Active</span>
+          <a href="knowledge.html" class="knowledge-strip__thumb">
+            <img src="images/topics/token/img-1.webp" alt="什么是 Token">
           </a>
         </div>
       </div>

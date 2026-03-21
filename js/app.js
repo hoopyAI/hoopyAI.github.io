@@ -89,12 +89,9 @@
 
         'home.projects.title': 'Featured Projects',
         'home.projects.viewAll': 'View all \u2192',
-        'home.projects.p1.desc': 'AI knowledge comic creation Skill — turns complex topics into hand-drawn style comic pages.',
-        'home.projects.p1.status': 'Active',
-        'home.projects.p2.desc': 'Lifting knowledge and inspiration from Mind to Knowledge Base.',
-        'home.projects.p2.status': 'Active',
-        'home.projects.p3.desc': 'Short-video creation assistant — voiceovers, subtitles, and translations from text.',
-        'home.projects.p3.status': 'Active',
+        'home.projects.p1.desc': 'AI knowledge comic creation Skill',
+        'home.projects.p2.desc': 'Knowledge and inspiration distiller',
+        'home.projects.p3.desc': 'Short-video creation assistant',
 
         'home.knowledge.title': 'Knowledge Hub',
         'home.knowledge.viewAll': 'Explore more \u2192',
@@ -150,12 +147,9 @@
 
         'home.projects.title': '精选项目',
         'home.projects.viewAll': '查看全部 \u2192',
-        'home.projects.p1.desc': 'AI 知识图文创作 Skill —— 把复杂话题变成手绘风漫画页面。',
-        'home.projects.p1.status': '已上线',
-        'home.projects.p2.desc': '从思维到知识库的提炼器。',
-        'home.projects.p2.status': '已上线',
-        'home.projects.p3.desc': '短视频创作助手 —— 从文本生成配音、字幕和翻译。',
-        'home.projects.p3.status': '已上线',
+        'home.projects.p1.desc': 'AI 知识图文创作 Skill',
+        'home.projects.p2.desc': '知识与灵感提炼器',
+        'home.projects.p3.desc': '短视频创作助手',
 
         'home.knowledge.title': '知识库',
         'home.knowledge.viewAll': '探索更多 \u2192',
