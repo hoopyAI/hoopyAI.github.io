@@ -334,7 +334,7 @@
         this.gridEl.innerHTML = `
           <div class="empty-state">
             <p class="empty-state__title">Could not load topics</p>
-            <p>${err.message}</p>
+            <p>${escHtml(err.message)}</p>
           </div>`;
       }
     },
@@ -524,7 +524,7 @@
         this.gridEl.innerHTML = `
           <div class="empty-state">
             <p class="empty-state__title">Could not load projects</p>
-            <p>${err.message}</p>
+            <p>${escHtml(err.message)}</p>
           </div>`;
       }
     },
@@ -888,7 +888,7 @@
         this.gridEl.innerHTML = `
           <div class="empty-state">
             <p class="empty-state__title">Could not load articles</p>
-            <p>${err.message}</p>
+            <p>${escHtml(err.message)}</p>
           </div>`;
       }
     },
@@ -1029,98 +1029,6 @@
   };
 
   /* -----------------------------------------------------------
-     ArticleModal — reading overlay for articles
-  ----------------------------------------------------------- */
-  const ArticleModal = {
-    overlayEl: null,
-    modalEl:   null,
-    prevFocus: null,
-
-    init() {
-      this.overlayEl = document.getElementById('modal-overlay');
-      if (!this.overlayEl) return;
-      this.modalEl = this.overlayEl.querySelector('.modal');
-
-      this.overlayEl.addEventListener('click', (e) => {
-        if (e.target === this.overlayEl) this.close();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!this.overlayEl.classList.contains('is-open')) return;
-        if (e.key === 'Escape') this.close();
-        if (e.key === 'Tab') this.trapFocus(e);
-      });
-
-      const closeBtn = this.overlayEl.querySelector('.modal__close');
-      if (closeBtn) closeBtn.addEventListener('click', () => this.close());
-    },
-
-    open(article) {
-      if (!this.overlayEl) return;
-      const isZh = I18n.current === 'zh';
-
-      this.prevFocus = document.activeElement;
-      document.body.style.overflow = 'hidden';
-
-      const title    = isZh ? (article.titleZh    || article.title)    : article.title;
-      const content  = isZh ? (article.contentZh   || article.content)  : article.content;
-      const readTime = isZh ? (article.readTimeZh  || article.readTime) : article.readTime;
-
-      const tagColors = ['tag--cobalt', 'tag--viridian', 'tag--violet', 'tag--ochre', ''];
-      const tagsHtml = (article.tags || [])
-        .map((t, i) => `<span class="tag ${tagColors[i % tagColors.length]}">${t}</span>`)
-        .join('');
-
-      const titleEl = this.overlayEl.querySelector('.modal__title');
-      const bodyEl  = this.overlayEl.querySelector('.modal__body');
-      if (titleEl) titleEl.textContent = title;
-
-      bodyEl.innerHTML = `
-        <div class="article-content">
-          <div class="article-content__meta">
-            <time datetime="${article.date}">${formatDate(article.date)}</time>
-            <span>&middot;</span>
-            <span>${escHtml(readTime)}</span>
-          </div>
-          <div class="article-content__tags">${tagsHtml}</div>
-          <div class="article-content__body">${content}</div>
-        </div>
-      `;
-
-      this.overlayEl.classList.add('is-open');
-      this.overlayEl.setAttribute('aria-hidden', 'false');
-
-      const closeBtn = this.overlayEl.querySelector('.modal__close');
-      if (closeBtn) closeBtn.focus();
-      if (this.modalEl) this.modalEl.scrollTop = 0;
-    },
-
-    close() {
-      if (!this.overlayEl) return;
-      this.overlayEl.classList.remove('is-open');
-      this.overlayEl.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (this.prevFocus) this.prevFocus.focus();
-    },
-
-    trapFocus(e) {
-      const focusable = this.modalEl.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const first = focusable[0];
-      const last  = focusable[focusable.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    },
-  };
-
-  /* -----------------------------------------------------------
      ArticleReader — dedicated reading page for articles
   ----------------------------------------------------------- */
   const ArticleReader = {
@@ -1223,18 +1131,6 @@
     return `<svg class="btn--icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
       <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-    </svg>`;
-  }
-
-  function iconCopy() {
-    return `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-    </svg>`;
-  }
-
-  function iconCheck() {
-    return `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-      <polyline points="20 6 9 17 4 12"/>
     </svg>`;
   }
 
