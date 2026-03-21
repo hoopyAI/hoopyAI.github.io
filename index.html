@@ -346,140 +346,119 @@
       box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
     }
 
-    /* Dashboard grid */
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-xl);
-    }
-
-    /* Article Cards */
-    .article-preview-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .article-preview-card:hover {
-      color: inherit;
-    }
-
-    .article-preview__title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: var(--spacing-xs);
-      line-height: 1.4;
-    }
-
-    .article-preview__meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .article-preview__excerpt {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
+    /* Marquee strip */
+    .marquee-strip {
       overflow: hidden;
+      padding: 14px 0;
+      background: var(--bg-alt);
     }
-
-    .article-preview__tags {
+    .marquee-track {
       display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: var(--spacing-xs);
+      gap: 10px;
+      animation: marquee 35s linear infinite;
+      width: max-content;
     }
-
-    .tag {
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      border-radius: 4px;
-      background: rgba(196, 181, 253, 0.12);
-      color: var(--color-purple-dark);
-      letter-spacing: 0.02em;
-    }
-
-    .tag--blue { background: rgba(125, 211, 252, 0.15); color: var(--color-blue-dark); }
-    .tag--yellow { background: rgba(253, 230, 138, 0.2); color: var(--color-yellow-dark); }
-    .tag--green { background: rgba(22, 163, 74, 0.1); color: var(--color-green-dark); }
-
-    /* Knowledge mini grid (inside dashboard) */
-    .knowledge-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .knowledge-mini__thumb {
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-      transition: var(--transition-normal);
-    }
-
-    .knowledge-mini__thumb:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
-      border-color: var(--color-purple);
-    }
-
-    .knowledge-mini__thumb img {
-      width: 100%;
-      height: 100%;
+    .marquee-track img {
+      height: 110px;
+      border-radius: 8px;
       object-fit: cover;
-      display: block;
+      aspect-ratio: 3/4;
+      border: 1px solid var(--border-light);
+      transition: transform 0.2s;
+    }
+    .marquee-track img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
-    /* Project cards (with descriptions) */
-    .project-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-md);
-    }
-
-    .project-card-compact {
+    /* Article row card */
+    .article-row-card {
       display: block;
       text-decoration: none;
       color: inherit;
-      padding: var(--spacing-md);
+      padding: 16px 20px;
     }
-
-    .project-card-compact:hover { color: inherit; }
-
-    .project-card-compact__header {
+    .article-row-card:hover { color: inherit; }
+    .article-row-card__inner {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
+      justify-content: space-between;
+      gap: 24px;
     }
-
-    .project-card-compact__icon {
-      font-size: 1.25rem;
+    .article-row-card__tags {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 6px;
     }
-
-    .project-card-compact__name {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
+    .tag-sm {
+      font-size: 0.6rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(14, 165, 233, 0.08);
+      color: var(--color-blue-dark);
+      font-weight: 500;
     }
-
-    .project-card-compact:hover .project-card-compact__name {
+    .tag-sm--purple {
+      background: rgba(139, 92, 246, 0.08);
       color: var(--color-purple-dark);
     }
+    .article-row-card__title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .article-row-card:hover .article-row-card__title {
+      color: var(--color-blue-dark);
+    }
+    .article-row-card__meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .article-row-card__arrow {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .article-row-card:hover .article-row-card__arrow {
+      transform: translateX(4px);
+      color: var(--color-blue-dark);
+    }
 
-    .project-card-compact__desc {
+    /* Project cards - larger */
+    .project-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .project-card-lg {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 20px;
+    }
+    .project-card-lg:hover { color: inherit; }
+    .project-card-lg__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .project-card-lg__icon {
+      font-size: 1.4rem;
+    }
+    .project-card-lg__name {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .project-card-lg:hover .project-card-lg__name {
+      color: var(--color-purple-dark);
+    }
+    .project-card-lg__desc {
       font-size: 0.82rem;
       color: var(--text-secondary);
       line-height: 1.6;
@@ -536,15 +515,14 @@
       .hero__links { justify-content: center; }
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
-      .dashboard-grid { grid-template-columns: 1fr; }
-      .project-cards { grid-template-columns: 1fr; }
-      .knowledge-mini-grid { grid-template-columns: repeat(4, 1fr); }
+      .project-cards-row { grid-template-columns: 1fr; }
+      .article-row-card__arrow { display: none; }
       .section__header { flex-direction: column; gap: var(--spacing-xs); }
       .footer__inner { flex-direction: column; gap: var(--spacing-sm); text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .knowledge-mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-cards-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -612,50 +590,50 @@
       </div>
     </section>
 
-    <!-- Dashboard: Article + Projects side by side -->
+    <!-- Marquee: knowledge comic covers -->
+    <a href="knowledge.html" style="text-decoration:none; display:block;">
+      <div class="marquee-strip">
+        <div class="marquee-track">
+          <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
+          <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
+          <img src="images/topics/rag/img-1.webp" alt="RAG 全解析">
+          <img src="images/topics/token/img-1.webp" alt="什么是 Token">
+          <img src="images/topics/hallucination/img-3.webp" alt="">
+          <img src="images/topics/mcp/img-3.webp" alt="">
+          <img src="images/topics/rag/img-3.webp" alt="">
+          <img src="images/topics/token/img-3.webp" alt="">
+          <img src="images/topics/hallucination/img-1.webp" alt="">
+          <img src="images/topics/mcp/img-1.webp" alt="">
+          <img src="images/topics/rag/img-1.webp" alt="">
+          <img src="images/topics/token/img-1.webp" alt="">
+          <img src="images/topics/hallucination/img-3.webp" alt="">
+          <img src="images/topics/mcp/img-3.webp" alt="">
+          <img src="images/topics/rag/img-3.webp" alt="">
+          <img src="images/topics/token/img-3.webp" alt="">
+        </div>
+      </div>
+    </a>
+
+    <!-- Latest Articles -->
     <section class="section">
       <div class="container">
-        <div class="dashboard-grid">
-          <!-- Left: Latest Article -->
-          <div class="dashboard-col">
-            <div class="section__header">
-              <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
-              <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
-            </div>
-            <a href="/post.html?id=creation-workflow" class="card article-preview-card">
-              <div class="article-preview__tags">
-                <span class="tag">workflow</span>
-                <span class="tag tag--blue">claude-code</span>
-              </div>
-              <h3 class="article-preview__title" data-i18n="home.articles.a1.title">From Idea to Comic: My AI Knowledge Post Creation Workflow</h3>
-              <div class="article-preview__meta">
-                <time datetime="2026-03-20">2026-03-20</time>
-                <span>&middot;</span>
-                <span>10 min</span>
-              </div>
-              <p class="article-preview__excerpt" data-i18n="home.articles.a1.excerpt">How I use Claude Code + Gemini to turn AI topics into hand-drawn style knowledge comics.</p>
-            </a>
-          </div>
-
-          <!-- Right: Knowledge Hub mini -->
-          <div class="dashboard-col">
-            <div class="section__header">
-              <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
-              <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
-            </div>
-            <div class="knowledge-mini-grid">
-              <a href="knowledge.html" class="knowledge-mini__thumb">
-                <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
-              </a>
-              <a href="knowledge.html" class="knowledge-mini__thumb">
-                <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
-              </a>
-              <a href="knowledge.html" class="knowledge-mini__thumb">
-                <img src="images/topics/token/img-1.webp" alt="什么是 Token">
-              </a>
-            </div>
-          </div>
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="home.articles.title">Latest Articles</h2>
+          <a href="articles.html" class="section__view-all" data-i18n="home.articles.viewAll">View all &rarr;</a>
         </div>
+        <a href="/post.html?id=creation-workflow" class="card article-row-card">
+          <div class="article-row-card__inner">
+            <div>
+              <div class="article-row-card__tags">
+                <span class="tag-sm">workflow</span>
+                <span class="tag-sm tag-sm--purple">claude-code</span>
+              </div>
+              <h3 class="article-row-card__title" data-i18n="home.articles.a1.title">From Idea to Comic: My AI Knowledge Post Creation Workflow</h3>
+              <div class="article-row-card__meta">2026-03-20 · 10 min</div>
+            </div>
+            <span class="article-row-card__arrow">&rarr;</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -666,27 +644,27 @@
           <h2 class="section__title" data-i18n="home.projects.title">Featured Projects</h2>
           <a href="projects.html" class="section__view-all" data-i18n="home.projects.viewAll">View all &rarr;</a>
         </div>
-        <div class="project-cards">
-          <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
-            <div class="project-card-compact__header">
-              <span class="project-card-compact__icon">🎨</span>
-              <span class="project-card-compact__name">Sketch Post</span>
+        <div class="project-cards-row">
+          <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="card project-card-lg">
+            <div class="project-card-lg__header">
+              <span class="project-card-lg__icon">🎨</span>
+              <span class="project-card-lg__name">Sketch Post</span>
             </div>
-            <p class="project-card-compact__desc" data-i18n="home.projects.p1.desc">AI 知识图文创作 Skill——把复杂 AI 话题变成达芬奇手绘风漫画，支持 Claude Code、Cursor、Gemini CLI 等多平台。</p>
+            <p class="project-card-lg__desc" data-i18n="home.projects.p1.desc">AI knowledge comic Skill</p>
           </a>
-          <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
-            <div class="project-card-compact__header">
-              <span class="project-card-compact__icon">💡</span>
-              <span class="project-card-compact__name">MindLift</span>
+          <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="card project-card-lg">
+            <div class="project-card-lg__header">
+              <span class="project-card-lg__icon">💡</span>
+              <span class="project-card-lg__name">MindLift</span>
             </div>
-            <p class="project-card-compact__desc" data-i18n="home.projects.p2.desc">从零散的笔记、对话和灵感中提取知识，组织成结构化的知识库。</p>
+            <p class="project-card-lg__desc" data-i18n="home.projects.p2.desc">Knowledge distiller</p>
           </a>
-          <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
-            <div class="project-card-compact__header">
-              <span class="project-card-compact__icon">🎬</span>
-              <span class="project-card-compact__name">Voice Your Video</span>
+          <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="card project-card-lg">
+            <div class="project-card-lg__header">
+              <span class="project-card-lg__icon">🎬</span>
+              <span class="project-card-lg__name">Voice Your Video</span>
             </div>
-            <p class="project-card-compact__desc" data-i18n="home.projects.p3.desc">短视频创作助手——从文本一键生成配音、字幕时间线和多语言翻译字幕。</p>
+            <p class="project-card-lg__desc" data-i18n="home.projects.p3.desc">Video creation assistant</p>
           </a>
         </div>
       </div>
