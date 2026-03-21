@@ -89,9 +89,9 @@
 
         'home.projects.title': 'Featured Projects',
         'home.projects.viewAll': 'View all \u2192',
-        'home.projects.p1.desc': 'AI knowledge comic creation Skill',
-        'home.projects.p2.desc': 'Knowledge and inspiration distiller',
-        'home.projects.p3.desc': 'Short-video creation assistant',
+        'home.projects.p1.desc': 'AI knowledge comic creation Skill — turns complex AI topics into Da Vinci hand-drawn style comics. Works with Claude Code, Cursor, Gemini CLI, and more.',
+        'home.projects.p2.desc': 'Extract insights from scattered notes, conversations, and ideas into a structured knowledge base.',
+        'home.projects.p3.desc': 'Short-video creation assistant — generate voiceovers, subtitle timelines, and multilingual captions from text.',
 
         'home.knowledge.title': 'Knowledge Hub',
         'home.knowledge.viewAll': 'Explore more \u2192',
@@ -147,9 +147,9 @@
 
         'home.projects.title': '精选项目',
         'home.projects.viewAll': '查看全部 \u2192',
-        'home.projects.p1.desc': 'AI 知识图文创作 Skill',
-        'home.projects.p2.desc': '知识与灵感提炼器',
-        'home.projects.p3.desc': '短视频创作助手',
+        'home.projects.p1.desc': 'AI 知识图文创作 Skill——把复杂 AI 话题变成达芬奇手绘风漫画，支持 Claude Code、Cursor、Gemini CLI 等多平台。',
+        'home.projects.p2.desc': '从零散的笔记、对话和灵感中提取知识，组织成结构化的知识库。',
+        'home.projects.p3.desc': '短视频创作助手——从文本一键生成配音、字幕时间线和多语言翻译字幕。',
 
         'home.knowledge.title': '知识库',
         'home.knowledge.viewAll': '探索更多 \u2192',

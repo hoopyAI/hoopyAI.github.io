@@ -414,66 +414,14 @@
     .tag--yellow { background: rgba(253, 230, 138, 0.2); color: var(--color-yellow-dark); }
     .tag--green { background: rgba(22, 163, 74, 0.1); color: var(--color-green-dark); }
 
-    /* Project rows (compact list) */
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .project-row {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      padding: var(--spacing-sm) 0;
-      border-bottom: 1px solid var(--border-light);
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition-fast);
-    }
-
-    .project-row:last-child { border-bottom: none; }
-
-    .project-row:hover {
-      color: var(--color-purple-dark);
-    }
-
-    .project-row__icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-      width: 32px;
-      text-align: center;
-    }
-
-    .project-row__info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .project-row__name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .project-row:hover .project-row__name {
-      color: var(--color-purple-dark);
-    }
-
-    .project-row__desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* Knowledge strip (compact horizontal) */
-    .knowledge-strip {
+    /* Knowledge mini grid (inside dashboard) */
+    .knowledge-mini-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-sm);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
     }
 
-    .knowledge-strip__thumb {
+    .knowledge-mini__thumb {
       aspect-ratio: 3/4;
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -481,17 +429,61 @@
       transition: var(--transition-normal);
     }
 
-    .knowledge-strip__thumb:hover {
+    .knowledge-mini__thumb:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.12);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
       border-color: var(--color-purple);
     }
 
-    .knowledge-strip__thumb img {
+    .knowledge-mini__thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    /* Project cards (with descriptions) */
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+    }
+
+    .project-card-compact {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: var(--spacing-md);
+    }
+
+    .project-card-compact:hover { color: inherit; }
+
+    .project-card-compact__header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .project-card-compact__icon {
+      font-size: 1.25rem;
+    }
+
+    .project-card-compact__name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .project-card-compact:hover .project-card-compact__name {
+      color: var(--color-purple-dark);
+    }
+
+    .project-card-compact__desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* Footer */
@@ -545,13 +537,14 @@
       .nav__links { display: none; }
       .nav__hamburger { display: flex; }
       .dashboard-grid { grid-template-columns: 1fr; }
-      .knowledge-strip { grid-template-columns: repeat(4, 1fr); }
+      .project-cards { grid-template-columns: 1fr; }
+      .knowledge-mini-grid { grid-template-columns: repeat(4, 1fr); }
       .section__header { flex-direction: column; gap: var(--spacing-xs); }
       .footer__inner { flex-direction: column; gap: var(--spacing-sm); text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .knowledge-strip { grid-template-columns: repeat(2, 1fr); }
+      .knowledge-mini-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -644,33 +637,24 @@
             </a>
           </div>
 
-          <!-- Right: Projects -->
+          <!-- Right: Knowledge Hub mini -->
           <div class="dashboard-col">
             <div class="section__header">
-              <h2 class="section__title" data-i18n="home.projects.title">Featured Projects</h2>
-              <a href="projects.html" class="section__view-all" data-i18n="home.projects.viewAll">View all &rarr;</a>
+              <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
+              <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
             </div>
-            <div class="project-list">
-              <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="project-row">
-                <span class="project-row__icon">🎨</span>
-                <div class="project-row__info">
-                  <span class="project-row__name">Sketch Post</span>
-                  <span class="project-row__desc" data-i18n="home.projects.p1.desc">AI knowledge comic creation Skill</span>
-                </div>
+            <div class="knowledge-mini-grid">
+              <a href="knowledge.html" class="knowledge-mini__thumb">
+                <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
               </a>
-              <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="project-row">
-                <span class="project-row__icon">💡</span>
-                <div class="project-row__info">
-                  <span class="project-row__name">MindLift</span>
-                  <span class="project-row__desc" data-i18n="home.projects.p2.desc">Knowledge and inspiration distiller</span>
-                </div>
+              <a href="knowledge.html" class="knowledge-mini__thumb">
+                <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
               </a>
-              <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="project-row">
-                <span class="project-row__icon">🎬</span>
-                <div class="project-row__info">
-                  <span class="project-row__name">Voice Your Video</span>
-                  <span class="project-row__desc" data-i18n="home.projects.p3.desc">Short-video creation assistant</span>
-                </div>
+              <a href="knowledge.html" class="knowledge-mini__thumb">
+                <img src="images/topics/rag/img-1.webp" alt="RAG 全解析">
+              </a>
+              <a href="knowledge.html" class="knowledge-mini__thumb">
+                <img src="images/topics/token/img-1.webp" alt="什么是 Token">
               </a>
             </div>
           </div>
@@ -678,25 +662,34 @@
       </div>
     </section>
 
-    <!-- Knowledge Hub: compact strip -->
-    <section class="section section--alt" style="padding: var(--spacing-xl) 0;">
+    <!-- Featured Projects -->
+    <section class="section section--alt">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title" data-i18n="home.knowledge.title">Knowledge Hub</h2>
-          <a href="knowledge.html" class="section__view-all" data-i18n="home.knowledge.viewAll">Explore more &rarr;</a>
+          <h2 class="section__title" data-i18n="home.projects.title">Featured Projects</h2>
+          <a href="projects.html" class="section__view-all" data-i18n="home.projects.viewAll">View all &rarr;</a>
         </div>
-        <div class="knowledge-strip">
-          <a href="knowledge.html" class="knowledge-strip__thumb">
-            <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
+        <div class="project-cards">
+          <a href="https://github.com/hoopyAI/sketch-post" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
+            <div class="project-card-compact__header">
+              <span class="project-card-compact__icon">🎨</span>
+              <span class="project-card-compact__name">Sketch Post</span>
+            </div>
+            <p class="project-card-compact__desc" data-i18n="home.projects.p1.desc">AI 知识图文创作 Skill——把复杂 AI 话题变成达芬奇手绘风漫画，支持 Claude Code、Cursor、Gemini CLI 等多平台。</p>
           </a>
-          <a href="knowledge.html" class="knowledge-strip__thumb">
-            <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
+          <a href="https://github.com/hoopyAI/MindLift" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
+            <div class="project-card-compact__header">
+              <span class="project-card-compact__icon">💡</span>
+              <span class="project-card-compact__name">MindLift</span>
+            </div>
+            <p class="project-card-compact__desc" data-i18n="home.projects.p2.desc">从零散的笔记、对话和灵感中提取知识，组织成结构化的知识库。</p>
           </a>
-          <a href="knowledge.html" class="knowledge-strip__thumb">
-            <img src="images/topics/rag/img-1.webp" alt="RAG 全解析">
-          </a>
-          <a href="knowledge.html" class="knowledge-strip__thumb">
-            <img src="images/topics/token/img-1.webp" alt="什么是 Token">
+          <a href="https://github.com/hoopyAI/voice-your-video" target="_blank" rel="noopener noreferrer" class="card project-card-compact">
+            <div class="project-card-compact__header">
+              <span class="project-card-compact__icon">🎬</span>
+              <span class="project-card-compact__name">Voice Your Video</span>
+            </div>
+            <p class="project-card-compact__desc" data-i18n="home.projects.p3.desc">短视频创作助手——从文本一键生成配音、字幕时间线和多语言翻译字幕。</p>
           </a>
         </div>
       </div>
