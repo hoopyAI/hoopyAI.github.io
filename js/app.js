@@ -71,9 +71,9 @@
         'articles.readmore': 'Read more',
 
         // Knowledge page
-        'page.knowledge.eyebrow': 'AI Concepts &amp; Prompts',
+        'page.knowledge.eyebrow': 'AI Knowledge Comics',
         'page.knowledge.title':   'Knowledge <span class="grad-text">Hub</span>',
-        'page.knowledge.desc':    'Visual explainers for AI topics — each entry has a gallery of AI-generated images and the prompts that created them. Click any card to explore.',
+        'page.knowledge.desc':    'AI concepts explained through hand-drawn comics. Click any cover to browse — each page comes with the exact prompt used to generate it, ready to copy.',
         'knowledge.filter.all': 'All',
         'knowledge.pages': 'pages',
         'carousel.prompt.label': 'PROMPT',
@@ -129,9 +129,9 @@
         'articles.readmore': '阅读全文',
 
         // Knowledge page
-        'page.knowledge.eyebrow': 'AI 概念 &amp; Prompt',
+        'page.knowledge.eyebrow': 'AI 知识漫画',
         'page.knowledge.title':   '知识 <span class="grad-text">库</span>',
-        'page.knowledge.desc':    'AI 主题的视觉解读 —— 每个条目有 AI 生成的图片集和创建它们的 Prompt。点击任意卡片探索。',
+        'page.knowledge.desc':    '用达芬奇手绘风漫画解读 AI 概念。点开任意封面浏览——每一页都附带生成用的完整 Prompt，可一键复制。',
         'knowledge.filter.all': '全部',
         'knowledge.pages': '页',
         'carousel.prompt.label': '提示词',
