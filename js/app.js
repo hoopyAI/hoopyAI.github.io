@@ -1024,7 +1024,7 @@
         <p class="article-card__excerpt">${escHtml(excerpt)}</p>
       `;
 
-      const openArticle = () => { window.location.href = `post.html?id=${article.id}`; };
+      const openArticle = () => { window.location.href = `${window.location.origin}/post.html?id=${article.id}`; };
       el.addEventListener('click', openArticle);
       el.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openArticle(); }
