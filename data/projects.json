@@ -49,6 +49,18 @@
       "featured": false
     },
     {
+      "id": "rootwisdom",
+      "title": "Rootwisdom",
+      "titleZh": "Rootwisdom · 菜根谭智慧",
+      "description": "Describe your mood, get the most fitting quote from Caigen Tan (菜根谭). AI-powered mood matching, 360 quotes with modern interpretations, 7 wallpaper-quality share image templates. Built as a PWA.",
+      "descriptionZh": "输入你的心情，从菜根谭里找到一句说给你听的话。AI 语义匹配、360 条语录附白话释义、7 套壁纸级分享图模板。支持 PWA 安装。",
+      "tags": ["typescript", "next.js", "ai", "pwa"],
+      "githubUrl": "https://github.com/hoopyAI/caigen-tan-app",
+      "liveUrl": "https://rootwisdom.online",
+      "status": "active",
+      "featured": true
+    },
+    {
       "id": "knowledge-hub",
       "title": "HoopyAI Knowledge Hub",
       "titleZh": "潦草虎皮AI说 · 知识库",
