@@ -7,6 +7,7 @@
   <title>Knowledge Hub — HoopyAI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=ZCOOL+KuaiLe&family=Varela+Round&family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="knowledge">
@@ -35,6 +36,10 @@
   <main>
     <!-- Page Header — Violet + Viridian wash -->
     <header class="section--wc" style="padding: calc(var(--nav-h) + 72px) 0 52px;">
+      <!-- Watercolor blob decorations -->
+      <div class="wc-blob" style="width:420px;height:420px;background:radial-gradient(circle,rgba(205,180,219,0.5),transparent 70%);top:-100px;right:-60px;"></div>
+      <div class="wc-blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(181,201,154,0.5),transparent 70%);top:25%;left:-80px;animation-delay:-4s;"></div>
+      <div class="wc-blob" style="width:300px;height:300px;opacity:0.45;background:radial-gradient(circle,rgba(242,204,143,0.5),transparent 70%);bottom:-40px;right:20%;animation-delay:-7s;"></div>
       <div class="container">
         <p class="page-header__eyebrow reveal" data-i18n="page.knowledge.eyebrow">AI Concepts &amp; Prompts</p>
         <h1 class="page-header__title reveal reveal--delay-1"
@@ -48,8 +53,20 @@
       </div>
     </header>
 
+    <!-- Brush divider: header → grid -->
+    <div class="brush-div">
+      <svg viewBox="0 0 1200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24 Q60 8,150 22 T350 18 T500 28 T700 16 T900 26 T1100 20 T1200 24" stroke="#cdb4db" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.25"/>
+        <path d="M0 28 Q80 38,200 22 T450 30 T650 20 T850 32 T1050 18 T1200 26" stroke="#b5c99a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.2"/>
+        <path d="M0 20 Q100 12,250 26 T550 16 T800 28 T1000 14 T1200 22" stroke="#f2cc8f" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.2"/>
+      </svg>
+    </div>
+
     <!-- Grid section — Cobalt + Sage wash -->
-    <div class="main-content section--wc">
+    <div class="main-content section--wc" style="background:linear-gradient(180deg,rgba(253,248,240,0) 0%,rgba(242,204,143,0.12) 10%,rgba(181,201,154,0.1) 25%,rgba(251,196,171,0.12) 40%,rgba(244,162,97,0.1) 55%,rgba(240,166,202,0.12) 70%,rgba(205,180,219,0.12) 85%,rgba(214,122,177,0.08) 100%);">
+      <!-- Watercolor blobs in grid area -->
+      <div class="wc-blob" style="width:350px;height:350px;opacity:0.4;background:radial-gradient(circle,rgba(240,166,202,0.4),transparent 70%);top:20%;right:-40px;animation-delay:-3s;"></div>
+      <div class="wc-blob" style="width:300px;height:300px;opacity:0.4;background:radial-gradient(circle,rgba(162,184,216,0.4),transparent 70%);bottom:15%;left:-30px;animation-delay:-6s;"></div>
       <div class="container">
         <!-- Tag Filter Bar -->
         <div class="filter-bar reveal" id="filter-bar" role="group" aria-label="Filter by tag">

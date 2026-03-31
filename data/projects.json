@@ -4,11 +4,11 @@
       "id": "sketch-post",
       "title": "Sketch Post",
       "titleZh": "Sketch Post · AI 知识图文创作",
-      "description": "A Claude Code Skill to generate AI knowledge sharing posts using Nano Banana models. Turns complex AI topics into beautiful hand-drawn style comic pages with prompts, layouts, and copywriting — all in one workflow.",
-      "descriptionZh": "基于 Claude Code 的 AI 知识图文创作 Skill——使用 Nano Banana 模型，将复杂 AI 话题转化为精美的达芬奇手绘风漫画页面，一站式生成 prompt、排版和文案。",
+      "description": "A Claude Code Skill that turns complex AI topics into beautiful Da Vinci-style comic pages — prompts, layouts, and copywriting in one workflow. The Knowledge Hub on this site was entirely created with this skill.",
+      "descriptionZh": "基于 Claude Code 的 AI 知识图文创作 Skill——将复杂 AI 话题转化为达芬奇手绘风漫画页面，一站式生成 prompt、排版和文案。本站的知识画廊就是用它创作的。",
       "tags": ["typescript", "claude-code", "skill", "ai-art"],
       "githubUrl": "https://github.com/hoopyAI/sketch-post",
-      "liveUrl": null,
+      "liveUrl": "knowledge.html",
       "status": "active",
       "featured": true
     },
@@ -57,18 +57,6 @@
       "tags": ["typescript", "next.js", "ai", "pwa"],
       "githubUrl": "https://github.com/hoopyAI/caigen-tan-app",
       "liveUrl": "https://rootwisdom.online",
-      "status": "active",
-      "featured": true
-    },
-    {
-      "id": "knowledge-hub",
-      "title": "HoopyAI Knowledge Hub",
-      "titleZh": "潦草虎皮AI说 · 知识库",
-      "description": "Visual explainers for AI concepts — each topic has AI-generated comic pages and the exact prompts that created them. This site's knowledge-sharing engine.",
-      "descriptionZh": "AI 概念的视觉化解读——每个主题都有 AI 生成的漫画页面和完整 Prompt。本站的知识分享引擎。",
-      "tags": ["javascript", "html", "ai-art", "prompts"],
-      "githubUrl": "https://github.com/hoopyAI/hoopyAI.github.io",
-      "liveUrl": "https://hoopyai.github.io/knowledge.html",
       "status": "active",
       "featured": true
     }

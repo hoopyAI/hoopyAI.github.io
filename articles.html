@@ -7,6 +7,7 @@
   <title>Articles — HoopyAI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=ZCOOL+KuaiLe&family=Varela+Round&family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="articles">
@@ -35,6 +36,10 @@
   <main>
     <!-- Page Header — Blue + Purple wash -->
     <header class="section--wc" style="padding: calc(var(--nav-h) + 72px) 0 52px;">
+      <!-- Watercolor blob decorations -->
+      <div class="wc-blob" style="width:400px;height:400px;background:radial-gradient(circle,rgba(240,166,202,0.5),transparent 70%);top:-100px;right:-80px;"></div>
+      <div class="wc-blob" style="width:350px;height:350px;background:radial-gradient(circle,rgba(205,180,219,0.45),transparent 70%);top:20%;left:-60px;animation-delay:-5s;"></div>
+      <div class="wc-blob" style="width:300px;height:300px;opacity:0.45;background:radial-gradient(circle,rgba(162,184,216,0.5),transparent 70%);bottom:-50px;right:15%;animation-delay:-8s;"></div>
       <div class="container">
         <p class="page-header__eyebrow reveal" data-i18n="page.articles.eyebrow">Blog</p>
         <h1 class="page-header__title reveal reveal--delay-1"
@@ -48,8 +53,17 @@
       </div>
     </header>
 
+    <!-- Brush divider: header → articles -->
+    <div class="brush-div">
+      <svg viewBox="0 0 1200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24 Q60 8,150 22 T350 18 T500 28 T700 16 T900 26 T1100 20 T1200 24" stroke="#f0a6ca" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.25"/>
+        <path d="M0 28 Q80 38,200 22 T450 30 T650 20 T850 32 T1050 18 T1200 26" stroke="#cdb4db" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.2"/>
+        <path d="M0 20 Q100 12,250 26 T550 16 T800 28 T1000 14 T1200 22" stroke="#f2cc8f" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.2"/>
+      </svg>
+    </div>
+
     <!-- Articles section -->
-    <div class="main-content section--wc">
+    <div class="main-content section--wc" style="background:linear-gradient(180deg,rgba(253,248,240,0) 0%,rgba(240,166,202,0.12) 15%,rgba(205,180,219,0.1) 50%,rgba(214,122,177,0.07) 85%,rgba(253,248,240,0) 100%);">
       <div class="container">
         <!-- Tag Filter Bar -->
         <div class="filter-bar reveal" id="articles-filter-bar" role="group" aria-label="Filter by tag">
