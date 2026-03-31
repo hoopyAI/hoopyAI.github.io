@@ -54,9 +54,11 @@
   --border-light: rgba(196,168,130,0.2);
   --border-medium: rgba(196,168,130,0.35);
 
-  /* Typography */
+  /* Typography — 3-tier Chinese font system */
   --font-hand-en: 'Caveat', cursive;
-  --font-hand-zh: 'ZCOOL KuaiLe', cursive;
+  --font-hero-zh: 'ZCOOL KuaiLe', cursive;            /* hero title only */
+  --font-title-zh: 'Long Cang', cursive;               /* section/card titles */
+  --font-hand-zh: 'Long Cang', cursive;                /* legacy alias → title tier */
   --font-body: 'Noto Sans SC', 'Nunito', sans-serif;
   --font-display-en: 'Varela Round', sans-serif;
   --font-primary: 'Noto Sans SC', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -247,9 +249,9 @@ a:hover {
 }
 
 .nav__link {
-  font-family: var(--font-hand-zh);
-  font-size: 1rem;
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--wc-ink-light);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 10px;
@@ -404,7 +406,7 @@ a:hover {
 }
 
 .hero__name {
-  font-family: var(--font-hand-zh);
+  font-family: var(--font-hero-zh);
   font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: var(--spacing-sm);

@@ -7,7 +7,7 @@
   <title>潦草虎皮AI说 — AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=ZCOOL+KuaiLe&family=Varela+Round&family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=ZCOOL+KuaiLe&family=Long+Cang&family=Varela+Round&family=Nunito:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* Index-page specific overrides */
@@ -197,21 +197,22 @@
     .marquee-strip {
       overflow: hidden;
       padding: 14px 0;
-      background: var(--bg-alt);
+      background: var(--bg-secondary);
     }
     .marquee-track {
       display: flex;
       gap: 10px;
-      animation: marquee 35s linear infinite;
+      animation: marquee 40s linear infinite;
       width: max-content;
     }
     .marquee-track img {
-      height: 110px;
-      border-radius: 8px;
+      height: 120px;
+      border-radius: 10px;
       object-fit: cover;
       aspect-ratio: 3/4;
-      border: 1px solid var(--border-light);
+      border: 1.5px solid rgba(196,168,130,0.15);
       transition: transform 0.2s;
+      flex-shrink: 0;
     }
     .marquee-track img:hover {
       transform: scale(1.05);
@@ -418,22 +419,32 @@
     <a href="knowledge.html" style="text-decoration:none; display:block;">
       <div class="marquee-strip">
         <div class="marquee-track">
-          <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉">
-          <img src="images/topics/mcp/img-1.webp" alt="什么是 MCP">
-          <img src="images/topics/rag/img-1.webp" alt="RAG 全解析">
-          <img src="images/topics/token/img-1.webp" alt="什么是 Token">
-          <img src="images/topics/hallucination/img-3.webp" alt="">
-          <img src="images/topics/mcp/img-3.webp" alt="">
-          <img src="images/topics/rag/img-3.webp" alt="">
-          <img src="images/topics/token/img-3.webp" alt="">
-          <img src="images/topics/hallucination/img-1.webp" alt="">
-          <img src="images/topics/mcp/img-1.webp" alt="">
-          <img src="images/topics/rag/img-1.webp" alt="">
-          <img src="images/topics/token/img-1.webp" alt="">
-          <img src="images/topics/hallucination/img-3.webp" alt="">
-          <img src="images/topics/mcp/img-3.webp" alt="">
-          <img src="images/topics/rag/img-3.webp" alt="">
-          <img src="images/topics/token/img-3.webp" alt="">
+          <!-- First set -->
+          <img src="images/topics/hallucination/img-1.webp" alt="AI 幻觉" loading="lazy">
+          <img src="images/topics/mcp/img-1.webp" alt="MCP" loading="lazy">
+          <img src="images/topics/rag/img-1.webp" alt="RAG" loading="lazy">
+          <img src="images/topics/token/img-1.webp" alt="Token" loading="lazy">
+          <img src="images/topics/hallucination/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/mcp/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/rag/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/token/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/hallucination/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/mcp/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/rag/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/token/img-4.webp" alt="" loading="lazy">
+          <!-- Duplicate for seamless loop -->
+          <img src="images/topics/hallucination/img-1.webp" alt="" loading="lazy">
+          <img src="images/topics/mcp/img-1.webp" alt="" loading="lazy">
+          <img src="images/topics/rag/img-1.webp" alt="" loading="lazy">
+          <img src="images/topics/token/img-1.webp" alt="" loading="lazy">
+          <img src="images/topics/hallucination/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/mcp/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/rag/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/token/img-2.webp" alt="" loading="lazy">
+          <img src="images/topics/hallucination/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/mcp/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/rag/img-4.webp" alt="" loading="lazy">
+          <img src="images/topics/token/img-4.webp" alt="" loading="lazy">
         </div>
       </div>
     </a>
